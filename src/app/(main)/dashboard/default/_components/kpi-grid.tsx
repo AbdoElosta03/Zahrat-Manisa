@@ -4,6 +4,7 @@ import { CalendarCheck, DollarSign, TrendingDown, TrendingUp, Users, Wallet } fr
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 import metricsData from "./metrics-data.json";
 
@@ -48,44 +49,63 @@ function formatValue(metric: Metric) {
 
 export function KpiGrid() {
   return (
-    <div className="grid h-full grid-cols-1 gap-4 sm:grid-cols-2">
-      {metrics.map((metric) => {
-        const Icon = icons[metric.id] ?? DollarSign;
-        const accent = accents[metric.id] ?? accents["total-bookings"];
-        const isUp = metric.trend === "up";
-        const maxSpark = Math.max(...metric.spark);
+    <Card className="h-full gap-4">
+      <CardHeader>
+        <CardTitle className="leading-none">Today&apos;s Overview</CardTitle>
+        <CardDescription>Here&apos;s what&apos;s happening with your travel business today.</CardDescription>
+      </CardHeader>
 
-        return (
-          <Card key={metric.id} className="justify-between gap-3 shadow-xs">
-            <CardHeader className="gap-1">
-              <div className="flex items-center justify-between">
-                <div className={`flex size-8 items-center justify-center rounded-lg ${accent.icon}`}>
-                  <Icon className="size-4" />
+      <CardContent>
+        <div className="divide-border grid grid-cols-1 divide-y sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+          {metrics.map((metric, index) => {
+            const Icon = icons[metric.id] ?? DollarSign;
+            const accent = accents[metric.id] ?? accents["total-bookings"];
+            const isUp = metric.trend === "up";
+            const maxSpark = Math.max(...metric.spark);
+
+            return (
+              <div
+                key={metric.id}
+                className={`flex flex-col gap-2.5 py-4 first:pt-0 sm:py-0 sm:first:pt-0 ${
+                  index % 2 === 0 ? "sm:pr-5" : "sm:pl-5"
+                } ${index >= 2 ? "sm:pt-4" : ""}`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className={`flex size-8 items-center justify-center rounded-lg ${accent.icon}`}>
+                    <Icon className="size-4" />
+                  </div>
+                  <Badge variant={isUp ? "default" : "destructive"} className="gap-1">
+                    {isUp ? <TrendingUp className="size-3" /> : <TrendingDown className="size-3" />}
+                    {isUp ? "+" : ""}
+                    {metric.change}%
+                  </Badge>
                 </div>
-                <Badge variant={isUp ? "default" : "destructive"} className="gap-1">
-                  {isUp ? <TrendingUp className="size-3" /> : <TrendingDown className="size-3" />}
-                  {isUp ? "+" : ""}
-                  {metric.change}%
-                </Badge>
+
+                <div className="flex items-end justify-between gap-3">
+                  <div className="flex flex-col gap-0.5">
+                    <span className="font-medium text-2xl tabular-nums leading-none tracking-tight">
+                      {formatValue(metric)}
+                    </span>
+                    <span className="text-muted-foreground text-xs">{metric.label}</span>
+                  </div>
+
+                  <div className="flex h-8 items-end gap-0.5" aria-hidden="true">
+                    {metric.spark.map((point, sparkIndex) => (
+                      <span
+                        key={sparkIndex}
+                        className={`w-1.5 rounded-full ${accent.bar} opacity-70 first:opacity-40 last:opacity-100`}
+                        style={{ height: `${Math.max(6, (point / maxSpark) * 32)}px` }}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
-              <CardTitle className="pt-1 font-medium text-2xl tabular-nums leading-none tracking-tight">
-                {formatValue(metric)}
-              </CardTitle>
-              <CardDescription>{metric.label}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex items-end gap-1">
-              {metric.spark.map((point, index) => (
-                <span
-                  key={index}
-                  aria-hidden="true"
-                  className={`flex-1 rounded-full ${accent.bar} opacity-70 first:opacity-40 last:opacity-100`}
-                  style={{ height: `${Math.max(14, (point / maxSpark) * 32)}px` }}
-                />
-              ))}
-            </CardContent>
-          </Card>
-        );
-      })}
-    </div>
+            );
+          })}
+        </div>
+      </CardContent>
+
+      <Separator className="hidden sm:block" />
+    </Card>
   );
 }

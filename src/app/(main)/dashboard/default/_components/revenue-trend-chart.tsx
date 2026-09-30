@@ -1,7 +1,7 @@
 "use client";
 
 import { format, parseISO } from "date-fns";
-import { Area, CartesianGrid, ComposedChart, Line, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -38,16 +38,18 @@ type RevenueSummary = {
   netProfit: number;
 };
 
-const chartData = revenueTrendData as RevenuePoint[];
+const rawData = revenueTrendData as RevenuePoint[];
+// Weekly buckets keep the bar chart compact and readable instead of 90 daily bars.
+const chartData = rawData.filter((_, index) => index % 7 === 0);
 const summary = revenueSummaryData as RevenueSummary;
 
 const chartConfig = {
-  revenue: {
-    label: "Revenue",
-    color: "var(--color-blue-500)",
-  },
   bookings: {
     label: "Bookings",
+    color: "var(--color-blue-500)",
+  },
+  revenue: {
+    label: "Revenue",
     color: "var(--color-teal-500)",
   },
 } satisfies ChartConfig;
@@ -64,9 +66,9 @@ export function RevenueTrendChart() {
   return (
     <Card className="@container/card h-full">
       <CardHeader>
-        <CardTitle className="leading-none">Revenue & Bookings</CardTitle>
+        <CardTitle className="leading-none">Bookings & Revenue</CardTitle>
         <CardDescription>
-          <span className="@[540px]/card:block hidden">Booking revenue trend for the last 90 days</span>
+          <span className="@[540px]/card:block hidden">Weekly bookings vs revenue for the last 90 days</span>
           <span className="@[540px]/card:hidden">Last 90 days</span>
         </CardDescription>
         <CardAction className="flex items-center gap-2">
@@ -89,22 +91,25 @@ export function RevenueTrendChart() {
       </CardHeader>
 
       <CardContent>
-        <ChartContainer config={chartConfig} className="aspect-auto h-80 w-full">
-          <ComposedChart data={chartData} margin={{ top: 0 }}>
+        <ChartContainer config={chartConfig} className="aspect-auto h-64 w-full">
+          <BarChart data={chartData} margin={{ top: 0 }} barGap={4}>
             <defs>
+              <linearGradient id="fillBookings" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="var(--color-bookings)" stopOpacity={1} />
+                <stop offset="100%" stopColor="var(--color-bookings)" stopOpacity={0.55} />
+              </linearGradient>
               <linearGradient id="fillRevenue" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="var(--color-revenue)" stopOpacity={0.36} />
-                <stop offset="95%" stopColor="var(--color-revenue)" stopOpacity={0.04} />
+                <stop offset="0%" stopColor="var(--color-revenue)" stopOpacity={1} />
+                <stop offset="100%" stopColor="var(--color-revenue)" stopOpacity={0.55} />
               </linearGradient>
             </defs>
-            <CartesianGrid vertical={false} strokeOpacity={0.5} />
+            <CartesianGrid vertical={false} strokeOpacity={0.35} />
 
             <XAxis
               dataKey="date"
               tickLine={false}
               axisLine={false}
               tickMargin={8}
-              minTickGap={48}
               tickFormatter={(value) =>
                 parseISO(value).toLocaleDateString("en-US", {
                   month: "short",
@@ -114,28 +119,19 @@ export function RevenueTrendChart() {
             />
 
             <ChartTooltip
-              cursor={false}
+              cursor={{ fill: "var(--muted)", opacity: 0.4 }}
               content={
                 <ChartTooltipContent
                   className="w-50"
-                  indicator="line"
                   labelFormatter={(value) => format(parseISO(value), "d MMMM yyyy")}
                 />
               }
             />
             <ChartLegend verticalAlign="top" content={<ChartLegendContent className="mb-5 justify-end" />} />
 
-            <Area
-              dataKey="revenue"
-              type="natural"
-              fill="url(#fillRevenue)"
-              stroke="var(--color-revenue)"
-              strokeWidth={1.25}
-              dot={false}
-              fillOpacity={1}
-            />
-            <Line dataKey="bookings" type="natural" stroke="var(--color-bookings)" strokeWidth={1.4} dot={false} />
-          </ComposedChart>
+            <Bar dataKey="bookings" fill="url(#fillBookings)" radius={[6, 6, 0, 0]} maxBarSize={22} />
+            <Bar dataKey="revenue" fill="url(#fillRevenue)" radius={[6, 6, 0, 0]} maxBarSize={22} />
+          </BarChart>
         </ChartContainer>
 
         <div className="mt-5 grid grid-cols-3 gap-3 border-t pt-4">
