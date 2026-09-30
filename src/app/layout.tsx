@@ -14,8 +14,16 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://studio-admin.arhamkhnz.com"),
-  title: APP_CONFIG.meta.title,
+  title: {
+    default: APP_CONFIG.meta.title,
+    template: `%s · ${APP_CONFIG.name}`,
+  },
   description: APP_CONFIG.meta.description,
+  applicationName: APP_CONFIG.name,
+  icons: {
+    icon: [{ url: "/logo/zahratmanisa-logo.png", type: "image/png" }],
+    apple: [{ url: "/logo/zahratmanisa-logo.png", type: "image/png" }],
+  },
   twitter: {
     card: "summary_large_image",
   },

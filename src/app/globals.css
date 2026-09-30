@@ -117,7 +117,7 @@ These serve as the fallback; there is no separate default.css file. */
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
+  --sidebar: #262626;
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -228,27 +228,10 @@ These serve as the fallback; there is no separate default.css file. */
   html[data-font="playfairDisplay"] body {
     --font-sans: var(--font-playfair-display);
   }
-
-  html body:has([data-landing-page]) {
-    --font-sans: var(--font-geist);
-  }
 }
 
 html {
   overscroll-behavior: none;
-}
-
-html:has([data-landing-page]) {
-  view-transition-name: none;
-}
-
-[data-landing-dashboard-preview] {
-  view-transition-name: landing-dashboard-preview;
-}
-
-::view-transition-group(landing-dashboard-preview) {
-  animation-duration: 360ms;
-  animation-timing-function: ease-out;
 }
 
 .disable-transitions * {
@@ -298,4 +281,14 @@ html:has([data-landing-page]) {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
+}
+
+.dark:root[data-theme-preset] {
+  --sidebar: #262626;
+}
+
+[data-sidebar="menu-button"][data-active="true"],
+[data-sidebar="menu-sub-button"][data-active="true"] {
+  background-color: #388c7d;
+  color: #fff;
 }

@@ -1,0 +1,625 @@
+---
+alwaysApply: true
+---
+---
+description: Core project context and rules for Zahrat Manisa
+alwaysApply: true
+---
+
+# Zahrat Manisa — Project Rule
+
+This rule defines the core context and working principles for the Zahrat Manisa project.
+
+## 1. Project Overview
+
+Zahrat Manisa (زهرة مانيسا) is a digital travel platform initially focused on airline ticket search and booking.
+
+The platform aims to simplify the customer journey from finding a flight to receiving and managing the issued ticket.
+
+The long-term vision may expand into additional travel services such as:
+
+- Hotel booking
+- Transportation / Taxi
+- Other travel-related services
+
+These future services are not part of the initial scope unless explicitly approved.
+
+---
+
+## 2. Current Project Status
+
+The project is currently in the analysis and planning stage.
+
+Important:
+
+- Proposed features are not automatically confirmed requirements.
+- Do not assume that every feature mentioned in the documentation must be implemented.
+- Do not invent missing business rules.
+- Do not assume technical decisions that have not been confirmed.
+- When an important decision is missing, identify it clearly before making a major implementation decision.
+
+---
+
+## 3. Main Platform Components
+
+The overall platform consists of:
+
+### Customer Mobile App
+
+Technology:
+- Flutter
+
+Purpose:
+- Flight search
+- Flight selection
+- Booking
+- Payment
+- Ticket management
+- Booking history
+- Notifications
+- Customer account
+
+### Admin Dashboard
+
+Technology:
+- React / Next.js
+
+Purpose:
+- Manage platform operations
+- Manage bookings
+- Manage flights
+- Manage users
+- Manage payments and refunds
+- Manage promotions
+- Manage notifications
+- Manage roles and permissions
+- Monitor integrations
+- Manage content
+- Audit sensitive operations
+
+### Marketing Website
+
+Purpose:
+- Introduce the platform
+- Explain services
+- Provide app download links
+- Provide company information
+- Provide FAQ
+- Provide legal information
+- Potentially display promotional offers
+
+### Backend
+
+Technology:
+- Python
+
+Purpose:
+- Business logic
+- APIs
+- Airline integrations
+- Payment integrations
+- Communication with frontend applications
+
+Technology choices may change during technical planning.
+
+---
+
+# 4. Core Customer Flow
+
+The primary customer journey is expected to be:
+
+Search Flight
+→ View Results
+→ Select Flight
+→ View Details
+→ Enter Passenger Information
+→ Payment
+→ Booking Confirmation
+→ Ticket Issued
+→ Receive Ticket
+→ Manage Booking
+
+This represents the intended product direction and is not a finalized implementation specification.
+
+---
+
+# 5. Customer App Capabilities
+
+Potential capabilities include:
+
+## Authentication
+
+- Account registration
+- Login
+- OTP verification
+
+## Flight Search
+
+- Origin
+- Destination
+- Travel date
+- Number of passengers
+
+## Flight Results
+
+Potential filters:
+
+- Price
+- Number of stops
+- Airline
+
+## Flight Details
+
+Potential information:
+
+- Departure
+- Arrival
+- Airline
+- Flight duration
+- Baggage allowance
+- Ticket rules
+- Fare conditions
+- Price
+
+## Booking
+
+Potential workflow:
+
+- Select flight
+- Enter passenger information
+- Review booking
+- Payment
+- Booking confirmation
+
+## Ticket
+
+Potential outputs:
+
+- Electronic ticket
+- PDF
+- QR code
+
+Potential delivery channels:
+
+- Email
+- SMS
+
+## Booking Management
+
+Potential capabilities:
+
+- View bookings
+- View booking details
+- Cancellation requests
+- Refund requests
+- Booking history
+
+## Notifications
+
+Potential notifications:
+
+- Booking status
+- Flight status
+- Payment status
+- Ticket issuance
+
+## Account
+
+Potential sections:
+
+- Profile
+- Support
+- Account settings
+- Language
+
+## Localization
+
+The application is expected to support multiple languages.
+
+---
+
+# 6. Admin Dashboard
+
+The Admin Dashboard is the operational control center of the platform.
+
+It should not be treated as a generic dashboard composed mainly of KPI cards and charts.
+
+The dashboard should prioritize operational workflows such as:
+
+- Search
+- Filtering
+- Tables
+- Statuses
+- Detail views
+- Actions
+- Permissions
+- Auditability
+
+---
+
+# 7. Admin Dashboard Modules
+
+## Overview
+
+Potential metrics:
+
+- Bookings today
+- Bookings this week
+- Bookings this month
+- Revenue
+- New users
+- Popular destinations
+- Popular flights
+- Booking growth
+- Cancellation rate
+
+Potential alerts:
+
+- Airline API problems
+- Payment integration problems
+- Synchronization failures
+- Unusual refund activity
+
+---
+
+## Flight Management
+
+Potential capabilities:
+
+- View upcoming flights
+- Synchronize flights from airline APIs
+- Add flights manually
+- Edit manually managed flights
+- View pricing
+- View seat availability
+- Monitor synchronization status
+
+Potential statuses:
+
+- Connected
+- Delayed
+- Disconnected
+
+---
+
+## Booking Management
+
+Potential capabilities:
+
+- View bookings
+- Search bookings
+- Filter bookings
+- View booking details
+- View passenger information
+- View payment status
+- View PNR
+- Update booking status
+- Cancel booking
+- Process refund
+- Create manual booking
+
+Potential filters:
+
+- Date
+- Booking status
+- Destination
+- Customer
+- Payment status
+
+---
+
+## User Management
+
+Potential capabilities:
+
+- View users
+- View user profile
+- Activate account
+- Suspend account
+- View booking history
+- View support requests
+
+---
+
+## Payments & Refunds
+
+Potential capabilities:
+
+- View transactions
+- View successful payments
+- View failed payments
+- View refunded transactions
+- Process refunds
+- Process partial refunds
+- Reconcile payment gateway transactions
+- Export financial reports
+
+Financial rules are not finalized.
+
+---
+
+## Discounts & Promotions
+
+Potential capabilities:
+
+- Create discount codes
+- Percentage discounts
+- Fixed amount discounts
+- Expiration date
+- Usage limits
+- Usage analytics
+- Revenue generated from promotions
+
+---
+
+## Reports & Analytics
+
+Potential reports:
+
+- Booking reports
+- Revenue reports
+- Destination performance
+- Flight performance
+- Booking abandonment
+- Cancellation rate
+- Refund rate
+
+Potential export formats:
+
+- Excel
+- PDF
+
+---
+
+## Notifications & Campaigns
+
+Potential capabilities:
+
+- Push notifications
+- SMS
+- Email
+- User segmentation
+- Scheduled campaigns
+- Promotional banners
+
+---
+
+## Roles & Permissions
+
+Potential roles:
+
+- Super Admin
+- Operations
+- Finance
+- Customer Support
+
+The final role model is not yet confirmed.
+
+Permissions should follow least-privilege principles.
+
+Example:
+
+Customer Support should not automatically have access to sensitive financial operations.
+
+---
+
+## Integrations
+
+Potential integrations include:
+
+### Airline APIs
+
+Possible responsibilities:
+
+- Flight availability
+- Pricing
+- Booking
+- Ticketing
+- Flight status
+
+### Payment Gateway
+
+Possible responsibilities:
+
+- Payment processing
+- Payment status
+- Refunds
+- Reconciliation
+
+Specific providers have not been finalized.
+
+---
+
+## CMS
+
+Potential content management:
+
+- Terms of Use
+- Privacy Policy
+- FAQ
+- Website content
+- Promotional content
+- Banners
+
+---
+
+## Audit Log
+
+Sensitive administrative actions should potentially be logged.
+
+Examples:
+
+- Booking cancellation
+- Refund
+- Permission changes
+- Configuration changes
+- Manual booking
+- User suspension
+
+Potential audit fields:
+
+- Actor
+- Action
+- Timestamp
+- Resource
+- Previous value
+- New value
+
+The final audit model is not finalized.
+
+---
+
+# 8. Important Product Entities
+
+Potential product concepts include:
+
+- User
+- Passenger
+- Flight
+- Airline
+- Booking
+- PNR
+- Ticket
+- Payment
+- Refund
+- Discount
+- Notification
+- Campaign
+- Role
+- Permission
+- Audit Log
+- Integration
+- Destination
+
+These are conceptual entities only.
+
+Do not assume that this list represents the final database schema.
+
+---
+
+# 9. Important Business Areas
+
+The following areas require careful treatment because they may affect financial or operational behavior:
+
+- Flight availability
+- Pricing
+- Booking lifecycle
+- Payment lifecycle
+- Ticket issuance
+- Cancellation
+- Refunds
+- Airline synchronization
+- Permissions
+- Financial reconciliation
+- Audit logs
+
+Do not invent business logic for these areas.
+
+---
+
+# 10. Unknown / Unconfirmed Decisions
+
+The following decisions are currently not finalized:
+
+- Airline API providers
+- Payment gateway provider
+- SMS provider
+- Email provider
+- Supported airlines
+- Supported currencies
+- Cancellation rules
+- Refund rules
+- Ticket issuance mechanism
+- Final booking workflow
+- Final payment workflow
+- Final roles
+- Final permission model
+- Final database schema
+- Final backend architecture
+- Final design system
+- Final visual identity
+
+When implementation depends on one of these decisions:
+
+1. Identify the missing decision.
+2. Explain why it matters.
+3. Suggest reasonable options when useful.
+4. Do not silently invent a decision.
+
+---
+
+# 11. UI / UX Direction
+
+The product should have a modern and professional interface.
+
+For the Admin Dashboard:
+
+- Prioritize information hierarchy.
+- Prioritize operational speed.
+- Use clear statuses.
+- Use searchable and filterable data.
+- Use tables where they improve operational workflows.
+- Use detail views for complex entities.
+- Avoid unnecessary decoration.
+- Avoid excessive dashboard cards.
+- Use consistent spacing and typography.
+- Keep components reusable.
+- Keep responsive behavior in mind.
+
+The final visual language is not yet finalized.
+
+When a requirement is ambiguous, prefer presenting a suitable design direction rather than assuming a specific solution without context.
+
+---
+
+# 12. AI Working Rules
+
+When working on this project:
+
+## Rule 1 — Understand Context First
+
+Use this rule and the project documentation as context before making major implementation decisions.
+
+## Rule 2 — Separate Proposed Features From Confirmed Requirements
+
+A feature described as potential, proposed, optional, or future must not be treated as mandatory.
+
+## Rule 3 — Do Not Invent Business Rules
+
+Do not create financial, booking, cancellation, refund, or permission rules without confirmation.
+
+## Rule 4 — Preserve Existing Decisions
+
+Do not replace established project decisions without explaining the reason and tradeoffs.
+
+## Rule 5 — Separate Product Decisions From Technical Decisions
+
+A product requirement should not automatically dictate the technical implementation.
+
+## Rule 6 — Prefer Reusable Architecture
+
+Use reusable components, clear abstractions, and avoid duplicated logic.
+
+## Rule 7 — Admin Dashboard Is an Operational Product
+
+Focus on workflows, search, filters, tables, statuses, actions, details, and permissions.
+
+## Rule 8 — Ask Before High-Impact Assumptions
+
+When a missing decision can materially affect architecture, UX, data models, or business logic, identify the issue before proceeding.
+
+## Rule 9 — Do Not Over-Engineer
+
+Prefer the simplest architecture that satisfies the confirmed requirements.
+
+## Rule 10 — Do Not Modify Unrelated Areas
+
+When implementing a feature, avoid changing unrelated parts of the project unless necessary.
+
+---
+
+# 13. Current Development Focus
+
+The current project is primarily focused on designing and building the Admin Dashboard.
+
+The Admin Dashboard should be treated as the current implementation focus unless explicitly changed.
