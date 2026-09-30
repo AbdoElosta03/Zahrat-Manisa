@@ -1,0 +1,42 @@
+[
+  {
+    "id": "UPC-001",
+    "customer": { "name": "Layla Hassan", "initials": "LH" },
+    "bookingId": "BKG-8281",
+    "dueDate": "2026-09-05",
+    "amount": 960,
+    "status": "pending"
+  },
+  {
+    "id": "UPC-002",
+    "customer": { "name": "Yousef Ahmed", "initials": "YA" },
+    "bookingId": "BKG-8264",
+    "dueDate": "2026-09-06",
+    "amount": 290,
+    "status": "partial"
+  },
+  {
+    "id": "UPC-003",
+    "customer": { "name": "Noura Ibrahim", "initials": "NI" },
+    "bookingId": "BKG-8245",
+    "dueDate": "2026-09-07",
+    "amount": 680,
+    "status": "pending"
+  },
+  {
+    "id": "UPC-004",
+    "customer": { "name": "Khaled Faraj", "initials": "KF" },
+    "bookingId": "BKG-8230",
+    "dueDate": "2026-09-08",
+    "amount": 1150,
+    "status": "overdue"
+  },
+  {
+    "id": "UPC-005",
+    "customer": { "name": "Ahmed Ali", "initials": "AA" },
+    "bookingId": "BKG-8219",
+    "dueDate": "2026-09-09",
+    "amount": 420,
+    "status": "pending"
+  }
+]

@@ -1,0 +1,6 @@
+[
+  { "key": "paid", "label": "Paid", "amount": 96240, "percentage": 68, "color": "var(--color-teal-500)" },
+  { "key": "pending", "label": "Pending", "amount": 18760, "percentage": 13, "color": "var(--color-orange-500)" },
+  { "key": "partial", "label": "Partially Paid", "amount": 12320, "percentage": 9, "color": "var(--color-amber-400)" },
+  { "key": "refunded", "label": "Refunded", "amount": 13460, "percentage": 10, "color": "var(--color-blue-500)" }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "TRX-0012",
+    "customer": { "name": "Ahmed Ali", "initials": "AA" },
+    "type": "booking-payment",
+    "amount": 420,
+    "method": "Credit Card",
+    "status": "paid",
+    "date": "2026-09-03"
+  },
+  {
+    "id": "TRX-0011",
+    "customer": { "name": "Fatima Omar", "initials": "FO" },
+    "type": "ticket-payment",
+    "amount": 780,
+    "method": "Bank Transfer",
+    "status": "pending",
+    "date": "2026-09-03"
+  },
+  {
+    "id": "TRX-0010",
+    "customer": { "name": "Mohamed Saleh", "initials": "MS" },
+    "type": "refund",
+    "amount": -510,
+    "method": "Credit Card",
+    "status": "refunded",
+    "date": "2026-09-02"
+  },
+  {
+    "id": "TRX-0009",
+    "customer": { "name": "Aisha Khaled", "initials": "AK" },
+    "type": "package-payment",
+    "amount": 1200,
+    "method": "Cash",
+    "status": "paid",
+    "date": "2026-09-02"
+  },
+  {
+    "id": "TRX-0008",
+    "customer": { "name": "Omar Al-Faraj", "initials": "OA" },
+    "type": "ticket-payment",
+    "amount": 320,
+    "method": "Credit Card",
+    "status": "paid",
+    "date": "2026-09-01"
+  }
+]
