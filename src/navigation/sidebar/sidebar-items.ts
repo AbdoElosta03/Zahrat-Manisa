@@ -105,7 +105,7 @@ export const sidebarItems: NavGroup[] = [
       {
         id: "ticketing",
         title: "Ticketing",
-        url: "/dashboard/invoice",
+        url: "/dashboard/ticketing",
         icon: Ticket,
       },
       {
