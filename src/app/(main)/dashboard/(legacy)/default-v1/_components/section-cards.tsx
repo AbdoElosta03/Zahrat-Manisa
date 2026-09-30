@@ -1,4 +1,4 @@
-import { TrendingDown, TrendingUp } from "lucide-react";
+import { DollarSign, TrendingDown, TrendingUp } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardAction, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +8,9 @@ export function SectionCards() {
     <div className="grid @5xl/main:grid-cols-4 @xl/main:grid-cols-2 grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs dark:*:data-[slot=card]:bg-card">
       <Card className="@container/card rounded-xl border-border/70 bg-card shadow-sm ring-0">
         <CardHeader className="gap-3 p-5">
+          <div className="flex size-9 items-center justify-center rounded-xl border border-border/70 bg-muted/50 text-muted-foreground shadow-xs">
+            <DollarSign aria-hidden="true" />
+          </div>
           <CardDescription className="text-sm font-medium tracking-tight">Total Revenue</CardDescription>
           <CardTitle className="font-semibold @[250px]/card:text-3xl text-2xl tracking-tight tabular-nums">
             $1,250.00
@@ -22,11 +25,8 @@ export function SectionCards() {
             </Badge>
           </CardAction>
         </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 border-t border-border/60 px-5 py-4 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Trending up this month <TrendingUp className="size-4" />
-          </div>
-          <div className="text-muted-foreground">Visitors for the last 6 months</div>
+        <CardFooter className="border-t border-border/60 px-5 py-4 text-sm text-muted-foreground">
+          Visitors for the last 6 months
         </CardFooter>
       </Card>
       <Card className="@container/card">
