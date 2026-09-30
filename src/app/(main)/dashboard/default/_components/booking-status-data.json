@@ -1,0 +1,5 @@
+[
+  { "status": "confirmed", "label": "Confirmed", "count": 862, "color": "var(--color-emerald-500)" },
+  { "status": "pending", "label": "Pending", "count": 274, "color": "var(--color-amber-500)" },
+  { "status": "cancelled", "label": "Cancelled", "count": 148, "color": "var(--color-rose-500)" }
+]

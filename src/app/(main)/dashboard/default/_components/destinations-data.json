@@ -1,0 +1,56 @@
+[
+  {
+    "id": "istanbul",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "image": "/destinations/istanbul.png",
+    "bookings": 312,
+    "revenue": 198450,
+    "share": 24
+  },
+  {
+    "id": "cappadocia",
+    "city": "Cappadocia",
+    "country": "Turkey",
+    "image": "/destinations/cappadocia.png",
+    "bookings": 267,
+    "revenue": 176220,
+    "share": 21
+  },
+  {
+    "id": "antalya",
+    "city": "Antalya",
+    "country": "Turkey",
+    "image": "/destinations/antalya.png",
+    "bookings": 214,
+    "revenue": 129480,
+    "share": 17
+  },
+  {
+    "id": "santorini",
+    "city": "Santorini",
+    "country": "Greece",
+    "image": "/destinations/santorini.png",
+    "bookings": 168,
+    "revenue": 142560,
+    "share": 13
+  },
+  {
+    "id": "dubai",
+    "city": "Dubai",
+    "country": "UAE",
+    "image": "/destinations/dubai.png",
+    "bookings": 143,
+    "revenue": 121550,
+    "share": 11
+  },
+  {
+    "id": "paris",
+    "city": "Paris",
+    "country": "France",
+    "image": "/destinations/paris.png",
+    "bookings": 96,
+    "revenue": 89760,
+    "share": 8
+  }
+]
