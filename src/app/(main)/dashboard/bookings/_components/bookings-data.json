@@ -1,0 +1,3530 @@
+[
+  {
+    "id": "BK-1025",
+    "tripName": "Santorini Island Hop",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-09-01",
+    "returnDate": "2026-09-08",
+    "duration": "7 Days",
+    "departureTime": "13:30",
+    "arrivalTime": "15:30",
+    "flightNumber": "A3479",
+    "travelers": [
+      {
+        "name": "Mona Saleh",
+        "initials": "MS"
+      },
+      {
+        "name": "Samir Fares",
+        "initials": "SF"
+      },
+      {
+        "name": "Lara Zayed",
+        "initials": "LZ"
+      },
+      {
+        "name": "Nour Farouk",
+        "initials": "NF"
+      },
+      {
+        "name": "Layla Karam",
+        "initials": "LK"
+      },
+      {
+        "name": "Khaled Nasser",
+        "initials": "KN"
+      }
+    ],
+    "travelersCount": 12,
+    "adults": 12,
+    "children": 0,
+    "seatsTotal": 17,
+    "seatsBooked": 12,
+    "amount": 20604,
+    "paidAmount": 20604,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-03"
+  },
+  {
+    "id": "BK-1026",
+    "tripName": "Turquoise Coast Tour",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-09-01",
+    "returnDate": "2026-09-08",
+    "duration": "7 Days",
+    "departureTime": "15:00",
+    "arrivalTime": "17:00",
+    "flightNumber": "PC491",
+    "travelers": [
+      {
+        "name": "Tariq Aziz",
+        "initials": "TA"
+      },
+      {
+        "name": "Hassan Ali",
+        "initials": "HA"
+      },
+      {
+        "name": "Lara Farouk",
+        "initials": "LF"
+      },
+      {
+        "name": "Layla Fares",
+        "initials": "LF"
+      }
+    ],
+    "travelersCount": 4,
+    "adults": 4,
+    "children": 0,
+    "seatsTotal": 5,
+    "seatsBooked": 4,
+    "amount": 4216,
+    "paidAmount": 4216,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-03"
+  },
+  {
+    "id": "BK-1027",
+    "tripName": "Santorini Sunset Cruise",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-09-01",
+    "returnDate": "2026-09-06",
+    "duration": "5 Days",
+    "departureTime": "11:15",
+    "arrivalTime": "17:15",
+    "flightNumber": "A3257",
+    "travelers": [
+      {
+        "name": "Salma Aziz",
+        "initials": "SA"
+      },
+      {
+        "name": "Lara Nasser",
+        "initials": "LN"
+      },
+      {
+        "name": "Adam Saleh",
+        "initials": "AS"
+      },
+      {
+        "name": "Adam Haddad",
+        "initials": "AH"
+      },
+      {
+        "name": "Nour Odeh",
+        "initials": "NO"
+      },
+      {
+        "name": "Ahmed Ali",
+        "initials": "AA"
+      }
+    ],
+    "travelersCount": 11,
+    "adults": 7,
+    "children": 4,
+    "seatsTotal": 16,
+    "seatsBooked": 11,
+    "amount": 18278,
+    "paidAmount": 10401,
+    "bookingStatus": "pending",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-07-27"
+  },
+  {
+    "id": "BK-1028",
+    "tripName": "Dubai Shopping & Skyline",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-02",
+    "returnDate": "2026-09-06",
+    "duration": "4 Days",
+    "departureTime": "08:00",
+    "arrivalTime": "10:00",
+    "flightNumber": "EK345",
+    "travelers": [
+      {
+        "name": "Nada Zayed",
+        "initials": "NZ"
+      },
+      {
+        "name": "Sara Farouk",
+        "initials": "SF"
+      },
+      {
+        "name": "Hassan Odeh",
+        "initials": "HO"
+      }
+    ],
+    "travelersCount": 3,
+    "adults": 3,
+    "children": 0,
+    "seatsTotal": 6,
+    "seatsBooked": 3,
+    "amount": 5315,
+    "paidAmount": 2964,
+    "bookingStatus": "pending",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-07-15"
+  },
+  {
+    "id": "BK-1029",
+    "tripName": "Dubai Luxury Break",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-02",
+    "returnDate": "2026-09-10",
+    "duration": "8 Days",
+    "departureTime": "11:00",
+    "arrivalTime": "13:00",
+    "flightNumber": "EK184",
+    "travelers": [
+      {
+        "name": "Mazen Haddad",
+        "initials": "MH"
+      },
+      {
+        "name": "Fahed Khan",
+        "initials": "FK"
+      },
+      {
+        "name": "Yara Barakat",
+        "initials": "YB"
+      },
+      {
+        "name": "Reem Ibrahim",
+        "initials": "RI"
+      },
+      {
+        "name": "Yara Haddad",
+        "initials": "YH"
+      },
+      {
+        "name": "Yara Nasser",
+        "initials": "YN"
+      }
+    ],
+    "travelersCount": 19,
+    "adults": 19,
+    "children": 0,
+    "seatsTotal": 23,
+    "seatsBooked": 19,
+    "amount": 34603,
+    "paidAmount": 16439,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-07-20"
+  },
+  {
+    "id": "BK-1030",
+    "tripName": "Istanbul Heritage Tour",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-09-03",
+    "returnDate": "2026-09-08",
+    "duration": "5 Days",
+    "departureTime": "15:00",
+    "arrivalTime": "18:00",
+    "flightNumber": "TK244",
+    "travelers": [
+      {
+        "name": "Layla Zayed",
+        "initials": "LZ"
+      },
+      {
+        "name": "Adam Khan",
+        "initials": "AK"
+      },
+      {
+        "name": "Hassan Aziz",
+        "initials": "HA"
+      },
+      {
+        "name": "Mona Haddad",
+        "initials": "MH"
+      },
+      {
+        "name": "Maya Karam",
+        "initials": "MK"
+      },
+      {
+        "name": "Yusuf Haddad",
+        "initials": "YH"
+      }
+    ],
+    "travelersCount": 8,
+    "adults": 4,
+    "children": 4,
+    "seatsTotal": 11,
+    "seatsBooked": 8,
+    "amount": 9401,
+    "paidAmount": 0,
+    "bookingStatus": "cancelled",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-07-11"
+  },
+  {
+    "id": "BK-1031",
+    "tripName": "Antalya All-Inclusive",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-09-03",
+    "returnDate": "2026-09-08",
+    "duration": "5 Days",
+    "departureTime": "12:15",
+    "arrivalTime": "16:15",
+    "flightNumber": "PC205",
+    "travelers": [
+      {
+        "name": "Yara Karam",
+        "initials": "YK"
+      },
+      {
+        "name": "Rana Barakat",
+        "initials": "RB"
+      },
+      {
+        "name": "Hassan Fares",
+        "initials": "HF"
+      },
+      {
+        "name": "Hassan Haddad",
+        "initials": "HH"
+      },
+      {
+        "name": "Yusuf Ali",
+        "initials": "YA"
+      },
+      {
+        "name": "Khaled Haddad",
+        "initials": "KH"
+      }
+    ],
+    "travelersCount": 11,
+    "adults": 11,
+    "children": 0,
+    "seatsTotal": 17,
+    "seatsBooked": 11,
+    "amount": 11443,
+    "paidAmount": 11443,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-04"
+  },
+  {
+    "id": "BK-1032",
+    "tripName": "Fairy Chimneys Tour",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-09-03",
+    "returnDate": "2026-09-10",
+    "duration": "7 Days",
+    "departureTime": "15:45",
+    "arrivalTime": "18:45",
+    "flightNumber": "PC574",
+    "travelers": [
+      {
+        "name": "Nour Barakat",
+        "initials": "NB"
+      },
+      {
+        "name": "Yara Aziz",
+        "initials": "YA"
+      },
+      {
+        "name": "Sara Fares",
+        "initials": "SF"
+      },
+      {
+        "name": "Dina Zayed",
+        "initials": "DZ"
+      },
+      {
+        "name": "Samir Ibrahim",
+        "initials": "SI"
+      },
+      {
+        "name": "Adam Haddad",
+        "initials": "AH"
+      }
+    ],
+    "travelersCount": 8,
+    "adults": 8,
+    "children": 0,
+    "seatsTotal": 13,
+    "seatsBooked": 8,
+    "amount": 11332,
+    "paidAmount": 11332,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-09"
+  },
+  {
+    "id": "BK-1033",
+    "tripName": "Santorini Sunset Cruise",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-09-05",
+    "returnDate": "2026-09-12",
+    "duration": "7 Days",
+    "departureTime": "11:30",
+    "arrivalTime": "13:30",
+    "flightNumber": "A3509",
+    "travelers": [
+      {
+        "name": "Reem Fares",
+        "initials": "RF"
+      },
+      {
+        "name": "Dina Saleh",
+        "initials": "DS"
+      },
+      {
+        "name": "Ahmed Zayed",
+        "initials": "AZ"
+      },
+      {
+        "name": "Yara Karam",
+        "initials": "YK"
+      },
+      {
+        "name": "Mazen Saleh",
+        "initials": "MS"
+      },
+      {
+        "name": "Yara Ali",
+        "initials": "YA"
+      }
+    ],
+    "travelersCount": 10,
+    "adults": 9,
+    "children": 1,
+    "seatsTotal": 10,
+    "seatsBooked": 10,
+    "amount": 17853,
+    "paidAmount": 8919,
+    "bookingStatus": "pending",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-10"
+  },
+  {
+    "id": "BK-1034",
+    "tripName": "Antalya All-Inclusive",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-09-06",
+    "returnDate": "2026-09-10",
+    "duration": "4 Days",
+    "departureTime": "09:30",
+    "arrivalTime": "13:30",
+    "flightNumber": "PC179",
+    "travelers": [
+      {
+        "name": "Omar Barakat",
+        "initials": "OB"
+      },
+      {
+        "name": "Rana Khan",
+        "initials": "RK"
+      },
+      {
+        "name": "Hala Hassan",
+        "initials": "HH"
+      },
+      {
+        "name": "Salma Odeh",
+        "initials": "SO"
+      },
+      {
+        "name": "Lara Ali",
+        "initials": "LA"
+      },
+      {
+        "name": "Hassan Zayed",
+        "initials": "HZ"
+      }
+    ],
+    "travelersCount": 20,
+    "adults": 20,
+    "children": 0,
+    "seatsTotal": 25,
+    "seatsBooked": 20,
+    "amount": 21219,
+    "paidAmount": 21219,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-07-13"
+  },
+  {
+    "id": "BK-1035",
+    "tripName": "Cappadocia Cave Retreat",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-09-07",
+    "returnDate": "2026-09-14",
+    "duration": "7 Days",
+    "departureTime": "13:30",
+    "arrivalTime": "15:30",
+    "flightNumber": "PC520",
+    "travelers": [
+      {
+        "name": "Salma Barakat",
+        "initials": "SB"
+      },
+      {
+        "name": "Fahed Aziz",
+        "initials": "FA"
+      },
+      {
+        "name": "Zaid Haddad",
+        "initials": "ZH"
+      },
+      {
+        "name": "Fadi Ibrahim",
+        "initials": "FI"
+      },
+      {
+        "name": "Nada Farouk",
+        "initials": "NF"
+      },
+      {
+        "name": "Nour Ali",
+        "initials": "NA"
+      }
+    ],
+    "travelersCount": 7,
+    "adults": 6,
+    "children": 1,
+    "seatsTotal": 7,
+    "seatsBooked": 7,
+    "amount": 11094,
+    "paidAmount": 11094,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-13"
+  },
+  {
+    "id": "BK-1036",
+    "tripName": "Cappadocia Cave Retreat",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-09-08",
+    "returnDate": "2026-09-16",
+    "duration": "8 Days",
+    "departureTime": "18:15",
+    "arrivalTime": "23:15",
+    "flightNumber": "PC589",
+    "travelers": [
+      {
+        "name": "Mona Khan",
+        "initials": "MK"
+      },
+      {
+        "name": "Nada Fares",
+        "initials": "NF"
+      },
+      {
+        "name": "Bilal Odeh",
+        "initials": "BO"
+      },
+      {
+        "name": "Fadi Barakat",
+        "initials": "FB"
+      },
+      {
+        "name": "Sara Mansour",
+        "initials": "SM"
+      },
+      {
+        "name": "Ahmed Zayed",
+        "initials": "AZ"
+      }
+    ],
+    "travelersCount": 17,
+    "adults": 14,
+    "children": 3,
+    "seatsTotal": 21,
+    "seatsBooked": 17,
+    "amount": 26910,
+    "paidAmount": 26910,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-07-13"
+  },
+  {
+    "id": "BK-1037",
+    "tripName": "Fairy Chimneys Tour",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-09-08",
+    "returnDate": "2026-09-16",
+    "duration": "8 Days",
+    "departureTime": "18:30",
+    "arrivalTime": "21:30",
+    "flightNumber": "PC185",
+    "travelers": [
+      {
+        "name": "Lara Fares",
+        "initials": "LF"
+      },
+      {
+        "name": "Nada Nasser",
+        "initials": "NN"
+      },
+      {
+        "name": "Rim Hassan",
+        "initials": "RH"
+      },
+      {
+        "name": "Mazen Saleh",
+        "initials": "MS"
+      }
+    ],
+    "travelersCount": 4,
+    "adults": 1,
+    "children": 3,
+    "seatsTotal": 8,
+    "seatsBooked": 4,
+    "amount": 5370,
+    "paidAmount": 5370,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-13"
+  },
+  {
+    "id": "BK-1038",
+    "tripName": "Turquoise Coast Tour",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-09-09",
+    "returnDate": "2026-09-13",
+    "duration": "4 Days",
+    "departureTime": "13:15",
+    "arrivalTime": "18:15",
+    "flightNumber": "PC245",
+    "travelers": [
+      {
+        "name": "Khaled Karam",
+        "initials": "KK"
+      },
+      {
+        "name": "Hala Saleh",
+        "initials": "HS"
+      },
+      {
+        "name": "Yusuf Ibrahim",
+        "initials": "YI"
+      },
+      {
+        "name": "Samir Ibrahim",
+        "initials": "SI"
+      },
+      {
+        "name": "Maya Fares",
+        "initials": "MF"
+      }
+    ],
+    "travelersCount": 5,
+    "adults": 5,
+    "children": 0,
+    "seatsTotal": 5,
+    "seatsBooked": 5,
+    "amount": 5294,
+    "paidAmount": 0,
+    "bookingStatus": "pending",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-07-23"
+  },
+  {
+    "id": "BK-1039",
+    "tripName": "Paris Romantic Escape",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-09-09",
+    "returnDate": "2026-09-16",
+    "duration": "7 Days",
+    "departureTime": "14:45",
+    "arrivalTime": "17:45",
+    "flightNumber": "AF511",
+    "travelers": [
+      {
+        "name": "Fadi Mansour",
+        "initials": "FM"
+      },
+      {
+        "name": "Hassan Zayed",
+        "initials": "HZ"
+      },
+      {
+        "name": "Fahed Ibrahim",
+        "initials": "FI"
+      },
+      {
+        "name": "Fadi Hassan",
+        "initials": "FH"
+      },
+      {
+        "name": "Salma Mansour",
+        "initials": "SM"
+      },
+      {
+        "name": "Tariq Saleh",
+        "initials": "TS"
+      }
+    ],
+    "travelersCount": 6,
+    "adults": 3,
+    "children": 3,
+    "seatsTotal": 11,
+    "seatsBooked": 6,
+    "amount": 12294,
+    "paidAmount": 0,
+    "bookingStatus": "pending",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-07-24"
+  },
+  {
+    "id": "BK-1040",
+    "tripName": "Dubai Desert Safari",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-10",
+    "returnDate": "2026-09-14",
+    "duration": "4 Days",
+    "departureTime": "08:30",
+    "arrivalTime": "12:30",
+    "flightNumber": "EK431",
+    "travelers": [
+      {
+        "name": "Yusuf Ali",
+        "initials": "YA"
+      },
+      {
+        "name": "Fadi Ali",
+        "initials": "FA"
+      }
+    ],
+    "travelersCount": 2,
+    "adults": 2,
+    "children": 0,
+    "seatsTotal": 8,
+    "seatsBooked": 2,
+    "amount": 3811,
+    "paidAmount": 1922,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-07-31"
+  },
+  {
+    "id": "BK-1041",
+    "tripName": "Istanbul City Break",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-09-10",
+    "returnDate": "2026-09-14",
+    "duration": "4 Days",
+    "departureTime": "18:45",
+    "arrivalTime": "22:45",
+    "flightNumber": "TK531",
+    "travelers": [
+      {
+        "name": "Maya Ibrahim",
+        "initials": "MI"
+      },
+      {
+        "name": "Khaled Karam",
+        "initials": "KK"
+      },
+      {
+        "name": "Wael Haddad",
+        "initials": "WH"
+      },
+      {
+        "name": "Hassan Ibrahim",
+        "initials": "HI"
+      },
+      {
+        "name": "Samir Fares",
+        "initials": "SF"
+      },
+      {
+        "name": "Maya Ali",
+        "initials": "MA"
+      }
+    ],
+    "travelersCount": 6,
+    "adults": 6,
+    "children": 0,
+    "seatsTotal": 6,
+    "seatsBooked": 6,
+    "amount": 8574,
+    "paidAmount": 4248,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-16"
+  },
+  {
+    "id": "BK-1042",
+    "tripName": "Antalya All-Inclusive",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-09-10",
+    "returnDate": "2026-09-14",
+    "duration": "4 Days",
+    "departureTime": "07:00",
+    "arrivalTime": "09:00",
+    "flightNumber": "PC476",
+    "travelers": [
+      {
+        "name": "Yara Hassan",
+        "initials": "YH"
+      },
+      {
+        "name": "Yara Mansour",
+        "initials": "YM"
+      },
+      {
+        "name": "Maya Zayed",
+        "initials": "MZ"
+      },
+      {
+        "name": "Sara Fares",
+        "initials": "SF"
+      },
+      {
+        "name": "Bilal Nasser",
+        "initials": "BN"
+      }
+    ],
+    "travelersCount": 5,
+    "adults": 2,
+    "children": 3,
+    "seatsTotal": 10,
+    "seatsBooked": 5,
+    "amount": 4862,
+    "paidAmount": 4862,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-07-21"
+  },
+  {
+    "id": "BK-1043",
+    "tripName": "Dubai Desert Safari",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-11",
+    "returnDate": "2026-09-15",
+    "duration": "4 Days",
+    "departureTime": "17:30",
+    "arrivalTime": "22:30",
+    "flightNumber": "EK448",
+    "travelers": [
+      {
+        "name": "Dina Nasser",
+        "initials": "DN"
+      },
+      {
+        "name": "Mazen Hassan",
+        "initials": "MH"
+      },
+      {
+        "name": "Layla Haddad",
+        "initials": "LH"
+      },
+      {
+        "name": "Tariq Ibrahim",
+        "initials": "TI"
+      },
+      {
+        "name": "Hala Hassan",
+        "initials": "HH"
+      },
+      {
+        "name": "Rim Fares",
+        "initials": "RF"
+      }
+    ],
+    "travelersCount": 9,
+    "adults": 9,
+    "children": 0,
+    "seatsTotal": 10,
+    "seatsBooked": 9,
+    "amount": 16014,
+    "paidAmount": 7208,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-18"
+  },
+  {
+    "id": "BK-1044",
+    "tripName": "Cappadocia Cave Retreat",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-09-11",
+    "returnDate": "2026-09-19",
+    "duration": "8 Days",
+    "departureTime": "13:15",
+    "arrivalTime": "19:15",
+    "flightNumber": "PC260",
+    "travelers": [
+      {
+        "name": "Layla Nasser",
+        "initials": "LN"
+      },
+      {
+        "name": "Dina Zayed",
+        "initials": "DZ"
+      },
+      {
+        "name": "Hassan Fares",
+        "initials": "HF"
+      },
+      {
+        "name": "Rana Farouk",
+        "initials": "RF"
+      },
+      {
+        "name": "Omar Ibrahim",
+        "initials": "OI"
+      },
+      {
+        "name": "Karim Ali",
+        "initials": "KA"
+      }
+    ],
+    "travelersCount": 15,
+    "adults": 14,
+    "children": 1,
+    "seatsTotal": 20,
+    "seatsBooked": 15,
+    "amount": 20380,
+    "paidAmount": 9253,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-08"
+  },
+  {
+    "id": "BK-1045",
+    "tripName": "Turquoise Coast Tour",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-09-12",
+    "returnDate": "2026-09-20",
+    "duration": "8 Days",
+    "departureTime": "17:15",
+    "arrivalTime": "23:15",
+    "flightNumber": "PC370",
+    "travelers": [
+      {
+        "name": "Zaid Karam",
+        "initials": "ZK"
+      },
+      {
+        "name": "Zaid Haddad",
+        "initials": "ZH"
+      },
+      {
+        "name": "Karim Aziz",
+        "initials": "KA"
+      },
+      {
+        "name": "Nada Farouk",
+        "initials": "NF"
+      },
+      {
+        "name": "Hala Zayed",
+        "initials": "HZ"
+      },
+      {
+        "name": "Hala Hassan",
+        "initials": "HH"
+      }
+    ],
+    "travelersCount": 19,
+    "adults": 17,
+    "children": 2,
+    "seatsTotal": 24,
+    "seatsBooked": 19,
+    "amount": 19393,
+    "paidAmount": 7760,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-22"
+  },
+  {
+    "id": "BK-1046",
+    "tripName": "Santorini Island Hop",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-09-12",
+    "returnDate": "2026-09-16",
+    "duration": "4 Days",
+    "departureTime": "10:15",
+    "arrivalTime": "15:15",
+    "flightNumber": "A3195",
+    "travelers": [
+      {
+        "name": "Yara Zayed",
+        "initials": "YZ"
+      },
+      {
+        "name": "Nour Zayed",
+        "initials": "NZ"
+      },
+      {
+        "name": "Lara Fares",
+        "initials": "LF"
+      },
+      {
+        "name": "Khaled Fares",
+        "initials": "KF"
+      },
+      {
+        "name": "Khaled Fares",
+        "initials": "KF"
+      },
+      {
+        "name": "Maya Farouk",
+        "initials": "MF"
+      }
+    ],
+    "travelersCount": 20,
+    "adults": 16,
+    "children": 4,
+    "seatsTotal": 22,
+    "seatsBooked": 20,
+    "amount": 32115,
+    "paidAmount": 32115,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-07-30"
+  },
+  {
+    "id": "BK-1047",
+    "tripName": "Istanbul City Break",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-09-13",
+    "returnDate": "2026-09-20",
+    "duration": "7 Days",
+    "departureTime": "20:15",
+    "arrivalTime": "00:15",
+    "flightNumber": "TK215",
+    "travelers": [
+      {
+        "name": "Rana Hassan",
+        "initials": "RH"
+      },
+      {
+        "name": "Sara Mansour",
+        "initials": "SM"
+      },
+      {
+        "name": "Reem Ali",
+        "initials": "RA"
+      }
+    ],
+    "travelersCount": 3,
+    "adults": 3,
+    "children": 0,
+    "seatsTotal": 9,
+    "seatsBooked": 3,
+    "amount": 4055,
+    "paidAmount": 4055,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-04"
+  },
+  {
+    "id": "BK-1048",
+    "tripName": "Dubai Luxury Break",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-15",
+    "returnDate": "2026-09-19",
+    "duration": "4 Days",
+    "departureTime": "15:00",
+    "arrivalTime": "20:00",
+    "flightNumber": "EK311",
+    "travelers": [
+      {
+        "name": "Salma Zayed",
+        "initials": "SZ"
+      },
+      {
+        "name": "Yara Mansour",
+        "initials": "YM"
+      },
+      {
+        "name": "Samir Ali",
+        "initials": "SA"
+      },
+      {
+        "name": "Khaled Hassan",
+        "initials": "KH"
+      },
+      {
+        "name": "Samir Odeh",
+        "initials": "SO"
+      },
+      {
+        "name": "Mona Hassan",
+        "initials": "MH"
+      }
+    ],
+    "travelersCount": 18,
+    "adults": 16,
+    "children": 2,
+    "seatsTotal": 21,
+    "seatsBooked": 18,
+    "amount": 33174,
+    "paidAmount": 15879,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-22"
+  },
+  {
+    "id": "BK-1049",
+    "tripName": "Cappadocia Balloon Adventure",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-09-17",
+    "returnDate": "2026-09-22",
+    "duration": "5 Days",
+    "departureTime": "18:45",
+    "arrivalTime": "20:45",
+    "flightNumber": "PC515",
+    "travelers": [
+      {
+        "name": "Omar Aziz",
+        "initials": "OA"
+      },
+      {
+        "name": "Omar Haddad",
+        "initials": "OH"
+      },
+      {
+        "name": "Fadi Hassan",
+        "initials": "FH"
+      },
+      {
+        "name": "Zaid Zayed",
+        "initials": "ZZ"
+      },
+      {
+        "name": "Lara Karam",
+        "initials": "LK"
+      },
+      {
+        "name": "Salma Barakat",
+        "initials": "SB"
+      }
+    ],
+    "travelersCount": 19,
+    "adults": 19,
+    "children": 0,
+    "seatsTotal": 19,
+    "seatsBooked": 19,
+    "amount": 29268,
+    "paidAmount": 15711,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-11"
+  },
+  {
+    "id": "BK-1050",
+    "tripName": "Cycladic Getaway",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-09-17",
+    "returnDate": "2026-09-25",
+    "duration": "8 Days",
+    "departureTime": "16:15",
+    "arrivalTime": "20:15",
+    "flightNumber": "A3581",
+    "travelers": [
+      {
+        "name": "Rana Karam",
+        "initials": "RK"
+      },
+      {
+        "name": "Dina Haddad",
+        "initials": "DH"
+      },
+      {
+        "name": "Reem Aziz",
+        "initials": "RA"
+      }
+    ],
+    "travelersCount": 3,
+    "adults": 3,
+    "children": 0,
+    "seatsTotal": 9,
+    "seatsBooked": 3,
+    "amount": 4541,
+    "paidAmount": 2235,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-27"
+  },
+  {
+    "id": "BK-1051",
+    "tripName": "Istanbul Heritage Tour",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-09-17",
+    "returnDate": "2026-09-22",
+    "duration": "5 Days",
+    "departureTime": "15:45",
+    "arrivalTime": "19:45",
+    "flightNumber": "TK189",
+    "travelers": [
+      {
+        "name": "Ahmed Odeh",
+        "initials": "AO"
+      },
+      {
+        "name": "Lina Mansour",
+        "initials": "LM"
+      },
+      {
+        "name": "Nour Hassan",
+        "initials": "NH"
+      },
+      {
+        "name": "Omar Farouk",
+        "initials": "OF"
+      },
+      {
+        "name": "Samir Aziz",
+        "initials": "SA"
+      },
+      {
+        "name": "Nada Farouk",
+        "initials": "NF"
+      }
+    ],
+    "travelersCount": 13,
+    "adults": 13,
+    "children": 0,
+    "seatsTotal": 13,
+    "seatsBooked": 13,
+    "amount": 17667,
+    "paidAmount": 0,
+    "bookingStatus": "pending",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-08-27"
+  },
+  {
+    "id": "BK-1052",
+    "tripName": "Dubai Shopping & Skyline",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-18",
+    "returnDate": "2026-09-23",
+    "duration": "5 Days",
+    "departureTime": "07:00",
+    "arrivalTime": "13:00",
+    "flightNumber": "EK100",
+    "travelers": [
+      {
+        "name": "Wael Mansour",
+        "initials": "WM"
+      },
+      {
+        "name": "Fahed Fares",
+        "initials": "FF"
+      },
+      {
+        "name": "Rana Saleh",
+        "initials": "RS"
+      },
+      {
+        "name": "Yusuf Fares",
+        "initials": "YF"
+      }
+    ],
+    "travelersCount": 4,
+    "adults": 4,
+    "children": 0,
+    "seatsTotal": 6,
+    "seatsBooked": 4,
+    "amount": 7316,
+    "paidAmount": 4068,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-26"
+  },
+  {
+    "id": "BK-1053",
+    "tripName": "Istanbul Heritage Tour",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-09-18",
+    "returnDate": "2026-09-23",
+    "duration": "5 Days",
+    "departureTime": "20:30",
+    "arrivalTime": "23:30",
+    "flightNumber": "TK258",
+    "travelers": [
+      {
+        "name": "Rim Nasser",
+        "initials": "RN"
+      },
+      {
+        "name": "Khaled Ibrahim",
+        "initials": "KI"
+      },
+      {
+        "name": "Rim Nasser",
+        "initials": "RN"
+      },
+      {
+        "name": "Zaid Aziz",
+        "initials": "ZA"
+      },
+      {
+        "name": "Maya Ibrahim",
+        "initials": "MI"
+      }
+    ],
+    "travelersCount": 5,
+    "adults": 5,
+    "children": 0,
+    "seatsTotal": 11,
+    "seatsBooked": 5,
+    "amount": 7025,
+    "paidAmount": 7025,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-13"
+  },
+  {
+    "id": "BK-1054",
+    "tripName": "Antalya All-Inclusive",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-09-19",
+    "returnDate": "2026-09-25",
+    "duration": "6 Days",
+    "departureTime": "14:30",
+    "arrivalTime": "20:30",
+    "flightNumber": "PC564",
+    "travelers": [
+      {
+        "name": "Salma Aziz",
+        "initials": "SA"
+      },
+      {
+        "name": "Bilal Hassan",
+        "initials": "BH"
+      }
+    ],
+    "travelersCount": 2,
+    "adults": 2,
+    "children": 0,
+    "seatsTotal": 4,
+    "seatsBooked": 2,
+    "amount": 1838,
+    "paidAmount": 1006,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-03"
+  },
+  {
+    "id": "BK-1055",
+    "tripName": "Antalya All-Inclusive",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-09-19",
+    "returnDate": "2026-09-27",
+    "duration": "8 Days",
+    "departureTime": "20:30",
+    "arrivalTime": "00:30",
+    "flightNumber": "PC118",
+    "travelers": [
+      {
+        "name": "Sara Mansour",
+        "initials": "SM"
+      },
+      {
+        "name": "Lara Fares",
+        "initials": "LF"
+      },
+      {
+        "name": "Zaid Mansour",
+        "initials": "ZM"
+      },
+      {
+        "name": "Layla Saleh",
+        "initials": "LS"
+      },
+      {
+        "name": "Dina Odeh",
+        "initials": "DO"
+      },
+      {
+        "name": "Rim Haddad",
+        "initials": "RH"
+      }
+    ],
+    "travelersCount": 17,
+    "adults": 13,
+    "children": 4,
+    "seatsTotal": 23,
+    "seatsBooked": 17,
+    "amount": 16651,
+    "paidAmount": 10419,
+    "bookingStatus": "pending",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-07-21"
+  },
+  {
+    "id": "BK-1056",
+    "tripName": "Istanbul City Break",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-09-20",
+    "returnDate": "2026-09-25",
+    "duration": "5 Days",
+    "departureTime": "06:45",
+    "arrivalTime": "12:45",
+    "flightNumber": "TK429",
+    "travelers": [
+      {
+        "name": "Mazen Fares",
+        "initials": "MF"
+      },
+      {
+        "name": "Ahmed Hassan",
+        "initials": "AH"
+      },
+      {
+        "name": "Lina Nasser",
+        "initials": "LN"
+      },
+      {
+        "name": "Nada Ali",
+        "initials": "NA"
+      },
+      {
+        "name": "Yara Farouk",
+        "initials": "YF"
+      },
+      {
+        "name": "Maya Odeh",
+        "initials": "MO"
+      }
+    ],
+    "travelersCount": 15,
+    "adults": 15,
+    "children": 0,
+    "seatsTotal": 15,
+    "seatsBooked": 15,
+    "amount": 18269,
+    "paidAmount": 18269,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-04"
+  },
+  {
+    "id": "BK-1057",
+    "tripName": "Santorini Island Hop",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-09-20",
+    "returnDate": "2026-09-25",
+    "duration": "5 Days",
+    "departureTime": "13:45",
+    "arrivalTime": "15:45",
+    "flightNumber": "A3529",
+    "travelers": [
+      {
+        "name": "Ahmed Ibrahim",
+        "initials": "AI"
+      },
+      {
+        "name": "Maya Mansour",
+        "initials": "MM"
+      },
+      {
+        "name": "Salma Mansour",
+        "initials": "SM"
+      },
+      {
+        "name": "Reem Zayed",
+        "initials": "RZ"
+      },
+      {
+        "name": "Bilal Khan",
+        "initials": "BK"
+      },
+      {
+        "name": "Samir Odeh",
+        "initials": "SO"
+      }
+    ],
+    "travelersCount": 20,
+    "adults": 20,
+    "children": 0,
+    "seatsTotal": 20,
+    "seatsBooked": 20,
+    "amount": 34676,
+    "paidAmount": 34676,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-07-31"
+  },
+  {
+    "id": "BK-1058",
+    "tripName": "Paris Romantic Escape",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-09-22",
+    "returnDate": "2026-09-28",
+    "duration": "6 Days",
+    "departureTime": "11:00",
+    "arrivalTime": "16:00",
+    "flightNumber": "AF368",
+    "travelers": [
+      {
+        "name": "Bilal Mansour",
+        "initials": "BM"
+      },
+      {
+        "name": "Salma Odeh",
+        "initials": "SO"
+      },
+      {
+        "name": "Lara Barakat",
+        "initials": "LB"
+      },
+      {
+        "name": "Tariq Mansour",
+        "initials": "TM"
+      }
+    ],
+    "travelersCount": 4,
+    "adults": 4,
+    "children": 0,
+    "seatsTotal": 7,
+    "seatsBooked": 4,
+    "amount": 7779,
+    "paidAmount": 0,
+    "bookingStatus": "cancelled",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-08-27"
+  },
+  {
+    "id": "BK-1059",
+    "tripName": "Dubai Desert Safari",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-23",
+    "returnDate": "2026-09-30",
+    "duration": "7 Days",
+    "departureTime": "15:45",
+    "arrivalTime": "18:45",
+    "flightNumber": "EK491",
+    "travelers": [
+      {
+        "name": "Ahmed Saleh",
+        "initials": "AS"
+      },
+      {
+        "name": "Maya Saleh",
+        "initials": "MS"
+      },
+      {
+        "name": "Yara Haddad",
+        "initials": "YH"
+      },
+      {
+        "name": "Samir Zayed",
+        "initials": "SZ"
+      },
+      {
+        "name": "Layla Karam",
+        "initials": "LK"
+      },
+      {
+        "name": "Ahmed Fares",
+        "initials": "AF"
+      }
+    ],
+    "travelersCount": 6,
+    "adults": 6,
+    "children": 0,
+    "seatsTotal": 7,
+    "seatsBooked": 6,
+    "amount": 9910,
+    "paidAmount": 9910,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-07-31"
+  },
+  {
+    "id": "BK-1060",
+    "tripName": "Dubai Shopping & Skyline",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-23",
+    "returnDate": "2026-10-01",
+    "duration": "8 Days",
+    "departureTime": "07:15",
+    "arrivalTime": "13:15",
+    "flightNumber": "EK122",
+    "travelers": [
+      {
+        "name": "Adam Saleh",
+        "initials": "AS"
+      },
+      {
+        "name": "Omar Ibrahim",
+        "initials": "OI"
+      },
+      {
+        "name": "Reem Ibrahim",
+        "initials": "RI"
+      },
+      {
+        "name": "Omar Khan",
+        "initials": "OK"
+      }
+    ],
+    "travelersCount": 4,
+    "adults": 2,
+    "children": 2,
+    "seatsTotal": 10,
+    "seatsBooked": 4,
+    "amount": 6643,
+    "paidAmount": 6643,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-30"
+  },
+  {
+    "id": "BK-1061",
+    "tripName": "Istanbul Heritage Tour",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-09-23",
+    "returnDate": "2026-09-30",
+    "duration": "7 Days",
+    "departureTime": "20:30",
+    "arrivalTime": "22:30",
+    "flightNumber": "TK114",
+    "travelers": [
+      {
+        "name": "Fahed Aziz",
+        "initials": "FA"
+      },
+      {
+        "name": "Mazen Haddad",
+        "initials": "MH"
+      },
+      {
+        "name": "Reem Zayed",
+        "initials": "RZ"
+      },
+      {
+        "name": "Mona Odeh",
+        "initials": "MO"
+      },
+      {
+        "name": "Bilal Aziz",
+        "initials": "BA"
+      },
+      {
+        "name": "Nour Ibrahim",
+        "initials": "NI"
+      }
+    ],
+    "travelersCount": 7,
+    "adults": 5,
+    "children": 2,
+    "seatsTotal": 9,
+    "seatsBooked": 7,
+    "amount": 9686,
+    "paidAmount": 9686,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-09-06"
+  },
+  {
+    "id": "BK-1062",
+    "tripName": "Paris City Lights",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-09-25",
+    "returnDate": "2026-10-03",
+    "duration": "8 Days",
+    "departureTime": "14:15",
+    "arrivalTime": "19:15",
+    "flightNumber": "AF231",
+    "travelers": [
+      {
+        "name": "Ahmed Odeh",
+        "initials": "AO"
+      },
+      {
+        "name": "Yara Zayed",
+        "initials": "YZ"
+      },
+      {
+        "name": "Hala Mansour",
+        "initials": "HM"
+      },
+      {
+        "name": "Hala Karam",
+        "initials": "HK"
+      },
+      {
+        "name": "Hala Fares",
+        "initials": "HF"
+      },
+      {
+        "name": "Omar Odeh",
+        "initials": "OO"
+      }
+    ],
+    "travelersCount": 6,
+    "adults": 6,
+    "children": 0,
+    "seatsTotal": 8,
+    "seatsBooked": 6,
+    "amount": 12121,
+    "paidAmount": 6628,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-07-29"
+  },
+  {
+    "id": "BK-1063",
+    "tripName": "Santorini Island Hop",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-09-25",
+    "returnDate": "2026-10-03",
+    "duration": "8 Days",
+    "departureTime": "17:30",
+    "arrivalTime": "22:30",
+    "flightNumber": "A3400",
+    "travelers": [
+      {
+        "name": "Sara Hassan",
+        "initials": "SH"
+      },
+      {
+        "name": "Mona Nasser",
+        "initials": "MN"
+      },
+      {
+        "name": "Lara Haddad",
+        "initials": "LH"
+      },
+      {
+        "name": "Nour Karam",
+        "initials": "NK"
+      },
+      {
+        "name": "Omar Barakat",
+        "initials": "OB"
+      },
+      {
+        "name": "Rana Mansour",
+        "initials": "RM"
+      }
+    ],
+    "travelersCount": 16,
+    "adults": 16,
+    "children": 0,
+    "seatsTotal": 16,
+    "seatsBooked": 16,
+    "amount": 27033,
+    "paidAmount": 13184,
+    "bookingStatus": "pending",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-23"
+  },
+  {
+    "id": "BK-1064",
+    "tripName": "Istanbul City Break",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-09-25",
+    "returnDate": "2026-09-30",
+    "duration": "5 Days",
+    "departureTime": "13:45",
+    "arrivalTime": "18:45",
+    "flightNumber": "TK350",
+    "travelers": [
+      {
+        "name": "Karim Mansour",
+        "initials": "KM"
+      },
+      {
+        "name": "Fadi Ali",
+        "initials": "FA"
+      },
+      {
+        "name": "Yara Khan",
+        "initials": "YK"
+      },
+      {
+        "name": "Samir Zayed",
+        "initials": "SZ"
+      },
+      {
+        "name": "Sara Fares",
+        "initials": "SF"
+      },
+      {
+        "name": "Tariq Karam",
+        "initials": "TK"
+      }
+    ],
+    "travelersCount": 17,
+    "adults": 17,
+    "children": 0,
+    "seatsTotal": 22,
+    "seatsBooked": 17,
+    "amount": 22065,
+    "paidAmount": 14835,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-09-03"
+  },
+  {
+    "id": "BK-1065",
+    "tripName": "Dubai Luxury Break",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-27",
+    "returnDate": "2026-10-04",
+    "duration": "7 Days",
+    "departureTime": "13:00",
+    "arrivalTime": "18:00",
+    "flightNumber": "EK147",
+    "travelers": [
+      {
+        "name": "Yara Nasser",
+        "initials": "YN"
+      },
+      {
+        "name": "Zaid Karam",
+        "initials": "ZK"
+      },
+      {
+        "name": "Nada Aziz",
+        "initials": "NA"
+      },
+      {
+        "name": "Omar Haddad",
+        "initials": "OH"
+      },
+      {
+        "name": "Mazen Karam",
+        "initials": "MK"
+      },
+      {
+        "name": "Ahmed Mansour",
+        "initials": "AM"
+      }
+    ],
+    "travelersCount": 9,
+    "adults": 9,
+    "children": 0,
+    "seatsTotal": 10,
+    "seatsBooked": 9,
+    "amount": 17253,
+    "paidAmount": 17253,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-16"
+  },
+  {
+    "id": "BK-1066",
+    "tripName": "Paris City Lights",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-09-28",
+    "returnDate": "2026-10-05",
+    "duration": "7 Days",
+    "departureTime": "10:45",
+    "arrivalTime": "14:45",
+    "flightNumber": "AF548",
+    "travelers": [
+      {
+        "name": "Dina Ibrahim",
+        "initials": "DI"
+      },
+      {
+        "name": "Mona Saleh",
+        "initials": "MS"
+      },
+      {
+        "name": "Nour Zayed",
+        "initials": "NZ"
+      },
+      {
+        "name": "Maya Karam",
+        "initials": "MK"
+      },
+      {
+        "name": "Karim Mansour",
+        "initials": "KM"
+      },
+      {
+        "name": "Samir Mansour",
+        "initials": "SM"
+      }
+    ],
+    "travelersCount": 19,
+    "adults": 19,
+    "children": 0,
+    "seatsTotal": 21,
+    "seatsBooked": 19,
+    "amount": 43731,
+    "paidAmount": 43731,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-03"
+  },
+  {
+    "id": "BK-1067",
+    "tripName": "Dubai Luxury Break",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-28",
+    "returnDate": "2026-10-02",
+    "duration": "4 Days",
+    "departureTime": "14:45",
+    "arrivalTime": "16:45",
+    "flightNumber": "EK147",
+    "travelers": [
+      {
+        "name": "Lina Mansour",
+        "initials": "LM"
+      },
+      {
+        "name": "Layla Ibrahim",
+        "initials": "LI"
+      },
+      {
+        "name": "Yara Fares",
+        "initials": "YF"
+      },
+      {
+        "name": "Rana Barakat",
+        "initials": "RB"
+      },
+      {
+        "name": "Fahed Saleh",
+        "initials": "FS"
+      },
+      {
+        "name": "Nada Barakat",
+        "initials": "NB"
+      }
+    ],
+    "travelersCount": 16,
+    "adults": 16,
+    "children": 0,
+    "seatsTotal": 19,
+    "seatsBooked": 16,
+    "amount": 30761,
+    "paidAmount": 30761,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-10"
+  },
+  {
+    "id": "BK-1068",
+    "tripName": "Antalya All-Inclusive",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-09-29",
+    "returnDate": "2026-10-03",
+    "duration": "4 Days",
+    "departureTime": "16:00",
+    "arrivalTime": "19:00",
+    "flightNumber": "PC101",
+    "travelers": [
+      {
+        "name": "Yusuf Mansour",
+        "initials": "YM"
+      },
+      {
+        "name": "Lina Aziz",
+        "initials": "LA"
+      },
+      {
+        "name": "Ahmed Aziz",
+        "initials": "AA"
+      },
+      {
+        "name": "Salma Hassan",
+        "initials": "SH"
+      },
+      {
+        "name": "Dina Farouk",
+        "initials": "DF"
+      },
+      {
+        "name": "Layla Ibrahim",
+        "initials": "LI"
+      }
+    ],
+    "travelersCount": 13,
+    "adults": 13,
+    "children": 0,
+    "seatsTotal": 19,
+    "seatsBooked": 13,
+    "amount": 13012,
+    "paidAmount": 7589,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-01"
+  },
+  {
+    "id": "BK-1069",
+    "tripName": "Dubai Luxury Break",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-09-29",
+    "returnDate": "2026-10-05",
+    "duration": "6 Days",
+    "departureTime": "19:00",
+    "arrivalTime": "00:00",
+    "flightNumber": "EK273",
+    "travelers": [
+      {
+        "name": "Zaid Khan",
+        "initials": "ZK"
+      },
+      {
+        "name": "Nada Farouk",
+        "initials": "NF"
+      },
+      {
+        "name": "Lara Ibrahim",
+        "initials": "LI"
+      },
+      {
+        "name": "Fahed Khan",
+        "initials": "FK"
+      },
+      {
+        "name": "Mazen Fares",
+        "initials": "MF"
+      },
+      {
+        "name": "Mazen Ali",
+        "initials": "MA"
+      }
+    ],
+    "travelersCount": 12,
+    "adults": 12,
+    "children": 0,
+    "seatsTotal": 12,
+    "seatsBooked": 12,
+    "amount": 19897,
+    "paidAmount": 0,
+    "bookingStatus": "cancelled",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-09-08"
+  },
+  {
+    "id": "BK-1070",
+    "tripName": "Dubai Desert Safari",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-10-01",
+    "returnDate": "2026-10-07",
+    "duration": "6 Days",
+    "departureTime": "16:45",
+    "arrivalTime": "22:45",
+    "flightNumber": "EK400",
+    "travelers": [
+      {
+        "name": "Rana Aziz",
+        "initials": "RA"
+      },
+      {
+        "name": "Khaled Haddad",
+        "initials": "KH"
+      },
+      {
+        "name": "Dina Odeh",
+        "initials": "DO"
+      },
+      {
+        "name": "Salma Saleh",
+        "initials": "SS"
+      },
+      {
+        "name": "Tariq Zayed",
+        "initials": "TZ"
+      },
+      {
+        "name": "Mazen Ali",
+        "initials": "MA"
+      }
+    ],
+    "travelersCount": 14,
+    "adults": 14,
+    "children": 0,
+    "seatsTotal": 19,
+    "seatsBooked": 14,
+    "amount": 22966,
+    "paidAmount": 22966,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-07"
+  },
+  {
+    "id": "BK-1071",
+    "tripName": "Antalya All-Inclusive",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-10-01",
+    "returnDate": "2026-10-06",
+    "duration": "5 Days",
+    "departureTime": "10:30",
+    "arrivalTime": "15:30",
+    "flightNumber": "PC402",
+    "travelers": [
+      {
+        "name": "Nada Saleh",
+        "initials": "NS"
+      },
+      {
+        "name": "Yusuf Nasser",
+        "initials": "YN"
+      },
+      {
+        "name": "Ahmed Haddad",
+        "initials": "AH"
+      },
+      {
+        "name": "Samir Saleh",
+        "initials": "SS"
+      },
+      {
+        "name": "Mazen Saleh",
+        "initials": "MS"
+      },
+      {
+        "name": "Adam Karam",
+        "initials": "AK"
+      }
+    ],
+    "travelersCount": 8,
+    "adults": 8,
+    "children": 0,
+    "seatsTotal": 11,
+    "seatsBooked": 8,
+    "amount": 8256,
+    "paidAmount": 8256,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-27"
+  },
+  {
+    "id": "BK-1072",
+    "tripName": "Antalya All-Inclusive",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-10-02",
+    "returnDate": "2026-10-09",
+    "duration": "7 Days",
+    "departureTime": "14:45",
+    "arrivalTime": "18:45",
+    "flightNumber": "PC126",
+    "travelers": [
+      {
+        "name": "Nour Odeh",
+        "initials": "NO"
+      },
+      {
+        "name": "Salma Ali",
+        "initials": "SA"
+      },
+      {
+        "name": "Bilal Karam",
+        "initials": "BK"
+      }
+    ],
+    "travelersCount": 3,
+    "adults": 2,
+    "children": 1,
+    "seatsTotal": 7,
+    "seatsBooked": 3,
+    "amount": 3185,
+    "paidAmount": 0,
+    "bookingStatus": "pending",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-08-20"
+  },
+  {
+    "id": "BK-1073",
+    "tripName": "Cycladic Getaway",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-02",
+    "returnDate": "2026-10-06",
+    "duration": "4 Days",
+    "departureTime": "08:45",
+    "arrivalTime": "12:45",
+    "flightNumber": "A3229",
+    "travelers": [
+      {
+        "name": "Samir Ibrahim",
+        "initials": "SI"
+      },
+      {
+        "name": "Dina Aziz",
+        "initials": "DA"
+      },
+      {
+        "name": "Salma Karam",
+        "initials": "SK"
+      },
+      {
+        "name": "Ahmed Odeh",
+        "initials": "AO"
+      },
+      {
+        "name": "Omar Fares",
+        "initials": "OF"
+      },
+      {
+        "name": "Reem Mansour",
+        "initials": "RM"
+      }
+    ],
+    "travelersCount": 17,
+    "adults": 17,
+    "children": 0,
+    "seatsTotal": 19,
+    "seatsBooked": 17,
+    "amount": 27980,
+    "paidAmount": 27980,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-05"
+  },
+  {
+    "id": "BK-1074",
+    "tripName": "Istanbul Heritage Tour",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-10-03",
+    "returnDate": "2026-10-10",
+    "duration": "7 Days",
+    "departureTime": "06:00",
+    "arrivalTime": "09:00",
+    "flightNumber": "TK335",
+    "travelers": [
+      {
+        "name": "Ahmed Khan",
+        "initials": "AK"
+      },
+      {
+        "name": "Lara Barakat",
+        "initials": "LB"
+      },
+      {
+        "name": "Maya Hassan",
+        "initials": "MH"
+      },
+      {
+        "name": "Nada Ali",
+        "initials": "NA"
+      },
+      {
+        "name": "Wael Zayed",
+        "initials": "WZ"
+      },
+      {
+        "name": "Fahed Ibrahim",
+        "initials": "FI"
+      }
+    ],
+    "travelersCount": 10,
+    "adults": 10,
+    "children": 0,
+    "seatsTotal": 15,
+    "seatsBooked": 10,
+    "amount": 12098,
+    "paidAmount": 12098,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-09-09"
+  },
+  {
+    "id": "BK-1075",
+    "tripName": "Antalya All-Inclusive",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-10-03",
+    "returnDate": "2026-10-09",
+    "duration": "6 Days",
+    "departureTime": "14:30",
+    "arrivalTime": "18:30",
+    "flightNumber": "PC257",
+    "travelers": [
+      {
+        "name": "Fahed Fares",
+        "initials": "FF"
+      },
+      {
+        "name": "Karim Ali",
+        "initials": "KA"
+      },
+      {
+        "name": "Wael Ali",
+        "initials": "WA"
+      },
+      {
+        "name": "Lara Ali",
+        "initials": "LA"
+      },
+      {
+        "name": "Ahmed Khan",
+        "initials": "AK"
+      },
+      {
+        "name": "Yara Aziz",
+        "initials": "YA"
+      }
+    ],
+    "travelersCount": 19,
+    "adults": 16,
+    "children": 3,
+    "seatsTotal": 23,
+    "seatsBooked": 19,
+    "amount": 20080,
+    "paidAmount": 0,
+    "bookingStatus": "cancelled",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-08-12"
+  },
+  {
+    "id": "BK-1076",
+    "tripName": "Santorini Island Hop",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-04",
+    "returnDate": "2026-10-11",
+    "duration": "7 Days",
+    "departureTime": "17:30",
+    "arrivalTime": "20:30",
+    "flightNumber": "A3170",
+    "travelers": [
+      {
+        "name": "Ahmed Ali",
+        "initials": "AA"
+      },
+      {
+        "name": "Adam Zayed",
+        "initials": "AZ"
+      },
+      {
+        "name": "Nada Ali",
+        "initials": "NA"
+      },
+      {
+        "name": "Samir Karam",
+        "initials": "SK"
+      },
+      {
+        "name": "Karim Fares",
+        "initials": "KF"
+      },
+      {
+        "name": "Rana Khan",
+        "initials": "RK"
+      }
+    ],
+    "travelersCount": 11,
+    "adults": 11,
+    "children": 0,
+    "seatsTotal": 15,
+    "seatsBooked": 11,
+    "amount": 19367,
+    "paidAmount": 0,
+    "bookingStatus": "pending",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-09-19"
+  },
+  {
+    "id": "BK-1077",
+    "tripName": "Cycladic Getaway",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-07",
+    "returnDate": "2026-10-13",
+    "duration": "6 Days",
+    "departureTime": "15:30",
+    "arrivalTime": "20:30",
+    "flightNumber": "A3527",
+    "travelers": [
+      {
+        "name": "Hala Odeh",
+        "initials": "HO"
+      },
+      {
+        "name": "Nour Aziz",
+        "initials": "NA"
+      },
+      {
+        "name": "Yusuf Odeh",
+        "initials": "YO"
+      },
+      {
+        "name": "Maya Farouk",
+        "initials": "MF"
+      },
+      {
+        "name": "Mazen Saleh",
+        "initials": "MS"
+      },
+      {
+        "name": "Nada Karam",
+        "initials": "NK"
+      }
+    ],
+    "travelersCount": 12,
+    "adults": 11,
+    "children": 1,
+    "seatsTotal": 15,
+    "seatsBooked": 12,
+    "amount": 20465,
+    "paidAmount": 0,
+    "bookingStatus": "cancelled",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-09-10"
+  },
+  {
+    "id": "BK-1078",
+    "tripName": "Paris City Lights",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-10-08",
+    "returnDate": "2026-10-13",
+    "duration": "5 Days",
+    "departureTime": "06:00",
+    "arrivalTime": "08:00",
+    "flightNumber": "AF261",
+    "travelers": [
+      {
+        "name": "Mona Farouk",
+        "initials": "MF"
+      },
+      {
+        "name": "Wael Zayed",
+        "initials": "WZ"
+      },
+      {
+        "name": "Yusuf Ibrahim",
+        "initials": "YI"
+      },
+      {
+        "name": "Omar Khan",
+        "initials": "OK"
+      },
+      {
+        "name": "Omar Aziz",
+        "initials": "OA"
+      },
+      {
+        "name": "Maya Haddad",
+        "initials": "MH"
+      }
+    ],
+    "travelersCount": 16,
+    "adults": 16,
+    "children": 0,
+    "seatsTotal": 18,
+    "seatsBooked": 16,
+    "amount": 33531,
+    "paidAmount": 33531,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-09-12"
+  },
+  {
+    "id": "BK-1079",
+    "tripName": "Turquoise Coast Tour",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-10-09",
+    "returnDate": "2026-10-13",
+    "duration": "4 Days",
+    "departureTime": "13:00",
+    "arrivalTime": "16:00",
+    "flightNumber": "PC419",
+    "travelers": [
+      {
+        "name": "Layla Karam",
+        "initials": "LK"
+      },
+      {
+        "name": "Layla Farouk",
+        "initials": "LF"
+      },
+      {
+        "name": "Lara Karam",
+        "initials": "LK"
+      },
+      {
+        "name": "Rana Hassan",
+        "initials": "RH"
+      },
+      {
+        "name": "Nour Nasser",
+        "initials": "NN"
+      },
+      {
+        "name": "Rim Farouk",
+        "initials": "RF"
+      }
+    ],
+    "travelersCount": 14,
+    "adults": 14,
+    "children": 0,
+    "seatsTotal": 15,
+    "seatsBooked": 14,
+    "amount": 13124,
+    "paidAmount": 13124,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-10"
+  },
+  {
+    "id": "BK-1080",
+    "tripName": "Cycladic Getaway",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-09",
+    "returnDate": "2026-10-17",
+    "duration": "8 Days",
+    "departureTime": "12:00",
+    "arrivalTime": "18:00",
+    "flightNumber": "A3272",
+    "travelers": [
+      {
+        "name": "Fadi Saleh",
+        "initials": "FS"
+      },
+      {
+        "name": "Nour Hassan",
+        "initials": "NH"
+      },
+      {
+        "name": "Mazen Khan",
+        "initials": "MK"
+      },
+      {
+        "name": "Tariq Nasser",
+        "initials": "TN"
+      },
+      {
+        "name": "Mazen Hassan",
+        "initials": "MH"
+      },
+      {
+        "name": "Omar Farouk",
+        "initials": "OF"
+      }
+    ],
+    "travelersCount": 20,
+    "adults": 17,
+    "children": 3,
+    "seatsTotal": 25,
+    "seatsBooked": 20,
+    "amount": 29945,
+    "paidAmount": 29945,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-09-14"
+  },
+  {
+    "id": "BK-1081",
+    "tripName": "Bosphorus & Bazaars",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-10-10",
+    "returnDate": "2026-10-16",
+    "duration": "6 Days",
+    "departureTime": "16:00",
+    "arrivalTime": "19:00",
+    "flightNumber": "TK316",
+    "travelers": [
+      {
+        "name": "Omar Saleh",
+        "initials": "OS"
+      },
+      {
+        "name": "Lina Fares",
+        "initials": "LF"
+      },
+      {
+        "name": "Mona Fares",
+        "initials": "MF"
+      },
+      {
+        "name": "Karim Aziz",
+        "initials": "KA"
+      },
+      {
+        "name": "Hassan Karam",
+        "initials": "HK"
+      },
+      {
+        "name": "Lara Odeh",
+        "initials": "LO"
+      }
+    ],
+    "travelersCount": 8,
+    "adults": 8,
+    "children": 0,
+    "seatsTotal": 10,
+    "seatsBooked": 8,
+    "amount": 9788,
+    "paidAmount": 9788,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-28"
+  },
+  {
+    "id": "BK-1082",
+    "tripName": "Bosphorus & Bazaars",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-10-10",
+    "returnDate": "2026-10-15",
+    "duration": "5 Days",
+    "departureTime": "14:45",
+    "arrivalTime": "18:45",
+    "flightNumber": "TK478",
+    "travelers": [
+      {
+        "name": "Mazen Aziz",
+        "initials": "MA"
+      },
+      {
+        "name": "Bilal Karam",
+        "initials": "BK"
+      },
+      {
+        "name": "Dina Karam",
+        "initials": "DK"
+      },
+      {
+        "name": "Lara Nasser",
+        "initials": "LN"
+      },
+      {
+        "name": "Karim Zayed",
+        "initials": "KZ"
+      },
+      {
+        "name": "Tariq Mansour",
+        "initials": "TM"
+      }
+    ],
+    "travelersCount": 19,
+    "adults": 19,
+    "children": 0,
+    "seatsTotal": 19,
+    "seatsBooked": 19,
+    "amount": 27087,
+    "paidAmount": 12145,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-16"
+  },
+  {
+    "id": "BK-1083",
+    "tripName": "Santorini Sunset Cruise",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-12",
+    "returnDate": "2026-10-20",
+    "duration": "8 Days",
+    "departureTime": "10:15",
+    "arrivalTime": "12:15",
+    "flightNumber": "A3131",
+    "travelers": [
+      {
+        "name": "Hassan Hassan",
+        "initials": "HH"
+      },
+      {
+        "name": "Nada Karam",
+        "initials": "NK"
+      },
+      {
+        "name": "Nada Mansour",
+        "initials": "NM"
+      },
+      {
+        "name": "Dina Fares",
+        "initials": "DF"
+      },
+      {
+        "name": "Sara Saleh",
+        "initials": "SS"
+      },
+      {
+        "name": "Lara Odeh",
+        "initials": "LO"
+      }
+    ],
+    "travelersCount": 11,
+    "adults": 11,
+    "children": 0,
+    "seatsTotal": 12,
+    "seatsBooked": 11,
+    "amount": 18619,
+    "paidAmount": 18619,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-09-22"
+  },
+  {
+    "id": "BK-1084",
+    "tripName": "Santorini Island Hop",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-12",
+    "returnDate": "2026-10-18",
+    "duration": "6 Days",
+    "departureTime": "19:45",
+    "arrivalTime": "22:45",
+    "flightNumber": "A3198",
+    "travelers": [
+      {
+        "name": "Omar Zayed",
+        "initials": "OZ"
+      },
+      {
+        "name": "Wael Mansour",
+        "initials": "WM"
+      },
+      {
+        "name": "Fahed Farouk",
+        "initials": "FF"
+      }
+    ],
+    "travelersCount": 3,
+    "adults": 3,
+    "children": 0,
+    "seatsTotal": 6,
+    "seatsBooked": 3,
+    "amount": 5342,
+    "paidAmount": 3519,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-18"
+  },
+  {
+    "id": "BK-1085",
+    "tripName": "Paris Art & Culture",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-10-13",
+    "returnDate": "2026-10-18",
+    "duration": "5 Days",
+    "departureTime": "11:15",
+    "arrivalTime": "15:15",
+    "flightNumber": "AF280",
+    "travelers": [
+      {
+        "name": "Maya Zayed",
+        "initials": "MZ"
+      },
+      {
+        "name": "Reem Nasser",
+        "initials": "RN"
+      },
+      {
+        "name": "Hala Barakat",
+        "initials": "HB"
+      },
+      {
+        "name": "Mona Hassan",
+        "initials": "MH"
+      },
+      {
+        "name": "Mazen Haddad",
+        "initials": "MH"
+      },
+      {
+        "name": "Samir Barakat",
+        "initials": "SB"
+      }
+    ],
+    "travelersCount": 14,
+    "adults": 14,
+    "children": 0,
+    "seatsTotal": 14,
+    "seatsBooked": 14,
+    "amount": 27812,
+    "paidAmount": 0,
+    "bookingStatus": "pending",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-09-11"
+  },
+  {
+    "id": "BK-1086",
+    "tripName": "Dubai Luxury Break",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-10-13",
+    "returnDate": "2026-10-19",
+    "duration": "6 Days",
+    "departureTime": "19:15",
+    "arrivalTime": "00:15",
+    "flightNumber": "EK538",
+    "travelers": [
+      {
+        "name": "Yusuf Odeh",
+        "initials": "YO"
+      },
+      {
+        "name": "Adam Mansour",
+        "initials": "AM"
+      },
+      {
+        "name": "Lara Ali",
+        "initials": "LA"
+      }
+    ],
+    "travelersCount": 3,
+    "adults": 3,
+    "children": 0,
+    "seatsTotal": 7,
+    "seatsBooked": 3,
+    "amount": 4870,
+    "paidAmount": 0,
+    "bookingStatus": "cancelled",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-08-31"
+  },
+  {
+    "id": "BK-1087",
+    "tripName": "Antalya Beach Escape",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-10-15",
+    "returnDate": "2026-10-20",
+    "duration": "5 Days",
+    "departureTime": "13:00",
+    "arrivalTime": "16:00",
+    "flightNumber": "PC554",
+    "travelers": [
+      {
+        "name": "Rana Zayed",
+        "initials": "RZ"
+      },
+      {
+        "name": "Samir Aziz",
+        "initials": "SA"
+      },
+      {
+        "name": "Omar Mansour",
+        "initials": "OM"
+      },
+      {
+        "name": "Lara Nasser",
+        "initials": "LN"
+      },
+      {
+        "name": "Wael Ibrahim",
+        "initials": "WI"
+      },
+      {
+        "name": "Hala Zayed",
+        "initials": "HZ"
+      }
+    ],
+    "travelersCount": 13,
+    "adults": 9,
+    "children": 4,
+    "seatsTotal": 18,
+    "seatsBooked": 13,
+    "amount": 11915,
+    "paidAmount": 6798,
+    "bookingStatus": "pending",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-09-15"
+  },
+  {
+    "id": "BK-1088",
+    "tripName": "Paris Art & Culture",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-10-16",
+    "returnDate": "2026-10-24",
+    "duration": "8 Days",
+    "departureTime": "11:30",
+    "arrivalTime": "16:30",
+    "flightNumber": "AF299",
+    "travelers": [
+      {
+        "name": "Adam Saleh",
+        "initials": "AS"
+      },
+      {
+        "name": "Mona Saleh",
+        "initials": "MS"
+      },
+      {
+        "name": "Karim Zayed",
+        "initials": "KZ"
+      },
+      {
+        "name": "Rim Zayed",
+        "initials": "RZ"
+      },
+      {
+        "name": "Zaid Karam",
+        "initials": "ZK"
+      }
+    ],
+    "travelersCount": 5,
+    "adults": 3,
+    "children": 2,
+    "seatsTotal": 9,
+    "seatsBooked": 5,
+    "amount": 10347,
+    "paidAmount": 4732,
+    "bookingStatus": "pending",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-09-22"
+  },
+  {
+    "id": "BK-1089",
+    "tripName": "Santorini Sunset Cruise",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-16",
+    "returnDate": "2026-10-21",
+    "duration": "5 Days",
+    "departureTime": "07:45",
+    "arrivalTime": "12:45",
+    "flightNumber": "A3383",
+    "travelers": [
+      {
+        "name": "Reem Aziz",
+        "initials": "RA"
+      },
+      {
+        "name": "Khaled Mansour",
+        "initials": "KM"
+      },
+      {
+        "name": "Mona Barakat",
+        "initials": "MB"
+      },
+      {
+        "name": "Bilal Saleh",
+        "initials": "BS"
+      },
+      {
+        "name": "Karim Aziz",
+        "initials": "KA"
+      },
+      {
+        "name": "Mazen Barakat",
+        "initials": "MB"
+      }
+    ],
+    "travelersCount": 17,
+    "adults": 16,
+    "children": 1,
+    "seatsTotal": 18,
+    "seatsBooked": 17,
+    "amount": 30087,
+    "paidAmount": 12983,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-31"
+  },
+  {
+    "id": "BK-1090",
+    "tripName": "Santorini Island Hop",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-17",
+    "returnDate": "2026-10-24",
+    "duration": "7 Days",
+    "departureTime": "14:45",
+    "arrivalTime": "17:45",
+    "flightNumber": "A3579",
+    "travelers": [
+      {
+        "name": "Hassan Ali",
+        "initials": "HA"
+      },
+      {
+        "name": "Rim Khan",
+        "initials": "RK"
+      },
+      {
+        "name": "Fadi Hassan",
+        "initials": "FH"
+      },
+      {
+        "name": "Yara Fares",
+        "initials": "YF"
+      },
+      {
+        "name": "Tariq Aziz",
+        "initials": "TA"
+      },
+      {
+        "name": "Nada Aziz",
+        "initials": "NA"
+      }
+    ],
+    "travelersCount": 16,
+    "adults": 16,
+    "children": 0,
+    "seatsTotal": 22,
+    "seatsBooked": 16,
+    "amount": 28665,
+    "paidAmount": 13508,
+    "bookingStatus": "pending",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-09-10"
+  },
+  {
+    "id": "BK-1091",
+    "tripName": "Paris Art & Culture",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-10-17",
+    "returnDate": "2026-10-22",
+    "duration": "5 Days",
+    "departureTime": "20:45",
+    "arrivalTime": "22:45",
+    "flightNumber": "AF133",
+    "travelers": [
+      {
+        "name": "Fahed Mansour",
+        "initials": "FM"
+      },
+      {
+        "name": "Maya Odeh",
+        "initials": "MO"
+      },
+      {
+        "name": "Hala Barakat",
+        "initials": "HB"
+      },
+      {
+        "name": "Rim Karam",
+        "initials": "RK"
+      },
+      {
+        "name": "Khaled Haddad",
+        "initials": "KH"
+      },
+      {
+        "name": "Yusuf Khan",
+        "initials": "YK"
+      }
+    ],
+    "travelersCount": 13,
+    "adults": 12,
+    "children": 1,
+    "seatsTotal": 16,
+    "seatsBooked": 13,
+    "amount": 27445,
+    "paidAmount": 11238,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-28"
+  },
+  {
+    "id": "BK-1092",
+    "tripName": "Santorini Island Hop",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-18",
+    "returnDate": "2026-10-23",
+    "duration": "5 Days",
+    "departureTime": "12:00",
+    "arrivalTime": "16:00",
+    "flightNumber": "A3209",
+    "travelers": [
+      {
+        "name": "Samir Fares",
+        "initials": "SF"
+      },
+      {
+        "name": "Hassan Aziz",
+        "initials": "HA"
+      }
+    ],
+    "travelersCount": 2,
+    "adults": 2,
+    "children": 0,
+    "seatsTotal": 6,
+    "seatsBooked": 2,
+    "amount": 3276,
+    "paidAmount": 3276,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-24"
+  },
+  {
+    "id": "BK-1093",
+    "tripName": "Antalya Beach Escape",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-10-19",
+    "returnDate": "2026-10-23",
+    "duration": "4 Days",
+    "departureTime": "15:30",
+    "arrivalTime": "19:30",
+    "flightNumber": "PC119",
+    "travelers": [
+      {
+        "name": "Samir Aziz",
+        "initials": "SA"
+      },
+      {
+        "name": "Reem Ali",
+        "initials": "RA"
+      },
+      {
+        "name": "Hassan Zayed",
+        "initials": "HZ"
+      },
+      {
+        "name": "Ahmed Mansour",
+        "initials": "AM"
+      },
+      {
+        "name": "Wael Farouk",
+        "initials": "WF"
+      },
+      {
+        "name": "Rana Fares",
+        "initials": "RF"
+      }
+    ],
+    "travelersCount": 6,
+    "adults": 3,
+    "children": 3,
+    "seatsTotal": 9,
+    "seatsBooked": 6,
+    "amount": 6211,
+    "paidAmount": 3840,
+    "bookingStatus": "pending",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-27"
+  },
+  {
+    "id": "BK-1094",
+    "tripName": "Santorini Island Hop",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-20",
+    "returnDate": "2026-10-25",
+    "duration": "5 Days",
+    "departureTime": "19:45",
+    "arrivalTime": "00:45",
+    "flightNumber": "A3133",
+    "travelers": [
+      {
+        "name": "Hassan Odeh",
+        "initials": "HO"
+      },
+      {
+        "name": "Rim Odeh",
+        "initials": "RO"
+      },
+      {
+        "name": "Fahed Farouk",
+        "initials": "FF"
+      },
+      {
+        "name": "Tariq Haddad",
+        "initials": "TH"
+      },
+      {
+        "name": "Maya Hassan",
+        "initials": "MH"
+      },
+      {
+        "name": "Lina Mansour",
+        "initials": "LM"
+      }
+    ],
+    "travelersCount": 20,
+    "adults": 20,
+    "children": 0,
+    "seatsTotal": 21,
+    "seatsBooked": 20,
+    "amount": 30901,
+    "paidAmount": 30901,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-09-11"
+  },
+  {
+    "id": "BK-1095",
+    "tripName": "Fairy Chimneys Tour",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-10-22",
+    "returnDate": "2026-10-26",
+    "duration": "4 Days",
+    "departureTime": "08:30",
+    "arrivalTime": "11:30",
+    "flightNumber": "PC256",
+    "travelers": [
+      {
+        "name": "Hassan Karam",
+        "initials": "HK"
+      },
+      {
+        "name": "Ahmed Saleh",
+        "initials": "AS"
+      },
+      {
+        "name": "Sara Khan",
+        "initials": "SK"
+      },
+      {
+        "name": "Bilal Zayed",
+        "initials": "BZ"
+      },
+      {
+        "name": "Mazen Ibrahim",
+        "initials": "MI"
+      },
+      {
+        "name": "Yara Fares",
+        "initials": "YF"
+      }
+    ],
+    "travelersCount": 15,
+    "adults": 15,
+    "children": 0,
+    "seatsTotal": 17,
+    "seatsBooked": 15,
+    "amount": 23347,
+    "paidAmount": 0,
+    "bookingStatus": "cancelled",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-10-02"
+  },
+  {
+    "id": "BK-1096",
+    "tripName": "Turquoise Coast Tour",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-10-22",
+    "returnDate": "2026-10-30",
+    "duration": "8 Days",
+    "departureTime": "19:15",
+    "arrivalTime": "00:15",
+    "flightNumber": "PC252",
+    "travelers": [
+      {
+        "name": "Layla Mansour",
+        "initials": "LM"
+      },
+      {
+        "name": "Adam Mansour",
+        "initials": "AM"
+      },
+      {
+        "name": "Khaled Haddad",
+        "initials": "KH"
+      },
+      {
+        "name": "Layla Haddad",
+        "initials": "LH"
+      },
+      {
+        "name": "Nada Hassan",
+        "initials": "NH"
+      },
+      {
+        "name": "Dina Fares",
+        "initials": "DF"
+      }
+    ],
+    "travelersCount": 10,
+    "adults": 10,
+    "children": 0,
+    "seatsTotal": 14,
+    "seatsBooked": 10,
+    "amount": 9997,
+    "paidAmount": 9997,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-09-03"
+  },
+  {
+    "id": "BK-1097",
+    "tripName": "Cappadocia Cave Retreat",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-10-22",
+    "returnDate": "2026-10-30",
+    "duration": "8 Days",
+    "departureTime": "20:00",
+    "arrivalTime": "00:00",
+    "flightNumber": "PC358",
+    "travelers": [
+      {
+        "name": "Omar Saleh",
+        "initials": "OS"
+      },
+      {
+        "name": "Rim Fares",
+        "initials": "RF"
+      },
+      {
+        "name": "Sara Ibrahim",
+        "initials": "SI"
+      },
+      {
+        "name": "Yara Nasser",
+        "initials": "YN"
+      },
+      {
+        "name": "Wael Karam",
+        "initials": "WK"
+      },
+      {
+        "name": "Mazen Fares",
+        "initials": "MF"
+      }
+    ],
+    "travelersCount": 8,
+    "adults": 7,
+    "children": 1,
+    "seatsTotal": 9,
+    "seatsBooked": 8,
+    "amount": 12245,
+    "paidAmount": 0,
+    "bookingStatus": "pending",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-09-11"
+  },
+  {
+    "id": "BK-1098",
+    "tripName": "Paris Romantic Escape",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-10-23",
+    "returnDate": "2026-10-27",
+    "duration": "4 Days",
+    "departureTime": "14:00",
+    "arrivalTime": "16:00",
+    "flightNumber": "AF508",
+    "travelers": [
+      {
+        "name": "Bilal Fares",
+        "initials": "BF"
+      },
+      {
+        "name": "Samir Farouk",
+        "initials": "SF"
+      },
+      {
+        "name": "Yusuf Zayed",
+        "initials": "YZ"
+      },
+      {
+        "name": "Mona Odeh",
+        "initials": "MO"
+      }
+    ],
+    "travelersCount": 4,
+    "adults": 1,
+    "children": 3,
+    "seatsTotal": 4,
+    "seatsBooked": 4,
+    "amount": 8063,
+    "paidAmount": 8063,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-08-29"
+  },
+  {
+    "id": "BK-1099",
+    "tripName": "Paris City Lights",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-10-24",
+    "returnDate": "2026-11-01",
+    "duration": "8 Days",
+    "departureTime": "16:30",
+    "arrivalTime": "18:30",
+    "flightNumber": "AF520",
+    "travelers": [
+      {
+        "name": "Bilal Hassan",
+        "initials": "BH"
+      },
+      {
+        "name": "Yusuf Ali",
+        "initials": "YA"
+      }
+    ],
+    "travelersCount": 2,
+    "adults": 1,
+    "children": 1,
+    "seatsTotal": 2,
+    "seatsBooked": 2,
+    "amount": 4470,
+    "paidAmount": 2918,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-08-31"
+  },
+  {
+    "id": "BK-1100",
+    "tripName": "Turquoise Coast Tour",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-10-24",
+    "returnDate": "2026-10-30",
+    "duration": "6 Days",
+    "departureTime": "08:15",
+    "arrivalTime": "10:15",
+    "flightNumber": "PC473",
+    "travelers": [
+      {
+        "name": "Nada Khan",
+        "initials": "NK"
+      },
+      {
+        "name": "Fahed Haddad",
+        "initials": "FH"
+      }
+    ],
+    "travelersCount": 2,
+    "adults": 1,
+    "children": 1,
+    "seatsTotal": 2,
+    "seatsBooked": 2,
+    "amount": 1997,
+    "paidAmount": 0,
+    "bookingStatus": "pending",
+    "paymentStatus": "unpaid",
+    "bookingDate": "2026-09-16"
+  },
+  {
+    "id": "BK-1101",
+    "tripName": "Istanbul City Break",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-10-25",
+    "returnDate": "2026-10-29",
+    "duration": "4 Days",
+    "departureTime": "16:15",
+    "arrivalTime": "18:15",
+    "flightNumber": "TK447",
+    "travelers": [
+      {
+        "name": "Bilal Farouk",
+        "initials": "BF"
+      },
+      {
+        "name": "Maya Mansour",
+        "initials": "MM"
+      },
+      {
+        "name": "Reem Saleh",
+        "initials": "RS"
+      },
+      {
+        "name": "Tariq Fares",
+        "initials": "TF"
+      },
+      {
+        "name": "Salma Ali",
+        "initials": "SA"
+      },
+      {
+        "name": "Wael Nasser",
+        "initials": "WN"
+      }
+    ],
+    "travelersCount": 10,
+    "adults": 10,
+    "children": 0,
+    "seatsTotal": 16,
+    "seatsBooked": 10,
+    "amount": 12673,
+    "paidAmount": 12673,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "paid",
+    "bookingDate": "2026-10-05"
+  },
+  {
+    "id": "BK-1102",
+    "tripName": "Fairy Chimneys Tour",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-10-25",
+    "returnDate": "2026-11-01",
+    "duration": "7 Days",
+    "departureTime": "10:30",
+    "arrivalTime": "12:30",
+    "flightNumber": "PC430",
+    "travelers": [
+      {
+        "name": "Adam Karam",
+        "initials": "AK"
+      },
+      {
+        "name": "Mona Odeh",
+        "initials": "MO"
+      },
+      {
+        "name": "Adam Ibrahim",
+        "initials": "AI"
+      },
+      {
+        "name": "Nour Ibrahim",
+        "initials": "NI"
+      },
+      {
+        "name": "Yara Khan",
+        "initials": "YK"
+      },
+      {
+        "name": "Hala Ibrahim",
+        "initials": "HI"
+      }
+    ],
+    "travelersCount": 18,
+    "adults": 15,
+    "children": 3,
+    "seatsTotal": 20,
+    "seatsBooked": 18,
+    "amount": 24160,
+    "paidAmount": 13530,
+    "bookingStatus": "confirmed",
+    "paymentStatus": "partial",
+    "bookingDate": "2026-09-13"
+  }
+]
