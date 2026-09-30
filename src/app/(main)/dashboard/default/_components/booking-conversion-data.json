@@ -1,0 +1,9 @@
+{
+  "conversionRate": 34.2,
+  "change": 5.1,
+  "stages": [
+    { "label": "Inquiries", "count": 4820, "percent": 100, "color": "var(--color-blue-500)" },
+    { "label": "Quotes Sent", "count": 2760, "percent": 57, "color": "var(--color-teal-500)" },
+    { "label": "Confirmed", "count": 1648, "percent": 34, "color": "var(--color-emerald-500)" }
+  ]
+}

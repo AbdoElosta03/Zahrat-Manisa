@@ -1,0 +1,37 @@
+[
+  {
+    "id": "txn-1",
+    "type": "payment",
+    "description": "Payment · Santorini Island Escape",
+    "amount": 4280,
+    "date": "2026-09-29"
+  },
+  {
+    "id": "txn-2",
+    "type": "refund",
+    "description": "Refund · Cancelled Dubai package",
+    "amount": -890,
+    "date": "2026-09-28"
+  },
+  {
+    "id": "txn-3",
+    "type": "payout",
+    "description": "Guide payout · Elif Yilmaz",
+    "amount": -1450,
+    "date": "2026-09-27"
+  },
+  {
+    "id": "txn-4",
+    "type": "payment",
+    "description": "Payment · Istanbul Heritage Weekend",
+    "amount": 3120,
+    "date": "2026-09-27"
+  },
+  {
+    "id": "txn-5",
+    "type": "payment",
+    "description": "Deposit · Cappadocia Balloon Tour",
+    "amount": 1560,
+    "date": "2026-09-26"
+  }
+]

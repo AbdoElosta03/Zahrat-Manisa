@@ -6,7 +6,8 @@
     "format": "number",
     "change": 12.4,
     "trend": "up",
-    "comparedTo": "vs last month"
+    "comparedTo": "vs last month",
+    "spark": [40, 55, 48, 62, 58, 74, 82]
   },
   {
     "id": "revenue",
@@ -15,7 +16,8 @@
     "format": "currency",
     "change": 8.1,
     "trend": "up",
-    "comparedTo": "vs last month"
+    "comparedTo": "vs last month",
+    "spark": [50, 46, 60, 55, 68, 64, 78]
   },
   {
     "id": "active-travelers",
@@ -24,7 +26,8 @@
     "format": "number",
     "change": -3.2,
     "trend": "down",
-    "comparedTo": "vs last month"
+    "comparedTo": "vs last month",
+    "spark": [70, 66, 72, 60, 58, 54, 50]
   },
   {
     "id": "avg-trip-value",
@@ -33,6 +36,7 @@
     "format": "currency",
     "change": 4.6,
     "trend": "up",
-    "comparedTo": "vs last month"
+    "comparedTo": "vs last month",
+    "spark": [45, 50, 48, 58, 56, 62, 68]
   }
 ]

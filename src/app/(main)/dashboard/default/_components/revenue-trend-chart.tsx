@@ -23,6 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import revenueSummaryData from "./revenue-summary-data.json";
 import revenueTrendData from "./revenue-trend-data.json";
 
 type RevenuePoint = {
@@ -31,22 +32,37 @@ type RevenuePoint = {
   bookings: number;
 };
 
+type RevenueSummary = {
+  bookingRevenue: number;
+  refunds: number;
+  netProfit: number;
+};
+
 const chartData = revenueTrendData as RevenuePoint[];
+const summary = revenueSummaryData as RevenueSummary;
 
 const chartConfig = {
   revenue: {
     label: "Revenue",
-    color: "var(--chart-1)",
+    color: "var(--color-blue-500)",
   },
   bookings: {
     label: "Bookings",
-    color: "var(--chart-2)",
+    color: "var(--color-teal-500)",
   },
 } satisfies ChartConfig;
 
+function formatCurrency(amount: number) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(amount);
+}
+
 export function RevenueTrendChart() {
   return (
-    <Card className="@container/card">
+    <Card className="@container/card h-full">
       <CardHeader>
         <CardTitle className="leading-none">Revenue & Bookings</CardTitle>
         <CardDescription>
@@ -121,6 +137,25 @@ export function RevenueTrendChart() {
             <Line dataKey="bookings" type="natural" stroke="var(--color-bookings)" strokeWidth={1.4} dot={false} />
           </ComposedChart>
         </ChartContainer>
+
+        <div className="mt-5 grid grid-cols-3 gap-3 border-t pt-4">
+          <div className="flex flex-col gap-1">
+            <span className="text-muted-foreground text-xs">Booking Revenue</span>
+            <span className="font-medium text-sm tabular-nums">{formatCurrency(summary.bookingRevenue)}</span>
+          </div>
+          <div className="flex flex-col gap-1">
+            <span className="text-muted-foreground text-xs">Refunds</span>
+            <span className="font-medium text-rose-600 text-sm tabular-nums dark:text-rose-400">
+              {formatCurrency(summary.refunds)}
+            </span>
+          </div>
+          <div className="flex flex-col gap-1">
+            <span className="text-muted-foreground text-xs">Net Profit</span>
+            <span className="font-medium text-emerald-600 text-sm tabular-nums dark:text-emerald-400">
+              {formatCurrency(summary.netProfit)}
+            </span>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );

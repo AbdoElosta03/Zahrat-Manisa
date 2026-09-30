@@ -1,0 +1,11 @@
+{
+  "value": 42400,
+  "change": 9.2,
+  "caption": "Daily travelers currently on active itineraries",
+  "image": "/destinations/santorini.png",
+  "stats": [
+    { "label": "New inquiries today", "value": 186 },
+    { "label": "Trips departing this week", "value": 24 },
+    { "label": "Guides on assignment", "value": 38 }
+  ]
+}

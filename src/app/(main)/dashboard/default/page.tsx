@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 
-import { MetricCards } from "./_components/metric-cards";
+import { BookingConversionCard } from "./_components/booking-conversion-card";
+import { BookingStatusCard } from "./_components/booking-status-card";
+import { FinancialActivityCard } from "./_components/financial-activity-card";
+import { KpiGrid } from "./_components/kpi-grid";
 import { RecentBookingsTable } from "./_components/recent-bookings-table/table";
 import { RevenueTrendChart } from "./_components/revenue-trend-chart";
 import { TopDestinations } from "./_components/top-destinations";
+import { TravelerHeroCard } from "./_components/traveler-hero-card";
 import { UpcomingDepartures } from "./_components/upcoming-departures";
 
 export const metadata: Metadata = {
@@ -17,13 +21,32 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="@container/main flex flex-col gap-4 md:gap-6">
-      <MetricCards />
-      <RevenueTrendChart />
-      <div className="grid grid-cols-1 gap-4 md:gap-6 xl:grid-cols-2">
-        <TopDestinations />
-        <UpcomingDepartures />
+      <div className="grid grid-cols-1 items-stretch gap-4 md:gap-6 xl:grid-cols-3">
+        <div className="xl:col-span-2">
+          <KpiGrid />
+        </div>
+        <TravelerHeroCard />
       </div>
-      <RecentBookingsTable />
+
+      <div className="grid grid-cols-1 items-stretch gap-4 md:gap-6 xl:grid-cols-3">
+        <div className="xl:col-span-2">
+          <RevenueTrendChart />
+        </div>
+        <BookingStatusCard />
+      </div>
+
+      <div className="grid grid-cols-1 items-stretch gap-4 md:gap-6 xl:grid-cols-3">
+        <BookingConversionCard />
+        <UpcomingDepartures />
+        <TopDestinations />
+      </div>
+
+      <div className="grid grid-cols-1 items-stretch gap-4 md:gap-6 xl:grid-cols-3">
+        <div className="xl:col-span-2">
+          <RecentBookingsTable />
+        </div>
+        <FinancialActivityCard />
+      </div>
     </div>
   );
 }
