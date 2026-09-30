@@ -1,0 +1,80 @@
+[
+  {
+    "id": "trip-001",
+    "name": "Cappadocia Balloon Tour",
+    "destination": "Cappadocia",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-10-04",
+    "returnDate": "2026-10-10",
+    "duration": "6 Days",
+    "availableSeats": 3,
+    "price": 780,
+    "guide": "Mehmet Yildiz",
+    "status": "filling-fast"
+  },
+  {
+    "id": "trip-002",
+    "name": "Istanbul Heritage Tour",
+    "destination": "Istanbul",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-10-06",
+    "returnDate": "2026-10-11",
+    "duration": "5 Days",
+    "availableSeats": 8,
+    "price": 620,
+    "guide": "Elif Kaya",
+    "status": "open"
+  },
+  {
+    "id": "trip-003",
+    "name": "Antalya Coastal Escape",
+    "destination": "Antalya",
+    "image": "/destinations/antalya.png",
+    "departureDate": "2026-10-08",
+    "returnDate": "2026-10-15",
+    "duration": "7 Days",
+    "availableSeats": 12,
+    "price": 540,
+    "guide": "Burak Aydin",
+    "status": "open"
+  },
+  {
+    "id": "trip-004",
+    "name": "Dubai City & Desert",
+    "destination": "Dubai",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-10-12",
+    "returnDate": "2026-10-17",
+    "duration": "5 Days",
+    "availableSeats": 0,
+    "price": 950,
+    "guide": "Fatima Noor",
+    "status": "full"
+  },
+  {
+    "id": "trip-005",
+    "name": "Paris Classic Getaway",
+    "destination": "Paris",
+    "image": "/destinations/paris.png",
+    "departureDate": "2026-10-18",
+    "returnDate": "2026-10-23",
+    "duration": "5 Days",
+    "availableSeats": 6,
+    "price": 1120,
+    "guide": "Claire Laurent",
+    "status": "open"
+  },
+  {
+    "id": "trip-006",
+    "name": "Santorini Sunset Escape",
+    "destination": "Santorini",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-21",
+    "returnDate": "2026-10-26",
+    "duration": "5 Days",
+    "availableSeats": 2,
+    "price": 890,
+    "guide": "Nikos Papas",
+    "status": "filling-fast"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "total-bookings",
+    "label": "Total Bookings",
+    "value": 1284,
+    "format": "number",
+    "change": 12.4,
+    "trend": "up",
+    "spark": [4, 6, 5, 8, 7, 9, 10, 12]
+  },
+  {
+    "id": "travelers",
+    "label": "Travelers",
+    "value": 3127,
+    "format": "number",
+    "change": 3.2,
+    "trend": "down"
+  },
+  {
+    "id": "upcoming-trips",
+    "label": "Upcoming Trips",
+    "value": 24,
+    "format": "number",
+    "change": 4.6,
+    "trend": "up",
+    "helper": "8 departures · 5 returns"
+  }
+]
