@@ -6,18 +6,23 @@ import { Card, CardAction, CardDescription, CardFooter, CardHeader, CardTitle } 
 export function SectionCards() {
   return (
     <div className="grid @5xl/main:grid-cols-4 @xl/main:grid-cols-2 grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs dark:*:data-[slot=card]:bg-card">
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Total Revenue</CardDescription>
-          <CardTitle className="font-semibold @[250px]/card:text-3xl text-2xl tabular-nums">$1,250.00</CardTitle>
+      <Card className="@container/card rounded-xl border-border/70 bg-card shadow-sm ring-0">
+        <CardHeader className="gap-3 p-5">
+          <CardDescription className="text-sm font-medium tracking-tight">Total Revenue</CardDescription>
+          <CardTitle className="font-semibold @[250px]/card:text-3xl text-2xl tracking-tight tabular-nums">
+            $1,250.00
+          </CardTitle>
           <CardAction>
-            <Badge variant="outline">
+            <Badge
+              className="rounded-full border-0 bg-foreground px-2.5 font-medium text-background shadow-none"
+              variant="outline"
+            >
               <TrendingUp />
               +12.5%
             </Badge>
           </CardAction>
         </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
+        <CardFooter className="flex-col items-start gap-1.5 border-t border-border/60 px-5 py-4 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
             Trending up this month <TrendingUp className="size-4" />
           </div>
