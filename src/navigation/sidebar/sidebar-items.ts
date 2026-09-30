@@ -99,7 +99,7 @@ export const sidebarItems: NavGroup[] = [
       {
         id: "flights",
         title: "Flights",
-        url: "/dashboard/logistics",
+        url: "/dashboard/flights",
         icon: Plane,
       },
       {
