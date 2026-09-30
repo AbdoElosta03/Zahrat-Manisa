@@ -1,0 +1,452 @@
+[
+  {
+    "date": "2026-07-03",
+    "revenue": 19175,
+    "bookings": 25
+  },
+  {
+    "date": "2026-07-04",
+    "revenue": 19734,
+    "bookings": 26
+  },
+  {
+    "date": "2026-07-05",
+    "revenue": 14250,
+    "bookings": 19
+  },
+  {
+    "date": "2026-07-06",
+    "revenue": 12600,
+    "bookings": 20
+  },
+  {
+    "date": "2026-07-07",
+    "revenue": 15981,
+    "bookings": 21
+  },
+  {
+    "date": "2026-07-08",
+    "revenue": 14238,
+    "bookings": 21
+  },
+  {
+    "date": "2026-07-09",
+    "revenue": 17402,
+    "bookings": 22
+  },
+  {
+    "date": "2026-07-10",
+    "revenue": 22649,
+    "bookings": 29
+  },
+  {
+    "date": "2026-07-11",
+    "revenue": 14812,
+    "bookings": 23
+  },
+  {
+    "date": "2026-07-12",
+    "revenue": 16940,
+    "bookings": 22
+  },
+  {
+    "date": "2026-07-13",
+    "revenue": 13300,
+    "bookings": 19
+  },
+  {
+    "date": "2026-07-14",
+    "revenue": 14180,
+    "bookings": 20
+  },
+  {
+    "date": "2026-07-15",
+    "revenue": 14421,
+    "bookings": 23
+  },
+  {
+    "date": "2026-07-16",
+    "revenue": 16632,
+    "bookings": 22
+  },
+  {
+    "date": "2026-07-17",
+    "revenue": 20304,
+    "bookings": 27
+  },
+  {
+    "date": "2026-07-18",
+    "revenue": 19575,
+    "bookings": 25
+  },
+  {
+    "date": "2026-07-19",
+    "revenue": 14344,
+    "bookings": 22
+  },
+  {
+    "date": "2026-07-20",
+    "revenue": 16350,
+    "bookings": 25
+  },
+  {
+    "date": "2026-07-21",
+    "revenue": 16654,
+    "bookings": 22
+  },
+  {
+    "date": "2026-07-22",
+    "revenue": 13125,
+    "bookings": 21
+  },
+  {
+    "date": "2026-07-23",
+    "revenue": 16978,
+    "bookings": 26
+  },
+  {
+    "date": "2026-07-24",
+    "revenue": 23700,
+    "bookings": 30
+  },
+  {
+    "date": "2026-07-25",
+    "revenue": 19899,
+    "bookings": 27
+  },
+  {
+    "date": "2026-07-26",
+    "revenue": 12620,
+    "bookings": 20
+  },
+  {
+    "date": "2026-07-27",
+    "revenue": 16742,
+    "bookings": 22
+  },
+  {
+    "date": "2026-07-28",
+    "revenue": 17888,
+    "bookings": 26
+  },
+  {
+    "date": "2026-07-29",
+    "revenue": 14904,
+    "bookings": 23
+  },
+  {
+    "date": "2026-07-30",
+    "revenue": 18980,
+    "bookings": 26
+  },
+  {
+    "date": "2026-07-31",
+    "revenue": 19332,
+    "bookings": 27
+  },
+  {
+    "date": "2026-08-01",
+    "revenue": 22127,
+    "bookings": 29
+  },
+  {
+    "date": "2026-08-02",
+    "revenue": 17411,
+    "bookings": 23
+  },
+  {
+    "date": "2026-08-03",
+    "revenue": 17575,
+    "bookings": 25
+  },
+  {
+    "date": "2026-08-04",
+    "revenue": 15548,
+    "bookings": 23
+  },
+  {
+    "date": "2026-08-05",
+    "revenue": 16629,
+    "bookings": 23
+  },
+  {
+    "date": "2026-08-06",
+    "revenue": 13471,
+    "bookings": 19
+  },
+  {
+    "date": "2026-08-07",
+    "revenue": 14421,
+    "bookings": 23
+  },
+  {
+    "date": "2026-08-08",
+    "revenue": 17888,
+    "bookings": 26
+  },
+  {
+    "date": "2026-08-09",
+    "revenue": 15048,
+    "bookings": 19
+  },
+  {
+    "date": "2026-08-10",
+    "revenue": 12186,
+    "bookings": 18
+  },
+  {
+    "date": "2026-08-11",
+    "revenue": 13490,
+    "bookings": 19
+  },
+  {
+    "date": "2026-08-12",
+    "revenue": 13080,
+    "bookings": 20
+  },
+  {
+    "date": "2026-08-13",
+    "revenue": 11985,
+    "bookings": 17
+  },
+  {
+    "date": "2026-08-14",
+    "revenue": 17446,
+    "bookings": 26
+  },
+  {
+    "date": "2026-08-15",
+    "revenue": 16445,
+    "bookings": 23
+  },
+  {
+    "date": "2026-08-16",
+    "revenue": 13878,
+    "bookings": 18
+  },
+  {
+    "date": "2026-08-17",
+    "revenue": 12600,
+    "bookings": 20
+  },
+  {
+    "date": "2026-08-18",
+    "revenue": 10768,
+    "bookings": 16
+  },
+  {
+    "date": "2026-08-19",
+    "revenue": 12852,
+    "bookings": 17
+  },
+  {
+    "date": "2026-08-20",
+    "revenue": 9720,
+    "bookings": 15
+  },
+  {
+    "date": "2026-08-21",
+    "revenue": 13860,
+    "bookings": 18
+  },
+  {
+    "date": "2026-08-22",
+    "revenue": 14380,
+    "bookings": 20
+  },
+  {
+    "date": "2026-08-23",
+    "revenue": 13328,
+    "bookings": 17
+  },
+  {
+    "date": "2026-08-24",
+    "revenue": 11296,
+    "bookings": 16
+  },
+  {
+    "date": "2026-08-25",
+    "revenue": 12257,
+    "bookings": 17
+  },
+  {
+    "date": "2026-08-26",
+    "revenue": 10332,
+    "bookings": 14
+  },
+  {
+    "date": "2026-08-27",
+    "revenue": 12223,
+    "bookings": 17
+  },
+  {
+    "date": "2026-08-28",
+    "revenue": 12800,
+    "bookings": 20
+  },
+  {
+    "date": "2026-08-29",
+    "revenue": 14250,
+    "bookings": 19
+  },
+  {
+    "date": "2026-08-30",
+    "revenue": 9674,
+    "bookings": 14
+  },
+  {
+    "date": "2026-08-31",
+    "revenue": 10770,
+    "bookings": 15
+  },
+  {
+    "date": "2026-09-01",
+    "revenue": 10515,
+    "bookings": 15
+  },
+  {
+    "date": "2026-09-02",
+    "revenue": 9534,
+    "bookings": 14
+  },
+  {
+    "date": "2026-09-03",
+    "revenue": 7860,
+    "bookings": 12
+  },
+  {
+    "date": "2026-09-04",
+    "revenue": 11050,
+    "bookings": 17
+  },
+  {
+    "date": "2026-09-05",
+    "revenue": 12750,
+    "bookings": 17
+  },
+  {
+    "date": "2026-09-06",
+    "revenue": 7590,
+    "bookings": 11
+  },
+  {
+    "date": "2026-09-07",
+    "revenue": 7896,
+    "bookings": 12
+  },
+  {
+    "date": "2026-09-08",
+    "revenue": 10878,
+    "bookings": 14
+  },
+  {
+    "date": "2026-09-09",
+    "revenue": 7733,
+    "bookings": 11
+  },
+  {
+    "date": "2026-09-10",
+    "revenue": 10976,
+    "bookings": 14
+  },
+  {
+    "date": "2026-09-11",
+    "revenue": 10914,
+    "bookings": 17
+  },
+  {
+    "date": "2026-09-12",
+    "revenue": 11310,
+    "bookings": 15
+  },
+  {
+    "date": "2026-09-13",
+    "revenue": 10192,
+    "bookings": 14
+  },
+  {
+    "date": "2026-09-14",
+    "revenue": 9192,
+    "bookings": 12
+  },
+  {
+    "date": "2026-09-15",
+    "revenue": 8688,
+    "bookings": 12
+  },
+  {
+    "date": "2026-09-16",
+    "revenue": 10950,
+    "bookings": 15
+  },
+  {
+    "date": "2026-09-17",
+    "revenue": 8016,
+    "bookings": 12
+  },
+  {
+    "date": "2026-09-18",
+    "revenue": 10752,
+    "bookings": 16
+  },
+  {
+    "date": "2026-09-19",
+    "revenue": 12078,
+    "bookings": 18
+  },
+  {
+    "date": "2026-09-20",
+    "revenue": 11520,
+    "bookings": 15
+  },
+  {
+    "date": "2026-09-21",
+    "revenue": 9212,
+    "bookings": 14
+  },
+  {
+    "date": "2026-09-22",
+    "revenue": 12656,
+    "bookings": 16
+  },
+  {
+    "date": "2026-09-23",
+    "revenue": 13039,
+    "bookings": 17
+  },
+  {
+    "date": "2026-09-24",
+    "revenue": 11145,
+    "bookings": 15
+  },
+  {
+    "date": "2026-09-25",
+    "revenue": 14972,
+    "bookings": 19
+  },
+  {
+    "date": "2026-09-26",
+    "revenue": 13756,
+    "bookings": 19
+  },
+  {
+    "date": "2026-09-27",
+    "revenue": 9390,
+    "bookings": 15
+  },
+  {
+    "date": "2026-09-28",
+    "revenue": 10860,
+    "bookings": 15
+  },
+  {
+    "date": "2026-09-29",
+    "revenue": 11184,
+    "bookings": 16
+  },
+  {
+    "date": "2026-09-30",
+    "revenue": 12376,
+    "bookings": 17
+  }
+]

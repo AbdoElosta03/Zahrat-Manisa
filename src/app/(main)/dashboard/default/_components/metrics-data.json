@@ -1,0 +1,38 @@
+[
+  {
+    "id": "total-bookings",
+    "label": "Total Bookings",
+    "value": 1284,
+    "format": "number",
+    "change": 12.4,
+    "trend": "up",
+    "comparedTo": "vs last month"
+  },
+  {
+    "id": "revenue",
+    "label": "Revenue",
+    "value": 842650,
+    "format": "currency",
+    "change": 8.1,
+    "trend": "up",
+    "comparedTo": "vs last month"
+  },
+  {
+    "id": "active-travelers",
+    "label": "Active Travelers",
+    "value": 3127,
+    "format": "number",
+    "change": -3.2,
+    "trend": "down",
+    "comparedTo": "vs last month"
+  },
+  {
+    "id": "avg-trip-value",
+    "label": "Avg. Trip Value",
+    "value": 656,
+    "format": "currency",
+    "change": 4.6,
+    "trend": "up",
+    "comparedTo": "vs last month"
+  }
+]

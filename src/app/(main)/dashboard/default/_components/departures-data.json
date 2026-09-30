@@ -1,0 +1,46 @@
+[
+  {
+    "id": "dep-1",
+    "packageName": "Cappadocia Balloon & Cave Hotels",
+    "destination": "Cappadocia, Turkey",
+    "image": "/destinations/cappadocia.png",
+    "departureDate": "2026-10-04",
+    "returnDate": "2026-10-09",
+    "seatsTotal": 20,
+    "seatsBooked": 17,
+    "guide": "Elif Yilmaz"
+  },
+  {
+    "id": "dep-2",
+    "packageName": "Istanbul Heritage Weekend",
+    "destination": "Istanbul, Turkey",
+    "image": "/destinations/istanbul.png",
+    "departureDate": "2026-10-07",
+    "returnDate": "2026-10-11",
+    "seatsTotal": 24,
+    "seatsBooked": 24,
+    "guide": "Mert Aydin"
+  },
+  {
+    "id": "dep-3",
+    "packageName": "Santorini Island Escape",
+    "destination": "Santorini, Greece",
+    "image": "/destinations/santorini.png",
+    "departureDate": "2026-10-14",
+    "returnDate": "2026-10-20",
+    "seatsTotal": 16,
+    "seatsBooked": 9,
+    "guide": "Nour Haddad"
+  },
+  {
+    "id": "dep-4",
+    "packageName": "Dubai Desert & City Break",
+    "destination": "Dubai, UAE",
+    "image": "/destinations/dubai.png",
+    "departureDate": "2026-10-21",
+    "returnDate": "2026-10-25",
+    "seatsTotal": 18,
+    "seatsBooked": 6,
+    "guide": "Omar Sultan"
+  }
+]
