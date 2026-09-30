@@ -1,0 +1,42 @@
+[
+  {
+    "id": "RFD-001",
+    "bookingId": "BKG-8172",
+    "customer": { "name": "Sara Mohamed", "initials": "SM" },
+    "amount": 320,
+    "status": "completed",
+    "date": "2026-08-30"
+  },
+  {
+    "id": "RFD-002",
+    "bookingId": "BKG-8150",
+    "customer": { "name": "Ali Ramadan", "initials": "AR" },
+    "amount": 780,
+    "status": "processing",
+    "date": "2026-08-28"
+  },
+  {
+    "id": "RFD-003",
+    "bookingId": "BKG-8123",
+    "customer": { "name": "Fatima Omar", "initials": "FO" },
+    "amount": 450,
+    "status": "completed",
+    "date": "2026-08-25"
+  },
+  {
+    "id": "RFD-004",
+    "bookingId": "BKG-8101",
+    "customer": { "name": "Nader Salim", "initials": "NS" },
+    "amount": 610,
+    "status": "pending",
+    "date": "2026-08-22"
+  },
+  {
+    "id": "RFD-005",
+    "bookingId": "BKG-8088",
+    "customer": { "name": "Mona Khaled", "initials": "MK" },
+    "amount": 280,
+    "status": "completed",
+    "date": "2026-08-20"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "totalRevenue": 128540,
+  "revenueChange": 12.8,
+  "revenueComparedAmount": 14620,
+  "revenueBreakdown": [
+    { "label": "Flights", "value": 62450, "icon": "flights" },
+    { "label": "Packages", "value": 38120, "icon": "packages" },
+    { "label": "Ticketing", "value": 27970, "icon": "ticketing" }
+  ],
+  "totalExpenses": 42380,
+  "expensesChange": 6.1,
+  "expensesComparedAmount": 2450,
+  "netProfit": 86160,
+  "netProfitChange": 15.4,
+  "netProfitComparedAmount": 11240,
+  "outstandingReceivables": 18760,
+  "outstandingReceivablesChange": -3.2,
+  "outstandingReceivablesCaption": "Pending customer payments"
+}

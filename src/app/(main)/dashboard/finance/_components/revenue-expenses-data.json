@@ -1,0 +1,11 @@
+[
+  { "month": "2026-01-01", "revenue": 46000, "expenses": 19500, "profit": 26500 },
+  { "month": "2026-02-01", "revenue": 41000, "expenses": 17800, "profit": 23200 },
+  { "month": "2026-03-01", "revenue": 49500, "expenses": 21200, "profit": 28300 },
+  { "month": "2026-04-01", "revenue": 63500, "expenses": 24800, "profit": 38700 },
+  { "month": "2026-05-01", "revenue": 64200, "expenses": 25600, "profit": 38600 },
+  { "month": "2026-06-01", "revenue": 71800, "expenses": 26100, "profit": 45700 },
+  { "month": "2026-07-01", "revenue": 69400, "expenses": 29800, "profit": 39600 },
+  { "month": "2026-08-01", "revenue": 72400, "expenses": 28300, "profit": 44100 },
+  { "month": "2026-09-01", "revenue": 58200, "expenses": 22100, "profit": 36100 }
+]
