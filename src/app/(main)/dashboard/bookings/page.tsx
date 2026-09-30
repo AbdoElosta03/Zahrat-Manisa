@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Download, Plus } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -18,9 +20,11 @@ export default function BookingsPage() {
             <Download data-icon="inline-start" />
             Export
           </Button>
-          <Button>
-            <Plus data-icon="inline-start" />
-            New Booking
+          <Button asChild>
+            <Link href="/dashboard/bookings/new">
+              <Plus data-icon="inline-start" />
+              New Booking
+            </Link>
           </Button>
         </div>
       </div>

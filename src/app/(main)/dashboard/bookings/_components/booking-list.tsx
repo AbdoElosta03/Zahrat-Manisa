@@ -7,6 +7,7 @@ import Image from "next/image";
 import { format, parseISO } from "date-fns";
 import { Search } from "lucide-react";
 
+import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
 import { Input } from "@/components/ui/input";
@@ -111,8 +112,10 @@ export function BookingList({
             <TableHeader>
               <TableRow>
                 <TableHead>Booking</TableHead>
+                <TableHead>Traveler</TableHead>
+                <TableHead>Trip</TableHead>
                 <TableHead>Travel dates</TableHead>
-                <TableHead>Travelers</TableHead>
+                <TableHead>Pax</TableHead>
                 <TableHead>Amount</TableHead>
                 <TableHead>Payment</TableHead>
                 <TableHead>Status</TableHead>
@@ -120,50 +123,76 @@ export function BookingList({
               </TableRow>
             </TableHeader>
             <TableBody>
-              {pageItems.map((booking) => (
-                <TableRow key={booking.id}>
-                  <TableCell>
-                    <div className="flex items-center gap-2.5">
-                      <div className="relative size-9 shrink-0 overflow-hidden rounded-md">
-                        <Image
-                          src={booking.image || "/placeholder.svg"}
-                          alt={booking.destination}
-                          fill
-                          className="object-cover"
-                          sizes="36px"
-                        />
-                      </div>
-                      <div className="flex min-w-0 flex-col gap-0.5">
-                        <span className="truncate font-medium text-sm leading-none">{booking.tripName}</span>
+              {pageItems.map((booking) => {
+                const primaryTraveler = booking.travelers[0];
+                const extraTravelers = booking.travelersCount - booking.travelers.length;
+
+                return (
+                  <TableRow key={booking.id}>
+                    <TableCell>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="font-medium text-sm leading-none">{booking.id}</span>
                         <span className="text-muted-foreground text-xs">
-                          {booking.id} &middot; {booking.destination}
+                          {format(parseISO(booking.bookingDate), "d MMM yyyy")}
                         </span>
                       </div>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex flex-col gap-0.5 text-xs">
-                      <span className="font-medium text-foreground text-sm">
-                        {format(parseISO(booking.departureDate), "d MMM yyyy")}
-                      </span>
-                      <span className="text-muted-foreground">{booking.duration}</span>
-                    </div>
-                  </TableCell>
-                  <TableCell className="tabular-nums">{booking.travelersCount}</TableCell>
-                  <TableCell className="font-medium tabular-nums">{formatCurrency(booking.amount)}</TableCell>
-                  <TableCell>
-                    <PaymentStatusBadge status={booking.paymentStatus} />
-                  </TableCell>
-                  <TableCell>
-                    <BookingStatusBadge status={booking.bookingStatus} />
-                  </TableCell>
-                  <TableCell className="text-right">
-                    <Button variant="outline" size="sm" onClick={() => onViewBooking(booking)}>
-                      View
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              ))}
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center gap-2">
+                        <AvatarGroup>
+                          {booking.travelers.slice(0, 2).map((traveler) => (
+                            <Avatar key={traveler.name} size="sm">
+                              <AvatarFallback>{traveler.initials}</AvatarFallback>
+                            </Avatar>
+                          ))}
+                          {extraTravelers > 0 ? (
+                            <AvatarGroupCount className="size-6 text-[10px]">+{extraTravelers}</AvatarGroupCount>
+                          ) : null}
+                        </AvatarGroup>
+                        <span className="truncate text-sm">{primaryTraveler?.name ?? "—"}</span>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center gap-2.5">
+                        <div className="relative size-9 shrink-0 overflow-hidden rounded-md">
+                          <Image
+                            src={booking.image || "/placeholder.svg"}
+                            alt={booking.destination}
+                            fill
+                            className="object-cover"
+                            sizes="36px"
+                          />
+                        </div>
+                        <div className="flex min-w-0 flex-col gap-0.5">
+                          <span className="truncate font-medium text-sm leading-none">{booking.tripName}</span>
+                          <span className="text-muted-foreground text-xs">{booking.destination}</span>
+                        </div>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex flex-col gap-0.5 text-xs">
+                        <span className="font-medium text-foreground text-sm">
+                          {format(parseISO(booking.departureDate), "d MMM yyyy")}
+                        </span>
+                        <span className="text-muted-foreground">{booking.duration}</span>
+                      </div>
+                    </TableCell>
+                    <TableCell className="tabular-nums">{booking.travelersCount}</TableCell>
+                    <TableCell className="font-medium tabular-nums">{formatCurrency(booking.amount)}</TableCell>
+                    <TableCell>
+                      <PaymentStatusBadge status={booking.paymentStatus} />
+                    </TableCell>
+                    <TableCell>
+                      <BookingStatusBadge status={booking.bookingStatus} />
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <Button variant="outline" size="sm" onClick={() => onViewBooking(booking)}>
+                        View
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
             </TableBody>
           </Table>
         </div>
