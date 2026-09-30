@@ -54,60 +54,68 @@ function RoutePanel({ flight }: { flight: Flight }) {
   const status = statusStyles[flight.status];
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/10 via-blue-500/5 to-transparent p-5">
-      <div className="pointer-events-none absolute -top-12 -right-12 size-48 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-16 -left-10 size-40 rounded-full bg-blue-500/10 blur-3xl" />
+    <div className="relative isolate min-h-64 overflow-hidden rounded-2xl border">
+      <img
+        src="/images/flight-hero-clouds.png"
+        alt=""
+        crossOrigin="anonymous"
+        className="absolute inset-0 -z-10 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/10 via-black/35 to-background" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-background via-background/80 to-transparent backdrop-blur-md" />
 
-      <div className="relative flex flex-wrap items-start justify-between gap-3">
-        <div className="flex items-center gap-3">
-          <div
-            className={cn(
-              "grid size-11 shrink-0 place-items-center rounded-xl text-sm font-semibold",
-              airlineStyles[flight.airlineCode],
-            )}
-          >
-            {flight.airlineCode}
-          </div>
-          <div>
-            <h2 className="text-lg leading-none font-semibold">{flight.flightNumber}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{flight.airline}</p>
-          </div>
-        </div>
-        <div className="flex flex-col items-end gap-2">
-          <Badge variant="outline" className={cn("gap-1.5", status.badge)}>
-            <span className="size-1.5 rounded-full bg-current" />
-            {flight.status}
-          </Badge>
-          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <CalendarDays className="size-3.5" />
-            {flight.date}
-          </span>
-        </div>
-      </div>
-
-      <div className="relative mt-6 flex items-center gap-3">
-        <div>
-          <div className="text-3xl font-semibold tracking-tight tabular-nums">{flight.origin.code}</div>
-          <div className="text-sm text-muted-foreground">{flight.origin.city}</div>
-          <div className="mt-3 text-sm font-medium tabular-nums">{flight.departure}</div>
-        </div>
-
-        <div className="flex flex-1 flex-col items-center gap-2 px-2">
-          <span className="text-xs text-muted-foreground">{flight.duration}</span>
-          <div className="flex w-full items-center gap-2">
-            <span className="h-px flex-1 border-t border-dashed border-primary/40" />
-            <div className="grid size-8 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
-              <PlaneTakeoff className="size-4" />
+      <div className="flex h-full flex-col justify-between gap-6 p-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div
+              className={cn(
+                "grid size-11 shrink-0 place-items-center rounded-xl text-sm font-semibold shadow-sm",
+                airlineStyles[flight.airlineCode],
+              )}
+            >
+              {flight.airlineCode}
             </div>
-            <span className="h-px flex-1 border-t border-dashed border-primary/40" />
+            <div>
+              <h2 className="text-lg leading-none font-semibold text-white drop-shadow-sm">{flight.flightNumber}</h2>
+              <p className="mt-1 text-sm text-white/85 drop-shadow-sm">{flight.airline}</p>
+            </div>
           </div>
-          <span className="text-xs text-muted-foreground">Nonstop</span>
+          <div className="flex flex-col items-end gap-2">
+            <Badge variant="outline" className={cn("gap-1.5 backdrop-blur-sm", status.badge)}>
+              <span className="size-1.5 rounded-full bg-current" />
+              {flight.status}
+            </Badge>
+            <span className="flex items-center gap-1.5 text-xs text-white/85 drop-shadow-sm">
+              <CalendarDays className="size-3.5" />
+              {flight.date}
+            </span>
+          </div>
         </div>
 
-        <div className="text-right">
-          <div className="text-3xl font-semibold tracking-tight tabular-nums">{flight.destination.code}</div>
-          <div className="text-sm text-muted-foreground">{flight.destination.city}</div>
-          <div className="mt-3 text-sm font-medium tabular-nums">{flight.arrival}</div>
+        <div className="flex items-center gap-3">
+          <div>
+            <div className="text-3xl font-semibold tracking-tight tabular-nums">{flight.origin.code}</div>
+            <div className="text-sm text-muted-foreground">{flight.origin.city}</div>
+            <div className="mt-3 text-sm font-medium tabular-nums">{flight.departure}</div>
+          </div>
+
+          <div className="flex flex-1 flex-col items-center gap-2 px-2">
+            <span className="text-xs text-muted-foreground">{flight.duration}</span>
+            <div className="flex w-full items-center gap-2">
+              <span className="h-px flex-1 border-t border-dashed border-primary/40" />
+              <div className="grid size-8 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
+                <PlaneTakeoff className="size-4" />
+              </div>
+              <span className="h-px flex-1 border-t border-dashed border-primary/40" />
+            </div>
+            <span className="text-xs text-muted-foreground">Nonstop</span>
+          </div>
+
+          <div className="text-right">
+            <div className="text-3xl font-semibold tracking-tight tabular-nums">{flight.destination.code}</div>
+            <div className="text-sm text-muted-foreground">{flight.destination.city}</div>
+            <div className="mt-3 text-sm font-medium tabular-nums">{flight.arrival}</div>
+          </div>
         </div>
       </div>
     </div>
