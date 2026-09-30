@@ -61,7 +61,7 @@ function RoutePanel({ flight }: { flight: Flight }) {
         crossOrigin="anonymous"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/10 via-black/35 to-background" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-sea/10 via-black/35 to-background" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-background via-background/80 to-transparent backdrop-blur-md" />
 
       <div className="flex h-full flex-col justify-between gap-6 p-5">
