@@ -91,8 +91,8 @@ export function RevenueTrendChart() {
       </CardHeader>
 
       <CardContent>
-        <ChartContainer config={chartConfig} className="aspect-auto h-64 w-full">
-          <BarChart data={chartData} margin={{ top: 0 }} barGap={4}>
+        <ChartContainer config={chartConfig} className="aspect-auto h-48 w-full">
+          <BarChart data={chartData} margin={{ top: 0 }}>
             <defs>
               <linearGradient id="fillBookings" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="var(--color-bookings)" stopOpacity={1} />
@@ -129,8 +129,8 @@ export function RevenueTrendChart() {
             />
             <ChartLegend verticalAlign="top" content={<ChartLegendContent className="mb-5 justify-end" />} />
 
-            <Bar dataKey="bookings" fill="url(#fillBookings)" radius={[6, 6, 0, 0]} maxBarSize={22} />
-            <Bar dataKey="revenue" fill="url(#fillRevenue)" radius={[6, 6, 0, 0]} maxBarSize={22} />
+            <Bar dataKey="revenue" stackId="period" fill="url(#fillRevenue)" radius={[0, 0, 4, 4]} maxBarSize={26} />
+            <Bar dataKey="bookings" stackId="period" fill="url(#fillBookings)" radius={[4, 4, 0, 0]} maxBarSize={26} />
           </BarChart>
         </ChartContainer>
 
