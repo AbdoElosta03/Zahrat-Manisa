@@ -60,6 +60,8 @@ export interface MfaChallengeResponse {
 // Login can require accepting terms or MFA instead of returning an access token.
 export type LoginResult = TokenResponse | LoginTermsRequiredResponse | MfaChallengeResponse;
 
+export type AccountType = "employee" | "customer" | "owner";
+
 export interface RegisteredUser {
   id: string;
   username?: string | null;
@@ -73,7 +75,7 @@ export interface RegisteredUser {
   updated_at: string;
   date_of_birth?: string | null;
   image?: string | null;
-  account_type: "employee" | "customer";
+  account_type: AccountType;
   is_owner: boolean;
   is_blocked: boolean;
   /** Present on some user payloads (e.g. detail); list may omit it. */
@@ -85,9 +87,36 @@ export interface MyRole {
   name: string;
 }
 
+/** GET /api/v1/auth/me — CurrentUserResponse */
 export interface MyProfile extends RegisteredUser {
   roles: MyRole[];
   permissions: string[];
+}
+
+/** PATCH /api/v1/users/me — EmployeeUpdate */
+export interface UpdateMyProfileRequest {
+  username?: string | null;
+  image?: string | null;
+  first_name?: string | null;
+  last_name?: string | null;
+  date_of_birth?: string | null;
+  occupation?: string | null;
+  employee_id?: string | null;
+}
+
+/** PATCH /api/v1/users/me response — UserResponse */
+export type UpdateMyProfileResponse = RegisteredUser;
+
+/** POST /api/v1/auth/change-password */
+export interface ChangePasswordRequest {
+  current_password: string;
+  new_password: string;
+  confirm_password: string;
+}
+
+/** DELETE /api/v1/auth/me */
+export interface DeleteAccountRequest {
+  password: string;
 }
 
 export interface ForgotPasswordResponse {

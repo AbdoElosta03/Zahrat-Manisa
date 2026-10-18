@@ -1,14 +1,17 @@
 import { apiClient, clearAccessToken, setAccessToken } from "@/lib/api/client";
 import { endpoints } from "@/lib/api/endpoints";
 import type {
+  ChangePasswordRequest,
   ConfirmRegistrationRequest,
+  DeleteAccountRequest,
   ForgotPasswordRequest,
   ForgotPasswordResponse,
   LoginRequest,
   LoginResult,
   MyProfile,
-  RegisteredUser,
   RegisterRequest,
+  UpdateMyProfileRequest,
+  UpdateMyProfileResponse,
 } from "@/lib/api/types/auth";
 
 /** Real FastAPI auth. Use with NEXT_PUBLIC_API_MODE=python and NEXT_PUBLIC_API_URL set to the API origin. */
@@ -30,6 +33,19 @@ export const authApi = {
   },
   async getMyProfile(signal?: AbortSignal): Promise<MyProfile> {
     return (await apiClient.get<MyProfile>(endpoints.authV1.me, { signal })).data;
+  },
+  async updateMyProfile(input: UpdateMyProfileRequest): Promise<UpdateMyProfileResponse> {
+    return (await apiClient.patch<UpdateMyProfileResponse>(endpoints.usersV1.me, input)).data;
+  },
+  async changePassword(input: ChangePasswordRequest): Promise<void> {
+    await apiClient.post(endpoints.authV1.changePassword, input);
+  },
+  async deleteMyAccount(input: DeleteAccountRequest): Promise<void> {
+    try {
+      await apiClient.delete(endpoints.authV1.me, { data: input });
+    } finally {
+      clearAccessToken();
+    }
   },
   async logout(): Promise<void> {
     try {

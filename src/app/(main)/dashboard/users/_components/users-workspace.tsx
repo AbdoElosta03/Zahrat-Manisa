@@ -32,7 +32,7 @@ import {
 } from "@/components/ui/pagination";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useI18n } from "@/i18n/language-provider";
 import { getApiErrorMessage } from "@/lib/api/api-error";
 import { usersApi } from "@/lib/api/services/users";
@@ -170,16 +170,30 @@ export function UsersWorkspace() {
         <CardContent className="px-0" aria-busy={usersQuery.isFetching}>
           {filteredItems.length ? (
             <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow className="border-t">
-                    <TableHead className="h-12 ps-4 text-start">{ar ? "الاسم" : "Name"}</TableHead>
-                    <TableHead className="text-start">{ar ? "البريد" : "Email"}</TableHead>
-                    <TableHead className="text-start">{ar ? "الهاتف" : "Phone"}</TableHead>
-                    <TableHead className="text-start">{ar ? "الدور" : "Role"}</TableHead>
-                    <TableHead className="text-start">{ar ? "الحالة" : "Status"}</TableHead>
-                    <TableHead className="text-start">{ar ? "تاريخ الانضمام" : "Joined"}</TableHead>
-                    <TableHead className="pe-4 text-end">{ar ? "إجراءات" : "Actions"}</TableHead>
+              <Table className="**:data-[slot=table-cell]:px-4 **:data-[slot=table-head]:px-4">
+                <TableHeader className="bg-neutral-100 dark:bg-muted/60 [&_tr]:border-b">
+                  <TableRow className="border-t bg-neutral-100 hover:bg-neutral-100 dark:bg-muted/60 dark:hover:bg-muted/60">
+                    <TableHead className="h-12 ps-4 text-start font-normal text-muted-foreground">
+                      {ar ? "الاسم" : "Name"}
+                    </TableHead>
+                    <TableHead className="h-12 text-start font-normal text-muted-foreground">
+                      {ar ? "البريد" : "Email"}
+                    </TableHead>
+                    <TableHead className="h-12 text-start font-normal text-muted-foreground">
+                      {ar ? "الهاتف" : "Phone"}
+                    </TableHead>
+                    <TableHead className="h-12 text-start font-normal text-muted-foreground">
+                      {ar ? "الدور" : "Role"}
+                    </TableHead>
+                    <TableHead className="h-12 text-start font-normal text-muted-foreground">
+                      {ar ? "الحالة" : "Status"}
+                    </TableHead>
+                    <TableHead className="h-12 text-start font-normal text-muted-foreground">
+                      {ar ? "تاريخ الانضمام" : "Joined"}
+                    </TableHead>
+                    <TableHead className="h-12 pe-4 text-end font-normal text-muted-foreground">
+                      {ar ? "إجراءات" : "Actions"}
+                    </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -259,6 +273,82 @@ export function UsersWorkspace() {
                     );
                   })}
                 </TableBody>
+                <TableFooter className="border-t bg-transparent">
+                  <TableRow className="border-0 hover:bg-transparent">
+                    <TableCell colSpan={7} className="p-0">
+                      <div className="flex flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+                        <p className="text-sm text-muted-foreground">
+                          {ar
+                            ? `عرض ${formatNumber(rowStart)} إلى ${formatNumber(rowEnd)} من ${formatNumber(total)}`
+                            : `Showing ${formatNumber(rowStart)} to ${formatNumber(rowEnd)} of ${formatNumber(total)} entries`}
+                        </p>
+
+                        <div className="flex flex-wrap items-center gap-3">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm text-muted-foreground">
+                              {ar ? "صفوف لكل صفحة" : "Rows per page"}
+                            </span>
+                            <Select
+                              value={`${params.pageSize}`}
+                              onValueChange={(value) => update({ pageSize: Number(value), page: 1 })}
+                            >
+                              <SelectTrigger size="sm" className="w-20">
+                                <SelectValue />
+                              </SelectTrigger>
+                              <SelectContent position="popper" align="end">
+                                <SelectGroup>
+                                  {[5, 10, 25, 50].map((size) => (
+                                    <SelectItem key={size} value={`${size}`}>
+                                      {formatNumber(size)}
+                                    </SelectItem>
+                                  ))}
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                          </div>
+
+                          <Pagination className="mx-0 w-auto">
+                            <PaginationContent>
+                              <PaginationItem>
+                                <PaginationPrevious
+                                  href="#"
+                                  onClick={(event) => {
+                                    event.preventDefault();
+                                    if (currentPage > 1) update({ page: currentPage - 1 });
+                                  }}
+                                  className={
+                                    currentPage <= 1 || usersQuery.isFetching
+                                      ? "pointer-events-none opacity-50"
+                                      : undefined
+                                  }
+                                />
+                              </PaginationItem>
+                              <PaginationItem>
+                                <PaginationLink href="#" isActive onClick={(event) => event.preventDefault()}>
+                                  {formatNumber(currentPage)}
+                                </PaginationLink>
+                              </PaginationItem>
+                              <PaginationItem>
+                                <PaginationNext
+                                  href="#"
+                                  onClick={(event) => {
+                                    event.preventDefault();
+                                    if (currentPage < pageCount) update({ page: currentPage + 1 });
+                                  }}
+                                  className={
+                                    currentPage >= pageCount || usersQuery.isFetching
+                                      ? "pointer-events-none opacity-50"
+                                      : undefined
+                                  }
+                                />
+                              </PaginationItem>
+                            </PaginationContent>
+                          </Pagination>
+                        </div>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                </TableFooter>
               </Table>
             </div>
           ) : (
@@ -278,69 +368,6 @@ export function UsersWorkspace() {
             </Empty>
           )}
         </CardContent>
-
-        <div className="flex flex-col gap-3 border-t px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-muted-foreground">
-            {ar
-              ? `عرض ${formatNumber(rowStart)} إلى ${formatNumber(rowEnd)} من ${formatNumber(total)}`
-              : `Showing ${formatNumber(rowStart)} to ${formatNumber(rowEnd)} of ${formatNumber(total)} entries`}
-          </p>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">{ar ? "صفوف لكل صفحة" : "Rows per page"}</span>
-              <Select
-                value={`${params.pageSize}`}
-                onValueChange={(value) => update({ pageSize: Number(value), page: 1 })}
-              >
-                <SelectTrigger size="sm" className="w-20">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent position="popper" align="end">
-                  <SelectGroup>
-                    {[5, 10, 25, 50].map((size) => (
-                      <SelectItem key={size} value={`${size}`}>
-                        {formatNumber(size)}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <Pagination className="mx-0 w-auto">
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious
-                    href="#"
-                    onClick={(event) => {
-                      event.preventDefault();
-                      if (currentPage > 1) update({ page: currentPage - 1 });
-                    }}
-                    className={currentPage <= 1 || usersQuery.isFetching ? "pointer-events-none opacity-50" : undefined}
-                  />
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationLink href="#" isActive onClick={(event) => event.preventDefault()}>
-                    {formatNumber(currentPage)}
-                  </PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationNext
-                    href="#"
-                    onClick={(event) => {
-                      event.preventDefault();
-                      if (currentPage < pageCount) update({ page: currentPage + 1 });
-                    }}
-                    className={
-                      currentPage >= pageCount || usersQuery.isFetching ? "pointer-events-none opacity-50" : undefined
-                    }
-                  />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
-          </div>
-        </div>
       </Card>
 
       {editor && (

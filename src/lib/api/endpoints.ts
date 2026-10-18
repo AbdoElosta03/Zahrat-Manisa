@@ -6,6 +6,7 @@ export const endpoints = {
     confirmRegister: "/api/v1/auth/register/confirm",
     forgotPassword: "/api/v1/auth/forgot-password",
     me: "/api/v1/auth/me",
+    changePassword: "/api/v1/auth/change-password",
     logout: "/api/v1/auth/logout",
   },
   auth: {
@@ -22,6 +23,7 @@ export const endpoints = {
   },
   usersV1: {
     list: "/api/v1/users",
+    me: "/api/v1/users/me",
     detail: (id: string) => `/api/v1/users/${encodeURIComponent(id)}`,
     employee: (id: string) => `/api/v1/users/${encodeURIComponent(id)}/employee`,
     blocking: (id: string) => `/api/v1/users/${encodeURIComponent(id)}/blocking`,
