@@ -1,8 +1,8 @@
 "use client";
 
-import { useIsMutating, useMutation, useQuery } from "@tanstack/react-query";
 import { type FormEvent, useState } from "react";
-import { toast } from "sonner";
+
+import { useIsMutating, useMutation, useQuery } from "@tanstack/react-query";
 
 import { AccessError } from "@/app/(main)/dashboard/_components/access/access-feedback";
 import { Button } from "@/components/ui/button";
@@ -23,6 +23,7 @@ import { getApiErrorMessage } from "@/lib/api/api-error";
 import { usersApi } from "@/lib/api/services/users";
 import type { RoleWithPermissionsResponse } from "@/lib/api/types/authorization";
 import type { CreateUserRequest, UpdateEmployeeRequest, User } from "@/lib/api/types/users";
+import { notify } from "@/lib/notify";
 
 export function UserEditor({
   userId,
@@ -113,7 +114,7 @@ function UserEditorForm({
           last_name,
           occupation: String(data.get("occupation") ?? "").trim() || null,
         });
-        toast.success(ar ? "تم تعديل المستخدم" : "User updated");
+        notify.success(ar ? "تم تعديل المستخدم" : "User updated");
       } else {
         if (!roleId) return;
         const input: CreateUserRequest = {
@@ -123,7 +124,7 @@ function UserEditorForm({
           role_ids: [roleId],
         };
         await create.mutateAsync(input);
-        toast.success(ar ? "تم إرسال الدعوة" : "Invitation sent", {
+        notify.success(ar ? "تم إرسال الدعوة" : "Invitation sent", {
           description: ar
             ? "سيظهر المستخدم في القائمة بعد قبول الدعوة."
             : "The user appears in the list after accepting the invitation.",
@@ -132,7 +133,7 @@ function UserEditorForm({
       onSaved();
       onClose();
     } catch (reason) {
-      toast.error(getApiErrorMessage(reason));
+      notify.error(getApiErrorMessage(reason));
     }
   }
 

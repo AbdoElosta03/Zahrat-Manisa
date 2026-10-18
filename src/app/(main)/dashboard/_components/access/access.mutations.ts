@@ -5,7 +5,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { isMockApi } from "@/lib/api/client";
 import { accessApi } from "@/lib/api/services/access";
 import { authApi } from "@/lib/api/services/auth";
-import type { RoleInput, UserUpdate } from "@/lib/api/types/access";
+import type { CurrentUser, RoleInput, UserUpdate } from "@/lib/api/types/access";
+import type { LoginResult } from "@/lib/api/types/auth";
 import { currentUserKey } from "@/lib/query/query-client";
 
 import { accessKeys, usePermissions } from "./access.queries";
@@ -43,10 +44,16 @@ export function useSessionMutations() {
     client.clear();
   };
   return {
-    login: useMutation({
+    login: useMutation<LoginResult | CurrentUser, Error, { email: string; password: string; remember_me?: boolean }>({
       mutationKey: ["session", "login"],
-      mutationFn: (input: { email: string; password: string }) =>
-        isMockApi ? accessApi.login(input) : authApi.login(input),
+      mutationFn: (input) =>
+        isMockApi
+          ? accessApi.login({ email: input.email, password: input.password })
+          : authApi.login({
+              email: input.email,
+              password: input.password,
+              remember_me: input.remember_me,
+            }),
       onSuccess: async (result) => {
         if ("transaction_token" in result || "challenge_token" in result) return;
         const user = "access_token" in result ? await accessApi.currentUser() : result;

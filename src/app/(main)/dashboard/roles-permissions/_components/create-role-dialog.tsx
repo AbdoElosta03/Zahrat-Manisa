@@ -1,8 +1,8 @@
 "use client";
 
+import type { FormEvent } from "react";
+
 import { useMutation } from "@tanstack/react-query";
-import { type FormEvent } from "react";
-import { toast } from "sonner";
 
 import { AccessError } from "@/app/(main)/dashboard/_components/access/access-feedback";
 import { Button } from "@/components/ui/button";
@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { authorizationApi } from "@/lib/api/services/authorization";
 import type { RoleResponse } from "@/lib/api/types/authorization";
+import { notify } from "@/lib/notify";
 
 export function CreateRoleDialog({
   ar,
@@ -46,9 +47,9 @@ export function CreateRoleDialog({
     }
     try {
       await onCreated(role);
-      toast.success(ar ? "تم إنشاء الدور" : "Role created");
+      notify.success(ar ? "تم إنشاء الدور" : "Role created");
     } catch {
-      toast.error(ar ? "تم إنشاء الدور، لكن تعذّر تحديث القائمة." : "Role created, but the list could not refresh.");
+      notify.error(ar ? "تم إنشاء الدور، لكن تعذّر تحديث القائمة." : "Role created, but the list could not refresh.");
     }
     onClose();
   }

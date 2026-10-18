@@ -1,12 +1,13 @@
 "use client";
 
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import Link from "next/link";
 import { useState } from "react";
-import { toast } from "sonner";
 
-import { AccessError, AccessUpdating } from "@/app/(main)/dashboard/_components/access/access-feedback";
+import Link from "next/link";
+
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+
 import { usePermissions } from "@/app/(main)/dashboard/_components/access/access.queries";
+import { AccessError, AccessUpdating } from "@/app/(main)/dashboard/_components/access/access-feedback";
 import { AccessSkeleton } from "@/app/(main)/dashboard/_components/access/access-skeleton";
 import { DeleteDialog } from "@/app/(main)/dashboard/_components/access/delete-dialog";
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,7 @@ import { useI18n } from "@/i18n/language-provider";
 import { getApiErrorMessage } from "@/lib/api/api-error";
 import { authorizationApi } from "@/lib/api/services/authorization";
 import type { RoleWithPermissionsResponse } from "@/lib/api/types/authorization";
+import { notify } from "@/lib/notify";
 import { currentUserKey } from "@/lib/query/query-client";
 
 import { CreateRoleDialog } from "./create-role-dialog";
@@ -179,7 +181,7 @@ export function RolesWorkspace() {
                           toggle.mutate(
                             { roleId: selected.id, permissionId: permission.id, checked },
                             {
-                              onError: (error) => toast.error(getApiErrorMessage(error)),
+                              onError: (error) => notify.error(getApiErrorMessage(error)),
                             },
                           )
                         }

@@ -1,3 +1,5 @@
+export { cn } from "cn";
+
 export const getInitials = (str: string): string => {
   if (typeof str !== "string" || !str.trim()) return "?";
 

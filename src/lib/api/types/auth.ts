@@ -76,6 +76,8 @@ export interface RegisteredUser {
   account_type: "employee" | "customer";
   is_owner: boolean;
   is_blocked: boolean;
+  /** Present on some user payloads (e.g. detail); list may omit it. */
+  roles?: MyRole[];
 }
 
 export interface MyRole {

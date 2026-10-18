@@ -1,7 +1,8 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+
+import { useSearchParams } from "next/navigation";
 
 import { type UsersParams, usersParamsSchema } from "@/lib/api/types/access";
 
@@ -15,7 +16,7 @@ export function useUsersFilters() {
     roleId: searchParams.get("role") ?? "all",
     sort: ["-name", "lastActive"].includes(searchParams.get("sort") ?? "") ? searchParams.get("sort") : "name",
     page: searchParams.get("page") ?? 1,
-    pageSize: searchParams.get("size") ?? 5,
+    pageSize: searchParams.get("size") ?? 10,
   });
   const [search, setSearch] = useState(params.search);
 
