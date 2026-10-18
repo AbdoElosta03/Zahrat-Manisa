@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import * as React from "react";
 
 import { cn } from "cn";
@@ -12,6 +13,7 @@ import { Empty, EmptyDescription, EmptyMedia, EmptyTitle } from "@/components/ui
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useLanguage } from "@/i18n/language-provider";
 
 import {
   airlineStyles,
@@ -60,12 +62,12 @@ function FlightCard({ flight, active, onSelectFlight }: FlightCardProps) {
           </div>
           <div className="min-w-0">
             <div className="truncate text-sm leading-none font-medium">{flight.flightNumber}</div>
-            <div className="mt-1 truncate text-xs text-muted-foreground">{flight.airline}</div>
+            <div className="mt-1 truncate text-xs text-muted-foreground"><V scope="flights" text={flight.airline} /></div>
           </div>
         </div>
         <Badge variant="outline" className={cn("shrink-0 gap-1.5 text-xs", status.badge)}>
           <span className={cn("size-1.5 rounded-full bg-current")} />
-          {flight.status}
+          <V scope="flights" text={flight.status} />
         </Badge>
       </div>
 
@@ -87,10 +89,10 @@ function FlightCard({ flight, active, onSelectFlight }: FlightCardProps) {
 
       <div className="flex items-center justify-between gap-2 text-xs">
         <span className="truncate text-muted-foreground">
-          {flight.origin.city} → {flight.destination.city}
+          <V scope="flights" text={flight.origin.city} /> → <V scope="flights" text={flight.destination.city} />
         </span>
         <span className={cn("shrink-0 font-medium tabular-nums", seatClass)}>
-          {available} / {flight.totalSeats} seats
+          {available} / {flight.totalSeats} <T id="flights.seats" />
         </span>
       </div>
     </button>
@@ -105,6 +107,7 @@ type FlightListProps = {
 };
 
 export function FlightList({ flights, selectedFlightId, onSelectFlight, onAddFlight }: FlightListProps) {
+  const { t } = useLanguage();
   const [tab, setTab] = React.useState<FlightFilter>("all");
   const [query, setQuery] = React.useState("");
 
@@ -134,11 +137,11 @@ export function FlightList({ flights, selectedFlightId, onSelectFlight, onAddFli
   return (
     <Card className="h-full rounded-none ring-0">
       <CardHeader>
-        <CardTitle className="text-xl font-normal">Flights</CardTitle>
+        <CardTitle className="text-xl font-normal"><T id="flights.flights" /></CardTitle>
         <CardAction>
           <Button size="sm" onClick={onAddFlight}>
             <PlusIcon data-icon="inline-start" />
-            Add Flight
+            <T id="flights.addFlight" />
           </Button>
         </CardAction>
       </CardHeader>
@@ -146,16 +149,16 @@ export function FlightList({ flights, selectedFlightId, onSelectFlight, onAddFli
         <Tabs value={tab} onValueChange={(value) => setTab(value as FlightFilter)}>
           <TabsList className="w-full border-b px-4" variant="line">
             <TabsTrigger className="text-xs" value="all">
-              All Flights ({counts.all})
+              <T id="flights.allFlights" />{counts.all})
             </TabsTrigger>
             <TabsTrigger className="text-xs" value="departures">
-              Departures ({counts.departures})
+              <T id="flights.departures" />{counts.departures})
             </TabsTrigger>
             <TabsTrigger className="text-xs" value="arrivals">
-              Arrivals ({counts.arrivals})
+              <T id="flights.arrivals" />{counts.arrivals})
             </TabsTrigger>
             <TabsTrigger className="text-xs" value="delayed">
-              Delayed ({counts.delayed})
+              <T id="flights.delayed" />{counts.delayed})
             </TabsTrigger>
           </TabsList>
         </Tabs>
@@ -165,8 +168,8 @@ export function FlightList({ flights, selectedFlightId, onSelectFlight, onAddFli
             <InputGroupInput
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              aria-label="Search flights"
-              placeholder="Search flights, airline, route..."
+              aria-label={t("common.searchFlights")}
+              placeholder={t("common.searchFlights")}
             />
             <InputGroupAddon>
               <Search />
@@ -181,8 +184,8 @@ export function FlightList({ flights, selectedFlightId, onSelectFlight, onAddFli
                 <EmptyMedia variant="icon">
                   <Plane />
                 </EmptyMedia>
-                <EmptyTitle>No flights found</EmptyTitle>
-                <EmptyDescription>Try adjusting your search or filters.</EmptyDescription>
+                <EmptyTitle><T id="flights.noFlightsFound" /></EmptyTitle>
+                <EmptyDescription><T id="flights.tryAdjustingYourSearchOrFilters" /></EmptyDescription>
               </Empty>
             ) : (
               filtered.map((flight) => (

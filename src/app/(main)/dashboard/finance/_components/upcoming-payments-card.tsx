@@ -1,3 +1,4 @@
+import { T } from "@/i18n/t";
 import { Button } from "@/components/ui/button";
 import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
@@ -16,10 +17,10 @@ export function UpcomingPaymentsCard() {
   return (
     <Card className="h-full shadow-xs">
       <CardHeader className="flex flex-row items-center justify-between gap-4">
-        <CardTitle className="font-semibold text-base">Upcoming Payments</CardTitle>
+        <CardTitle className="font-semibold text-base"><T id="finance.upcomingPayments" /></CardTitle>
         <CardAction>
           <Button variant="ghost" size="sm">
-            View All
+            <T id="finance.viewAll" />
           </Button>
         </CardAction>
       </CardHeader>
@@ -38,7 +39,7 @@ export function UpcomingPaymentsCard() {
                 <span
                   className={`truncate text-xs ${payment.status === "overdue" ? "font-medium text-rose-600 dark:text-rose-400" : "text-muted-foreground"}`}
                 >
-                  Due {formatDate(payment.dueDate)}
+                  <T id="finance.due" /> {formatDate(payment.dueDate)}
                 </span>
               </div>
               <div className="flex shrink-0 flex-col items-end gap-1">

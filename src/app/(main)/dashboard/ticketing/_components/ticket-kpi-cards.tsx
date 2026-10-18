@@ -1,3 +1,4 @@
+import { V } from "@/i18n/t";
 import type { ComponentType } from "react";
 
 import { cn } from "cn";
@@ -67,13 +68,13 @@ export function TicketKpiCards({ tickets }: { tickets: Ticket[] }) {
   const stats = buildStats(tickets);
 
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-      {stats.map((stat) => {
-        const Icon = stat.icon;
-        const isUp = stat.trend === "up";
-        return (
-          <Card key={stat.id} className="gap-0 py-0">
-            <CardContent className="flex items-center gap-3 p-4">
+    <Card className="gap-0 py-0">
+      <CardContent className="grid grid-cols-1 gap-3 p-4 sm:grid-cols-2">
+        {stats.map((stat) => {
+          const Icon = stat.icon;
+          const isUp = stat.trend === "up";
+          return (
+            <div key={stat.id} className="flex items-center gap-3 rounded-xl border p-3">
               <div className={cn("grid size-10 shrink-0 place-items-center rounded-xl", stat.accent)}>
                 <Icon className="size-5" />
               </div>
@@ -91,12 +92,12 @@ export function TicketKpiCards({ tickets }: { tickets: Ticket[] }) {
                     {stat.change}%
                   </span>
                 </div>
-                <span className="truncate text-sm text-muted-foreground">{stat.label}</span>
+                <span className="truncate text-sm text-muted-foreground"><V scope="ticketing" text={stat.label} /></span>
               </div>
-            </CardContent>
-          </Card>
-        );
-      })}
-    </div>
+            </div>
+          );
+        })}
+      </CardContent>
+    </Card>
   );
 }

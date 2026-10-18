@@ -1,0 +1,18 @@
+{
+  "dashboard": "لوحة التحكم",
+  "overview": "نظرة عامة",
+  "finance": "المالية",
+  "operations": "العمليات",
+  "bookings": "الحجوزات",
+  "flights": "الرحلات الجوية",
+  "ticketing": "إصدار التذاكر",
+  "cancellations": "الإلغاءات",
+  "customers": "العملاء",
+  "support": "الدعم",
+  "transactions": "المعاملات",
+  "users": "المستخدمون",
+  "rolesPermissions": "الأدوار والصلاحيات",
+  "userManagement": "إدارة المستخدمين",
+  "refunds": "الاسترداد",
+  "tagline": "سفر وسياحة"
+}

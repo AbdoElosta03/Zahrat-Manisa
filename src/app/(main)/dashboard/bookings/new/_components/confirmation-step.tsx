@@ -1,5 +1,6 @@
 "use client";
 
+import { T } from "@/i18n/t";
 import Link from "next/link";
 
 import { format, parseISO } from "date-fns";
@@ -37,36 +38,36 @@ export function ConfirmationStep({
       </span>
 
       <div className="flex flex-col gap-1">
-        <h2 className="font-semibold text-xl">Booking created</h2>
+        <h2 className="font-semibold text-xl"><T id="bookings.bookingCreated" /></h2>
         <p className="text-muted-foreground text-sm">
-          {bookingId} has been created for {traveler?.name}.
+          {bookingId} <T id="bookings.hasBeenCreatedFor" /> {traveler?.name}.
         </p>
       </div>
 
       <Card className="w-full max-w-md">
         <CardContent className="flex flex-col gap-3 p-4 text-left text-sm">
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Booking ID</span>
+            <span className="text-muted-foreground"><T id="bookings.bookingID" /></span>
             <span className="font-medium">{bookingId}</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Trip</span>
+            <span className="text-muted-foreground"><T id="bookings.trip" /></span>
             <span className="font-medium">{trip?.name}</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Departure</span>
+            <span className="text-muted-foreground"><T id="bookings.departure" /></span>
             <span className="font-medium">{trip ? format(parseISO(trip.departureDate), "d MMM yyyy") : "—"}</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Passengers</span>
+            <span className="text-muted-foreground"><T id="bookings.passengers" /></span>
             <span className="font-medium">{passengers.length}</span>
           </div>
           <div className="flex items-center justify-between border-t pt-3">
-            <span className="text-muted-foreground">Total amount</span>
+            <span className="text-muted-foreground"><T id="bookings.totalAmount" /></span>
             <span className="font-semibold tabular-nums">{formatCurrency(total)}</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-muted-foreground">Remaining balance</span>
+            <span className="text-muted-foreground"><T id="bookings.remainingBalance" /></span>
             <span className="tabular-nums">{formatCurrency(remaining)}</span>
           </div>
         </CardContent>
@@ -74,13 +75,13 @@ export function ConfirmationStep({
 
       <div className="flex flex-col items-center gap-2 sm:flex-row">
         <Button asChild>
-          <Link href="/dashboard/bookings">View bookings</Link>
+          <Link href="/dashboard/bookings"><T id="bookings.viewBookings" /></Link>
         </Button>
         <Button variant="outline" onClick={onCreateAnother}>
-          Create another booking
+          <T id="bookings.createAnotherBooking" />
         </Button>
         <Button variant="ghost" asChild>
-          <Link href="/dashboard/default">Return to dashboard</Link>
+          <Link href="/dashboard/default"><T id="bookings.returnToDashboard" /></Link>
         </Button>
       </div>
     </div>

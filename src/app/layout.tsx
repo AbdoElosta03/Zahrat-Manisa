@@ -1,12 +1,17 @@
 import type { ReactNode } from "react";
 
+import { cookies, headers } from "next/headers";
+
 import type { Metadata } from "next";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { APP_CONFIG } from "@/config/app-config";
+import { directionFor, LOCALE_COOKIE, PATHNAME_HEADER, parseLocale, resolveLocale } from "@/i18n/locale";
 import { fontVars } from "@/lib/fonts/registry";
+import { tajawal } from "@/lib/fonts/tajawal";
 import { PREFERENCE_DEFAULTS } from "@/lib/preferences/preferences-config";
+import { QueryProvider } from "@/lib/query/query-provider";
 import { ThemeBootScript } from "@/scripts/theme-boot";
 import { PreferencesStoreProvider } from "@/stores/preferences/preferences-provider";
 
@@ -29,12 +34,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  const cookieStore = await cookies();
+  const headerStore = await headers();
+  const locale = resolveLocale(
+    parseLocale(cookieStore.get(LOCALE_COOKIE)?.value),
+    headerStore.get(PATHNAME_HEADER) ?? "",
+  );
   const { theme_mode, theme_preset, content_layout, navbar_style, sidebar_variant, sidebar_collapsible, font } =
     PREFERENCE_DEFAULTS;
   return (
     <html
-      lang="en"
+      lang={locale}
+      dir={directionFor(locale)}
       data-theme-mode={theme_mode}
       data-theme-preset={theme_preset}
       data-content-layout={content_layout}
@@ -48,10 +60,10 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         {/* Applies theme and layout preferences on load to avoid flicker and unnecessary server rerenders. */}
         <ThemeBootScript />
       </head>
-      <body className={`${fontVars} min-h-screen antialiased`}>
+      <body className={`${fontVars} ${tajawal.variable} min-h-screen antialiased`}>
         <TooltipProvider>
           <PreferencesStoreProvider initialValues={PREFERENCE_DEFAULTS}>
-            {children}
+            <QueryProvider>{children}</QueryProvider>
             <Toaster />
           </PreferencesStoreProvider>
         </TooltipProvider>

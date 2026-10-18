@@ -139,8 +139,8 @@ export function LayoutControls() {
                 <ToggleGroupItem value="dark" aria-label="Toggle dark">
                   Dark
                 </ToggleGroupItem>
-                <ToggleGroupItem value="system" aria-label="Toggle system">
-                  System
+                <ToggleGroupItem value="manisa" aria-label="Toggle Manisa">
+                  Manisa
                 </ToggleGroupItem>
               </ToggleGroup>
             </div>

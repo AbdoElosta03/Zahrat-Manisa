@@ -1,6 +1,8 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -9,24 +11,17 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Field, FieldContent, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { getApiErrorMessage } from "@/lib/api/api-error";
+import { authApi } from "@/lib/api/services/auth";
 
 const formSchema = z.object({
   email: z.email({ message: "Please enter a valid email address." }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters." }),
+  password: z.string().min(1, { message: "Enter your password." }),
   remember: z.boolean().optional(),
 });
 
-function onSubmit(data: z.infer<typeof formSchema>) {
-  toast("You submitted the following values", {
-    description: (
-      <pre className="mt-2 w-[320px] rounded-md bg-neutral-950 p-4">
-        <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-      </pre>
-    ),
-  });
-}
-
 export function LoginForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,6 +30,24 @@ export function LoginForm() {
       remember: false,
     },
   });
+
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    try {
+      const result = await authApi.login({ email: data.email, password: data.password, remember_me: data.remember });
+      if ("transaction_token" in result) {
+        toast.info("Accept the current terms to continue signing in.");
+        return;
+      }
+      if ("challenge_token" in result) {
+        toast.info("MFA verification is required for this account.");
+        return;
+      }
+      toast.success("Signed in");
+      router.replace("/dashboard/default");
+    } catch (error) {
+      toast.error("Unable to sign in", { description: getApiErrorMessage(error) });
+    }
+  }
 
   return (
     <form noValidate onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4">
@@ -89,7 +102,7 @@ export function LoginForm() {
               />
               <FieldContent>
                 <FieldLabel htmlFor="login-remember" className="font-normal">
-                  Remember me for 30 days
+                  Remember me
                 </FieldLabel>
                 {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
               </FieldContent>
@@ -97,9 +110,10 @@ export function LoginForm() {
           )}
         />
       </FieldGroup>
-      <Button className="w-full" type="submit">
-        Login
+      <Button className="w-full" type="submit" disabled={form.formState.isSubmitting}>
+        {form.formState.isSubmitting ? "Signing in…" : "Login"}
       </Button>
+      <Link href="/forgot-password" className="text-center text-sm underline underline-offset-2">Forgot your password?</Link>
     </form>
   );
 }

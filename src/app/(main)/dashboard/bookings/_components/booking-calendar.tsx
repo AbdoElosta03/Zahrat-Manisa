@@ -11,17 +11,18 @@ import {
   endOfMonth,
   endOfWeek,
   format,
-  isSameDay,
   isSameMonth,
   isToday,
-  parseISO,
   startOfMonth,
   startOfWeek,
   subMonths,
 } from "date-fns";
+import { ar } from "date-fns/locale";
 import { ChevronLeft, ChevronRight, Plane, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/language-provider";
+import { T, V } from "@/i18n/t";
 
 import { bookingStatusDotStyles } from "./status-badge";
 import type { Booking } from "./types";
@@ -41,6 +42,7 @@ export function BookingCalendar({
   onSelectDate: (date: string) => void;
   onMonthChange: (date: Date) => void;
 }) {
+  const { direction, locale, t } = useLanguage();
   const bookingsByDate = useMemo(() => {
     const map = new Map<string, Booking[]>();
     for (const booking of bookings) {
@@ -61,28 +63,30 @@ export function BookingCalendar({
   return (
     <div className="flex h-full flex-col gap-3">
       <div className="flex items-center justify-between">
-        <span className="font-medium text-lg">{format(currentMonth, "MMMM yyyy")}</span>
+        <span className="font-medium text-lg">
+          {format(currentMonth, "MMMM yyyy", { locale: locale === "ar" ? ar : undefined })}
+        </span>
         <div className="flex items-center gap-1.5">
           <Button
             variant="outline"
             size="icon"
             className="size-8"
             onClick={() => onMonthChange(subMonths(currentMonth, 1))}
-            aria-label="Previous month"
+            aria-label={t("common.previousMonth")}
           >
-            <ChevronLeft />
+            {direction === "rtl" ? <ChevronRight /> : <ChevronLeft />}
           </Button>
           <Button variant="outline" size="sm" onClick={() => onMonthChange(new Date())}>
-            Today
+            <T id="bookings.today" />
           </Button>
           <Button
             variant="outline"
             size="icon"
             className="size-8"
             onClick={() => onMonthChange(addMonths(currentMonth, 1))}
-            aria-label="Next month"
+            aria-label={t("common.nextMonth")}
           >
-            <ChevronRight />
+            {direction === "rtl" ? <ChevronLeft /> : <ChevronRight />}
           </Button>
         </div>
       </div>
@@ -90,7 +94,7 @@ export function BookingCalendar({
       <div className="grid grid-cols-7 gap-1.5 text-center text-muted-foreground text-xs">
         {weekdayLabels.map((label) => (
           <span key={label} className="py-1">
-            {label}
+            <V scope="bookings" text={label} />
           </span>
         ))}
       </div>
@@ -141,7 +145,9 @@ export function BookingCalendar({
                         sizes="24px"
                       />
                     </div>
-                    <span className="truncate font-medium text-xs">{primary.destination}</span>
+                    <span className="truncate font-medium text-xs">
+                      <V scope="bookings" text={primary.destination} />
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
                     <span className="flex items-center gap-0.5">
@@ -164,7 +170,9 @@ export function BookingCalendar({
                       ))}
                     </div>
                     {extraCount > 0 ? (
-                      <span className="text-[10px] text-muted-foreground">+{extraCount} more</span>
+                      <span className="text-[10px] text-muted-foreground">
+                        +{extraCount} <T id="bookings.more" />
+                      </span>
                     ) : null}
                   </div>
                 </div>

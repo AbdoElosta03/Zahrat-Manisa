@@ -1,3 +1,4 @@
+import { T, V } from "@/i18n/t";
 import { format, parseISO } from "date-fns";
 
 import { Badge } from "@/components/ui/badge";
@@ -28,13 +29,13 @@ export function RecentBookingsCard() {
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle className="font-normal text-muted-foreground text-sm">Recent Bookings</CardTitle>
+        <CardTitle className="font-normal text-muted-foreground text-sm"><T id="default.recentBookings" /></CardTitle>
         <CardDescription className="text-foreground text-xl tabular-nums leading-none tracking-tight">
-          Latest {recentBookings.length} bookings
+          <T id="default.latest" /> {recentBookings.length} <T id="default.bookings" />
         </CardDescription>
         <CardAction>
           <Button variant="outline" size="sm">
-            View all
+            <T id="default.viewAll" />
           </Button>
         </CardAction>
       </CardHeader>
@@ -50,13 +51,13 @@ export function RecentBookingsCard() {
                 <span className="shrink-0 text-muted-foreground text-xs tabular-nums">{booking.id}</span>
               </div>
               <span className="truncate text-muted-foreground text-xs">
-                {booking.destination} · {format(parseISO(booking.travelDate), "d MMM")}
+                <V scope="default" text={booking.destination} /> · {format(parseISO(booking.travelDate), "d MMM")}
               </span>
             </div>
             <div className="flex shrink-0 flex-col items-end gap-1">
               <span className="font-medium text-sm tabular-nums leading-none">{formatCurrency(booking.amount)}</span>
               <Badge variant={statusVariants[booking.status]} className="px-1.5 py-0 text-[10px] capitalize">
-                {booking.status}
+                <V scope="default" text={booking.status} />
               </Badge>
             </div>
           </div>

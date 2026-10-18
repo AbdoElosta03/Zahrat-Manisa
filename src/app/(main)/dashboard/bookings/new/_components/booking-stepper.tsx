@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import { Check } from "lucide-react";
 
 import { Progress } from "@/components/ui/progress";
@@ -47,7 +48,7 @@ export function BookingStepper({
                     isCurrent ? "text-foreground" : isComplete ? "text-foreground" : "text-muted-foreground"
                   }`}
                 >
-                  {step.label}
+                  <V scope="bookings" text={step.label} />
                 </span>
               </button>
               {index < STEPS.length - 1 ? (
@@ -61,7 +62,7 @@ export function BookingStepper({
       <div className="flex flex-col gap-2 sm:hidden">
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground">
-            Step {currentIndex + 1} of {STEPS.length}
+            <T id="bookings.step" /> {currentIndex + 1} <T id="bookings.of" /> {STEPS.length}
           </span>
           <span className="font-medium">{STEPS[currentIndex]?.label}</span>
         </div>

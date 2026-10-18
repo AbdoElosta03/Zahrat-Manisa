@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/command";
 import type { NavMainItem } from "@/navigation/sidebar/sidebar-items";
 import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
+import { usePermissions } from "@/app/(main)/dashboard/_components/access/access.queries";
 
 type SearchItem = {
   id: string;
@@ -67,8 +68,6 @@ function getAvailableItems(items: SearchItem[]) {
   return items.filter((item) => !item.disabled && !item.url.includes("coming-soon"));
 }
 
-const recommendations = getAvailableItems(searchItems);
-
 function groupBy(items: SearchItem[]) {
   const groups = [...new Set(items.map((item) => item.group))];
   return groups.map((group) => ({
@@ -81,6 +80,14 @@ export function SearchDialog() {
   const [open, setOpen] = React.useState(false);
   const [query, setQuery] = React.useState("");
   const router = useRouter();
+  const { can, currentUser } = usePermissions();
+  const permittedSearchItems = searchItems.filter((item) => {
+    const group = sidebarItems.find((entry) => entry.items.some((navItem) => navItem.id === item.id || navItem.subItems?.some((subItem) => subItem.id === item.id)));
+    const parent = group?.items.find((navItem) => navItem.id === item.id || navItem.subItems?.some((subItem) => subItem.id === item.id));
+    const permission = parent?.subItems?.find((subItem) => subItem.id === item.id)?.permission ?? parent?.permission;
+    return !permission || can(permission);
+  });
+  const permittedRecommendations = getAvailableItems(permittedSearchItems);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -148,7 +155,7 @@ export function SearchDialog() {
           <CommandInput placeholder="Search dashboards, users, and more…" value={query} onValueChange={setQuery} />
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
-            {query ? renderGroups(searchItems) : renderGroups(recommendations)}
+            {currentUser && (query ? renderGroups(permittedSearchItems) : renderGroups(permittedRecommendations))}
           </CommandList>
         </Command>
       </CommandDialog>

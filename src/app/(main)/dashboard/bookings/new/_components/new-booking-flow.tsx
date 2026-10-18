@@ -1,5 +1,6 @@
 "use client";
 
+import { T } from "@/i18n/t";
 import { useMemo, useState } from "react";
 
 import Link from "next/link";
@@ -151,12 +152,12 @@ export function NewBookingFlow() {
           <Button variant="ghost" size="icon-sm" asChild>
             <Link href="/dashboard/bookings">
               <ArrowLeft />
-              <span className="sr-only">Back to bookings</span>
+              <span className="sr-only"><T id="bookings.backToBookings" /></span>
             </Link>
           </Button>
           <div>
-            <h1 className="font-semibold text-2xl tracking-tight">New Booking</h1>
-            <p className="text-muted-foreground text-sm">Create a booking for a traveler in a few steps.</p>
+            <h1 className="font-semibold text-2xl tracking-tight"><T id="bookings.newBooking" /></h1>
+            <p className="text-muted-foreground text-sm"><T id="bookings.createABookingForATravelerInAFewSteps" /></p>
           </div>
         </div>
       ) : null}
@@ -213,7 +214,7 @@ export function NewBookingFlow() {
               <div className="mt-6 flex items-center justify-between border-t pt-4">
                 <Button variant="outline" onClick={handleBack} disabled={stepIndex === 0}>
                   <ArrowLeft data-icon="inline-start" />
-                  Back
+                  <T id="bookings.back" />
                 </Button>
                 <Button onClick={handleNext} disabled={!canProceed}>
                   {currentKey === "review" ? "Create booking" : "Continue"}

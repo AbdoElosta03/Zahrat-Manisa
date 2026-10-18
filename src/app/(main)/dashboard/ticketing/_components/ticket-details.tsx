@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import { cn } from "cn";
 import {
   Armchair,
@@ -39,9 +40,9 @@ function EmptyTicketDetails() {
         <EmptyMedia variant="icon">
           <TicketIcon />
         </EmptyMedia>
-        <EmptyTitle>Select a ticket</EmptyTitle>
+        <EmptyTitle><T id="ticketing.selectATicket" /></EmptyTitle>
         <EmptyDescription>
-          Choose a ticket from the list to view passenger, flight and payment details.
+          <T id="ticketing.chooseATicketFromTheListToViewPassengerFlightAndPaymentDetails" />
         </EmptyDescription>
       </Empty>
     </Card>
@@ -59,8 +60,8 @@ function HeroPanel({ ticket }: { ticket: Ticket }) {
         crossOrigin="anonymous"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-sea/10 via-black/35 to-background" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-background via-background/80 to-transparent backdrop-blur-md" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-sea/10 via-black/15 to-background/80" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background/70 via-background/30 to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_top,black_0%,black_30%,transparent_100%)]" />
 
       <div className="flex h-full flex-col justify-between gap-5 p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -76,14 +77,14 @@ function HeroPanel({ ticket }: { ticket: Ticket }) {
             <div>
               <h2 className="text-lg leading-none font-semibold text-white drop-shadow-sm">{ticket.id}</h2>
               <p className="mt-1 flex items-center gap-1.5 text-sm text-white/85 drop-shadow-sm">
-                {ticket.airline} · PNR {ticket.pnr}
+                <V scope="ticketing" text={ticket.airline} /> <T id="ticketing.pnr" /> {ticket.pnr}
               </p>
             </div>
           </div>
           <div className="flex flex-col items-end gap-2">
             <Badge variant="outline" className={cn("gap-1.5 backdrop-blur-sm", status.badge)}>
               <span className="size-1.5 rounded-full bg-current" />
-              {ticket.status}
+              <V scope="ticketing" text={ticket.status} />
             </Badge>
             <span className="flex items-center gap-1.5 text-xs text-white/85 drop-shadow-sm">
               <CalendarDays className="size-3.5" />
@@ -95,7 +96,7 @@ function HeroPanel({ ticket }: { ticket: Ticket }) {
         <div className="flex items-center gap-3">
           <div>
             <div className="text-2xl font-semibold tracking-tight tabular-nums">{ticket.origin.code}</div>
-            <div className="text-xs text-muted-foreground">{ticket.origin.city}</div>
+            <div className="text-xs text-muted-foreground"><V scope="ticketing" text={ticket.origin.city} /></div>
             <div className="mt-2 text-sm font-medium tabular-nums">{ticket.departure}</div>
           </div>
 
@@ -113,7 +114,7 @@ function HeroPanel({ ticket }: { ticket: Ticket }) {
 
           <div className="text-right">
             <div className="text-2xl font-semibold tracking-tight tabular-nums">{ticket.destination.code}</div>
-            <div className="text-xs text-muted-foreground">{ticket.destination.city}</div>
+            <div className="text-xs text-muted-foreground"><V scope="ticketing" text={ticket.destination.city} /></div>
             <div className="mt-2 text-sm font-medium tabular-nums">{ticket.arrival}</div>
           </div>
         </div>
@@ -126,7 +127,7 @@ function OverviewTab({ ticket }: { ticket: Ticket }) {
   return (
     <div className="flex flex-col gap-5">
       <div>
-        <h3 className="mb-3 text-sm font-medium">Passenger Information</h3>
+        <h3 className="mb-3 text-sm font-medium"><T id="ticketing.passengerInformation" /></h3>
         <div className="flex items-center gap-3 rounded-xl border p-3">
           <Avatar className="size-10">
             <AvatarFallback>{initials(ticket.passenger.name)}</AvatarFallback>
@@ -134,7 +135,7 @@ function OverviewTab({ ticket }: { ticket: Ticket }) {
           <div className="min-w-0">
             <div className="truncate text-sm font-medium">{ticket.passenger.name}</div>
             <div className="truncate text-xs text-muted-foreground">
-              Passport: {ticket.passenger.passport} · {ticket.passenger.nationality}
+              <T id="ticketing.passport" /> {ticket.passenger.passport} · {ticket.passenger.nationality}
             </div>
           </div>
         </div>
@@ -155,7 +156,7 @@ function OverviewTab({ ticket }: { ticket: Ticket }) {
 function InfoRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-1">
-      <span className="text-xs text-muted-foreground">{label}</span>
+      <span className="text-xs text-muted-foreground"><V scope="ticketing" text={label} /></span>
       <span className="text-sm font-medium">{value}</span>
     </div>
   );
@@ -194,9 +195,9 @@ function PaymentTab({ ticket }: { ticket: Ticket }) {
         <InfoRow label="Payment method" value={ticket.paymentMethod} />
         <InfoRow label="Payment date" value={ticket.paymentDate} />
         <div className="flex flex-col gap-1">
-          <span className="text-xs text-muted-foreground">Payment status</span>
+          <span className="text-xs text-muted-foreground"><T id="ticketing.paymentStatus" /></span>
           <Badge variant="outline" className="w-fit gap-1.5 border-border bg-muted text-foreground">
-            {ticket.paymentStatus}
+            <V scope="ticketing" text={ticket.paymentStatus} />
           </Badge>
         </div>
       </div>
@@ -207,32 +208,32 @@ function PaymentTab({ ticket }: { ticket: Ticket }) {
         <div
           className={cn("flex items-center justify-between px-4 py-2.5 text-white", airlineStyles[ticket.airlineCode])}
         >
-          <span className="text-sm font-semibold">{ticket.airline}</span>
+          <span className="text-sm font-semibold"><V scope="ticketing" text={ticket.airline} /></span>
           <QrCode className="size-5" />
         </div>
         <div className="grid grid-cols-3 gap-3 p-4">
           <div>
-            <div className="text-xs text-muted-foreground">Passenger</div>
+            <div className="text-xs text-muted-foreground"><T id="ticketing.passenger" /></div>
             <div className="truncate text-sm font-medium">{ticket.passenger.name}</div>
           </div>
           <div>
-            <div className="text-xs text-muted-foreground">PNR</div>
+            <div className="text-xs text-muted-foreground"><T id="ticketing.pnr2" /></div>
             <div className="text-sm font-medium">{ticket.pnr}</div>
           </div>
           <div>
-            <div className="text-xs text-muted-foreground">Flight</div>
+            <div className="text-xs text-muted-foreground"><T id="ticketing.flight" /></div>
             <div className="text-sm font-medium">{ticket.flightNumber}</div>
           </div>
           <div>
-            <div className="text-xs text-muted-foreground">Date</div>
+            <div className="text-xs text-muted-foreground"><T id="ticketing.date" /></div>
             <div className="text-sm font-medium">{ticket.date}</div>
           </div>
           <div>
-            <div className="text-xs text-muted-foreground">Gate</div>
+            <div className="text-xs text-muted-foreground"><T id="ticketing.gate" /></div>
             <div className="text-sm font-medium">{ticket.gate}</div>
           </div>
           <div>
-            <div className="text-xs text-muted-foreground">Seat</div>
+            <div className="text-xs text-muted-foreground"><T id="ticketing.seat" /></div>
             <div className="text-sm font-medium">{ticket.seat}</div>
           </div>
         </div>
@@ -252,10 +253,10 @@ function HistoryTab({ ticket }: { ticket: Ticket }) {
           </div>
           <div className={cn("flex flex-col gap-0.5", index < ticket.history.length - 1 && "pb-5")}>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-medium">{event.label}</span>
-              <span className="text-xs text-muted-foreground">· {event.time}</span>
+              <span className="text-sm font-medium"><V scope="ticketing" text={event.label} /></span>
+              <span className="text-xs text-muted-foreground">· <V scope="ticketing" text={event.time} /></span>
             </div>
-            <p className="text-sm text-muted-foreground">{event.description}</p>
+            <p className="text-sm text-muted-foreground"><V scope="ticketing" text={event.description} /></p>
           </div>
         </div>
       ))}
@@ -279,9 +280,9 @@ export function TicketDetails({ ticket }: { ticket: Ticket | null }) {
               <Armchair className="size-4" />
             </div>
             <div className="min-w-0">
-              <div className="text-xs text-muted-foreground">Seat / Class</div>
+              <div className="text-xs text-muted-foreground"><T id="ticketing.seatClass" /></div>
               <div className="truncate text-sm font-medium">
-                {ticket.seat} · {ticket.cabinClass}
+                {ticket.seat} · <V scope="ticketing" text={ticket.cabinClass} />
               </div>
             </div>
           </div>
@@ -290,7 +291,7 @@ export function TicketDetails({ ticket }: { ticket: Ticket | null }) {
               <User className="size-4" />
             </div>
             <div className="min-w-0">
-              <div className="text-xs text-muted-foreground">Passengers</div>
+              <div className="text-xs text-muted-foreground"><T id="ticketing.passengers" /></div>
               <div className="truncate text-sm font-medium">{ticket.passenger.paxCount}</div>
             </div>
           </div>
@@ -298,10 +299,10 @@ export function TicketDetails({ ticket }: { ticket: Ticket | null }) {
 
         <Tabs defaultValue="overview">
           <TabsList className="w-full justify-start" variant="line">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="flight">Flight</TabsTrigger>
-            <TabsTrigger value="payment">Payment</TabsTrigger>
-            <TabsTrigger value="history">History</TabsTrigger>
+            <TabsTrigger value="overview"><T id="ticketing.overview" /></TabsTrigger>
+            <TabsTrigger value="flight"><T id="ticketing.flight" /></TabsTrigger>
+            <TabsTrigger value="payment"><T id="ticketing.payment" /></TabsTrigger>
+            <TabsTrigger value="history"><T id="ticketing.history" /></TabsTrigger>
           </TabsList>
           <TabsContent value="overview" className="mt-5">
             <OverviewTab ticket={ticket} />
@@ -322,11 +323,11 @@ export function TicketDetails({ ticket }: { ticket: Ticket | null }) {
         <div className="flex flex-col gap-2 sm:flex-row">
           <Button className="flex-1">
             <Download data-icon="inline-start" />
-            Download
+            <T id="ticketing.download" />
           </Button>
           <Button variant="outline" className="flex-1">
             <Mail data-icon="inline-start" />
-            Email Ticket
+            <T id="ticketing.emailTicket" />
           </Button>
           <Button variant="outline" size="icon" aria-label="More actions">
             <MoreHorizontal />

@@ -1,3 +1,4 @@
+import { T, V } from "@/i18n/t";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
@@ -30,13 +31,13 @@ export function TopDestinations() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-normal text-muted-foreground text-sm">Top Destinations</CardTitle>
+        <CardTitle className="font-normal text-muted-foreground text-sm"><T id="default.topDestinations" /></CardTitle>
         <CardDescription className="text-foreground text-xl tabular-nums leading-none tracking-tight">
-          {destinations.length} active packages
+          {destinations.length} <T id="default.activePackages" />
         </CardDescription>
         <CardAction>
           <Button variant="outline" size="sm">
-            View all
+            <T id="default.viewAll" />
           </Button>
         </CardAction>
       </CardHeader>
@@ -54,7 +55,7 @@ export function TopDestinations() {
             </div>
             <div className="flex min-w-0 flex-1 flex-col gap-1">
               <div className="flex items-baseline justify-between gap-2">
-                <span className="truncate font-medium text-sm leading-none">{destination.city}</span>
+                <span className="truncate font-medium text-sm leading-none"><V scope="default" text={destination.city} /></span>
                 <span className="shrink-0 text-muted-foreground text-xs tabular-nums">
                   {formatCurrency(destination.revenue)}
                 </span>

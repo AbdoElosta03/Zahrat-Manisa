@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import Image from "next/image";
 
 import { format, parseISO } from "date-fns";
@@ -8,6 +9,7 @@ import { Banknote, Building2, CreditCard, Pencil, Wallet } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useI18n } from "@/i18n/language-provider";
 
 import type { BookingDraft } from "./types";
 
@@ -25,6 +27,7 @@ function formatCurrency(amount: number) {
 }
 
 export function ReviewStep({ draft, onEditStep }: { draft: BookingDraft; onEditStep: (index: number) => void }) {
+  const { t } = useI18n();
   const { traveler, trip, passengers, discount, taxesFees, paidAmount, paymentMethod } = draft;
   const subtotal = (trip?.price ?? 0) * passengers.length;
   const total = Math.max(0, subtotal - discount + taxesFees);
@@ -34,8 +37,8 @@ export function ReviewStep({ draft, onEditStep }: { draft: BookingDraft; onEditS
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <h2 className="font-semibold text-lg">Review booking</h2>
-        <p className="text-muted-foreground text-sm">Confirm everything looks right before creating the booking.</p>
+        <h2 className="font-semibold text-lg"><T id="bookings.reviewBooking" /></h2>
+        <p className="text-muted-foreground text-sm"><T id="bookings.confirmEverythingLooksRightBeforeCreatingTheBooking" /></p>
       </div>
 
       <Card>
@@ -52,7 +55,7 @@ export function ReviewStep({ draft, onEditStep }: { draft: BookingDraft; onEditS
           </div>
           <Button variant="ghost" size="icon-sm" onClick={() => onEditStep(0)}>
             <Pencil className="text-muted-foreground" />
-            <span className="sr-only">Edit traveler</span>
+            <span className="sr-only"><T id="bookings.editTraveler" /></span>
           </Button>
         </CardContent>
       </Card>
@@ -74,14 +77,14 @@ export function ReviewStep({ draft, onEditStep }: { draft: BookingDraft; onEditS
             <div className="flex flex-col gap-0.5">
               <span className="font-medium text-sm">{trip?.name}</span>
               <span className="text-muted-foreground text-xs">
-                {trip ? format(parseISO(trip.departureDate), "d MMM yyyy") : ""} &middot; {trip?.duration}
+                {trip ? format(parseISO(trip.departureDate), "d MMM yyyy") : ""} <T id="bookings.middot" /> {trip?.duration}
               </span>
-              <span className="text-muted-foreground text-xs">Guide: {trip?.guide}</span>
+              <span className="text-muted-foreground text-xs"><T id="bookings.guide" /> {trip?.guide}</span>
             </div>
           </div>
           <Button variant="ghost" size="icon-sm" onClick={() => onEditStep(1)}>
             <Pencil className="text-muted-foreground" />
-            <span className="sr-only">Edit trip</span>
+            <span className="sr-only"><T id="bookings.editTrip" /></span>
           </Button>
         </div>
       </Card>
@@ -97,13 +100,11 @@ export function ReviewStep({ draft, onEditStep }: { draft: BookingDraft; onEditS
               ))}
               {passengers.length > 3 ? <AvatarGroupCount>+{passengers.length - 3}</AvatarGroupCount> : null}
             </AvatarGroup>
-            <span className="text-sm">
-              {passengers.length} passenger{passengers.length === 1 ? "" : "s"}
-            </span>
+            <span className="text-sm">{t("bookings.passengerCount", { count: passengers.length })}</span>
           </div>
           <Button variant="ghost" size="icon-sm" onClick={() => onEditStep(2)}>
             <Pencil className="text-muted-foreground" />
-            <span className="sr-only">Edit passengers</span>
+            <span className="sr-only"><T id="bookings.editPassengers" /></span>
           </Button>
         </CardContent>
       </Card>
@@ -113,24 +114,24 @@ export function ReviewStep({ draft, onEditStep }: { draft: BookingDraft; onEditS
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-1.5 text-sm">
               <PaymentIcon className="size-4 text-muted-foreground" />
-              {paymentMethodConfig[paymentMethod].label}
+              <V scope="bookings" text={paymentMethodConfig[paymentMethod].label} />
             </span>
             <Button variant="ghost" size="icon-sm" onClick={() => onEditStep(3)}>
               <Pencil className="text-muted-foreground" />
-              <span className="sr-only">Edit payment</span>
+              <span className="sr-only"><T id="bookings.editPayment" /></span>
             </Button>
           </div>
           <div className="flex flex-col gap-1.5 text-sm">
             <div className="flex items-center justify-between">
-              <span className="text-muted-foreground">Total</span>
+              <span className="text-muted-foreground"><T id="bookings.total" /></span>
               <span className="font-semibold tabular-nums">{formatCurrency(total)}</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-muted-foreground">Paid now</span>
+              <span className="text-muted-foreground"><T id="bookings.paidNow" /></span>
               <span className="tabular-nums">{formatCurrency(paidAmount)}</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-muted-foreground">Remaining</span>
+              <span className="text-muted-foreground"><T id="bookings.remaining" /></span>
               <span className="tabular-nums">{formatCurrency(remaining)}</span>
             </div>
           </div>

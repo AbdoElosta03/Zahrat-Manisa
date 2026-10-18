@@ -1,3 +1,4 @@
+import { T } from "@/i18n/t";
 import { CalendarDays, Download, Filter, Plus } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -15,25 +16,25 @@ export default function Page() {
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-semibold tracking-tight">Ticketing</h1>
-          <p className="text-sm text-muted-foreground">Manage issued tickets, passengers, fares and ticket status.</p>
+          <h1 className="text-2xl font-semibold tracking-tight"><T id="ticketing.ticketing" /></h1>
+          <p className="text-sm text-muted-foreground"><T id="ticketing.manageIssuedTicketsPassengersFaresAndTicketStatus" /></p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <Button variant="outline">
             <CalendarDays data-icon="inline-start" />
-            Tue, Sep 3, 2026
+            <T id="ticketing.tueSep32026" />
           </Button>
           <Button variant="outline">
             <Filter data-icon="inline-start" />
-            Filter
+            <T id="ticketing.filter" />
           </Button>
           <Button variant="outline">
             <Download data-icon="inline-start" />
-            Export
+            <T id="ticketing.export" />
           </Button>
           <Button>
             <Plus data-icon="inline-start" />
-            Issue Ticket
+            <T id="ticketing.issueTicket" />
           </Button>
         </div>
       </div>

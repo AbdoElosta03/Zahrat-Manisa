@@ -1,3 +1,5 @@
+"use client";
+
 import type { ComponentType } from "react";
 
 import Image from "next/image";
@@ -5,6 +7,8 @@ import Image from "next/image";
 import { CalendarCheck, Plane, TrendingDown, TrendingUp, Users } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { useI18n } from "@/i18n/language-provider";
+import { V } from "@/i18n/t";
 
 import metricsData from "./kpi-data.json";
 import revenueData from "./revenue-data.json";
@@ -43,14 +47,6 @@ const accents: Record<string, { icon: string; spark: string }> = {
   "upcoming-trips": { icon: "bg-amber-500/10 text-amber-500", spark: "bg-amber-500" },
 };
 
-function formatNumber(value: number) {
-  return value.toLocaleString();
-}
-
-function formatCurrency(value: number) {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(value);
-}
-
 function TrendBadge({ change, trend }: { change: number; trend: "up" | "down" }) {
   const isUp = trend === "up";
   return (
@@ -65,6 +61,7 @@ function TrendBadge({ change, trend }: { change: number; trend: "up" | "down" })
 }
 
 export function BookingKpiCards() {
+  const { formatCurrency, formatNumber } = useI18n();
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
       <Card className="gap-0 py-0 lg:col-span-2">
@@ -97,12 +94,18 @@ export function BookingKpiCards() {
                   <span className="font-medium text-2xl leading-none tracking-tight tabular-nums">
                     {formatNumber(metric.value)}
                   </span>
-                  <span className="text-muted-foreground text-sm">{metric.label}</span>
+                  <span className="text-muted-foreground text-sm">
+                    <V scope="bookings" text={metric.label} />
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-1.5">
                   <TrendBadge change={metric.change} trend={metric.trend} />
-                  {metric.helper ? <span className="text-muted-foreground text-xs">{metric.helper}</span> : null}
+                  {metric.helper ? (
+                    <span className="text-muted-foreground text-xs">
+                      <V scope="bookings" text={metric.helper} />
+                    </span>
+                  ) : null}
                 </div>
               </div>
             );
@@ -121,7 +124,9 @@ export function BookingKpiCards() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
         <CardContent className="relative flex h-full flex-col justify-between gap-3 p-5 text-white">
-          <span className="font-medium text-sm text-white/80">{revenue.label}</span>
+          <span className="font-medium text-sm text-white/80">
+            <V scope="bookings" text={revenue.label} />
+          </span>
           <div className="flex flex-col gap-1.5">
             <span className="font-semibold text-3xl leading-none tracking-tight tabular-nums">
               {formatCurrency(revenue.value)}

@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import * as React from "react";
 
 import { cn } from "cn";
@@ -23,6 +24,7 @@ import {
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useLanguage } from "@/i18n/language-provider";
 
 import { airlineStyles, statusStyles, type Ticket, type TicketFilter, ticketFilters } from "./ticketing-data";
 
@@ -43,6 +45,7 @@ type TicketTableProps = {
 };
 
 export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: TicketTableProps) {
+  const { t } = useLanguage();
   const [tab, setTab] = React.useState<TicketFilter>("all");
   const [query, setQuery] = React.useState("");
   const [airline, setAirline] = React.useState("all");
@@ -100,7 +103,7 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
           <TabsList className="w-full flex-wrap justify-start" variant="line">
             {ticketFilters.map((filter) => (
               <TabsTrigger key={filter} className="text-xs capitalize" value={filter}>
-                {filter === "all" ? "All" : filter} ({counts[filter]})
+                <V scope="ticketing" text={filter === "all" ? "All" : filter[0].toUpperCase() + filter.slice(1)} /> ({counts[filter]})
               </TabsTrigger>
             ))}
           </TabsList>
@@ -114,8 +117,8 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
                 setQuery(event.target.value);
                 setPage(1);
               }}
-              aria-label="Search tickets"
-              placeholder="Search tickets, passenger, PNR..."
+              aria-label={t("common.searchTickets")}
+              placeholder={t("common.searchTickets")}
             />
             <InputGroupAddon>
               <Search />
@@ -130,10 +133,10 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
             }}
           >
             <SelectTrigger size="sm" className="w-full sm:w-44">
-              <SelectValue placeholder="Airline" />
+              <SelectValue placeholder={t("common.airline")} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All airlines</SelectItem>
+              <SelectItem value="all"><T id="ticketing.allAirlines" /></SelectItem>
               {airlines.map((name) => (
                 <SelectItem key={name} value={name}>
                   {name}
@@ -144,7 +147,7 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
 
           <Button variant="ghost" size="sm" className="sm:ml-auto" onClick={resetFilters}>
             <RotateCcw data-icon="inline-start" />
-            Reset
+            <T id="ticketing.reset" />
           </Button>
         </div>
       </CardHeader>
@@ -156,8 +159,8 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
               <EmptyMedia variant="icon">
                 <TicketIcon />
               </EmptyMedia>
-              <EmptyTitle>No tickets found</EmptyTitle>
-              <EmptyDescription>Try adjusting your search or filters.</EmptyDescription>
+              <EmptyTitle><T id="ticketing.noTicketsFound" /></EmptyTitle>
+              <EmptyDescription><T id="ticketing.tryAdjustingYourSearchOrFilters" /></EmptyDescription>
             </Empty>
           </div>
         ) : (
@@ -168,12 +171,12 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
                   <TableHead className="w-10">
                     <Checkbox aria-label="Select all tickets" />
                   </TableHead>
-                  <TableHead>Ticket</TableHead>
-                  <TableHead>Passenger</TableHead>
-                  <TableHead>Route</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead className="text-right">Amount</TableHead>
-                  <TableHead>Status</TableHead>
+                  <TableHead><T id="ticketing.ticket" /></TableHead>
+                  <TableHead><T id="ticketing.passenger" /></TableHead>
+                  <TableHead><T id="ticketing.route" /></TableHead>
+                  <TableHead><T id="ticketing.date" /></TableHead>
+                  <TableHead className="text-right"><T id="ticketing.amount" /></TableHead>
+                  <TableHead><T id="ticketing.status" /></TableHead>
                   <TableHead className="w-10" />
                 </TableRow>
               </TableHeader>
@@ -204,7 +207,7 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
                           </div>
                           <div className="min-w-0">
                             <div className="truncate text-sm font-medium">{ticket.id}</div>
-                            <div className="truncate text-xs text-muted-foreground">PNR: {ticket.pnr}</div>
+                            <div className="truncate text-xs text-muted-foreground"><T id="ticketing.pnr3" /> {ticket.pnr}</div>
                           </div>
                         </div>
                       </TableCell>
@@ -216,7 +219,7 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
                           <div className="min-w-0">
                             <div className="truncate text-sm font-medium">{ticket.passenger.name}</div>
                             <div className="truncate text-xs text-muted-foreground">
-                              {ticket.passenger.paxCount} passenger{ticket.passenger.paxCount > 1 ? "s" : ""}
+                              {t("ticketing.passengerCount", { count: ticket.passenger.paxCount })}
                             </div>
                           </div>
                         </div>
@@ -232,7 +235,7 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
                       <TableCell>
                         <Badge variant="outline" className={cn("gap-1.5 text-xs", status.badge)}>
                           <span className="size-1.5 rounded-full bg-current" />
-                          {ticket.status}
+                          <V scope="ticketing" text={ticket.status} />
                         </Badge>
                       </TableCell>
                       <TableCell>
@@ -250,8 +253,8 @@ export function TicketTable({ tickets, selectedTicketId, onSelectTicket }: Ticke
       {filtered.length > 0 && (
         <div className="flex flex-col gap-3 border-t p-4 sm:flex-row sm:items-center sm:justify-between">
           <span className="text-sm text-muted-foreground">
-            Showing {(currentPage - 1) * PAGE_SIZE + 1} to {Math.min(currentPage * PAGE_SIZE, filtered.length)} of{" "}
-            {filtered.length} tickets
+            <T id="ticketing.showing" /> {(currentPage - 1) * PAGE_SIZE + 1} <T id="ticketing.to" /> {Math.min(currentPage * PAGE_SIZE, filtered.length)} <T id="ticketing.of" />{" "}
+            {filtered.length} <T id="ticketing.tickets" />
           </span>
           <Pagination className="mx-0 w-auto">
             <PaginationContent>

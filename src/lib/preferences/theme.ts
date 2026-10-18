@@ -1,7 +1,7 @@
-const THEME_MODE_OPTIONS = [
+export const THEME_MODE_OPTIONS = [
   { label: "Light", value: "light" },
   { label: "Dark", value: "dark" },
-  { label: "System", value: "system" },
+  { label: "Manisa", value: "manisa" },
 ] as const;
 
 export const THEME_MODE_VALUES = THEME_MODE_OPTIONS.map((o) => o.value);
@@ -15,8 +15,8 @@ export const THEME_PRESET_OPTIONS = [
     label: "Default",
     value: "default",
     primary: {
-      light: "oklch(0.48 0.095 195)",
-      dark: "oklch(0.74 0.11 190)",
+      light: "oklch(0.4442 0.0899 237.39)",
+      dark: "oklch(0.64 0.083 237.39)",
     },
   },
   {

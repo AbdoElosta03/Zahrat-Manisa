@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import { useState } from "react";
 
 import { Plus, Trash2, Users } from "lucide-react";
@@ -12,6 +13,7 @@ import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useI18n } from "@/i18n/language-provider";
 
 import type { DocumentStatus, Passenger, PassengerType } from "./types";
 
@@ -41,6 +43,7 @@ export function PassengersStep({
   onAdd: (passenger: Omit<Passenger, "id">) => void;
   onRemove: (id: string) => void;
 }) {
+  const { t } = useI18n();
   const [name, setName] = useState("");
   const [type, setType] = useState<PassengerType>("adult");
   const [age, setAge] = useState("");
@@ -67,18 +70,16 @@ export function PassengersStep({
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <h2 className="font-semibold text-lg">Passengers</h2>
-        <p className="text-muted-foreground text-sm">Add everyone traveling on this booking.</p>
+        <h2 className="font-semibold text-lg"><T id="bookings.passengers" /></h2>
+        <p className="text-muted-foreground text-sm"><T id="bookings.addEveryoneTravelingOnThisBooking" /></p>
       </div>
 
       <div className="flex items-center gap-4 rounded-lg border bg-muted/30 px-4 py-3 text-sm">
         <span className="flex items-center gap-1.5 font-medium">
           <Users className="size-4 text-muted-foreground" />
-          {passengers.length} total
+          {passengers.length} <T id="bookings.total2" />
         </span>
-        <span className="text-muted-foreground">
-          {adults} adult{adults === 1 ? "" : "s"} &middot; {children} child{children === 1 ? "" : "ren"}
-        </span>
+        <span className="text-muted-foreground">{t("bookings.partyLine", { adults, children })}</span>
       </div>
 
       {passengers.length === 0 ? (
@@ -87,8 +88,8 @@ export function PassengersStep({
             <EmptyMedia variant="icon">
               <Users />
             </EmptyMedia>
-            <EmptyTitle>No passengers yet</EmptyTitle>
-            <EmptyDescription>Add at least one passenger to continue.</EmptyDescription>
+            <EmptyTitle><T id="bookings.noPassengersYet" /></EmptyTitle>
+            <EmptyDescription><T id="bookings.addAtLeastOnePassengerToContinue" /></EmptyDescription>
           </EmptyHeader>
         </Empty>
       ) : (
@@ -105,18 +106,18 @@ export function PassengersStep({
                     <span className="truncate font-medium text-sm">
                       {passenger.name}
                       {passenger.isPrimary ? (
-                        <span className="ml-1.5 text-muted-foreground text-xs">(Primary traveler)</span>
+                        <span className="ml-1.5 text-muted-foreground text-xs"><T id="bookings.primaryTraveler" /></span>
                       ) : null}
                     </span>
                     <span className="text-muted-foreground text-xs">
-                      {typeLabels[passenger.type]} &middot; Age {passenger.age}
+                      {typeLabels[passenger.type]} <T id="bookings.middotAge" /> {passenger.age}
                     </span>
                   </div>
-                  <Badge className={document.className}>{document.label}</Badge>
+                  <Badge className={document.className}><V scope="bookings" text={document.label} /></Badge>
                   {!passenger.isPrimary ? (
                     <Button variant="ghost" size="icon-sm" onClick={() => onRemove(passenger.id)}>
                       <Trash2 className="text-muted-foreground" />
-                      <span className="sr-only">Remove passenger</span>
+                      <span className="sr-only"><T id="bookings.removePassenger" /></span>
                     </Button>
                   ) : (
                     <div className="size-7" />
@@ -133,7 +134,7 @@ export function PassengersStep({
           <FieldGroup>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
               <Field className="sm:col-span-2">
-                <FieldLabel htmlFor="passenger-name">Full name</FieldLabel>
+                <FieldLabel htmlFor="passenger-name"><T id="bookings.fullName" /></FieldLabel>
                 <Input
                   id="passenger-name"
                   value={name}
@@ -142,7 +143,7 @@ export function PassengersStep({
                 />
               </Field>
               <Field>
-                <FieldLabel htmlFor="passenger-age">Age</FieldLabel>
+                <FieldLabel htmlFor="passenger-age"><T id="bookings.age" /></FieldLabel>
                 <Input
                   id="passenger-age"
                   type="number"
@@ -153,28 +154,28 @@ export function PassengersStep({
                 />
               </Field>
               <Field>
-                <FieldLabel htmlFor="passenger-type">Type</FieldLabel>
+                <FieldLabel htmlFor="passenger-type"><T id="bookings.type" /></FieldLabel>
                 <Select value={type} onValueChange={(value) => setType(value as PassengerType)}>
                   <SelectTrigger id="passenger-type" className="w-full">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="adult">Adult</SelectItem>
-                    <SelectItem value="child">Child</SelectItem>
-                    <SelectItem value="infant">Infant</SelectItem>
+                    <SelectItem value="adult"><T id="bookings.adult2" /></SelectItem>
+                    <SelectItem value="child"><T id="bookings.child2" /></SelectItem>
+                    <SelectItem value="infant"><T id="bookings.infant" /></SelectItem>
                   </SelectContent>
                 </Select>
               </Field>
               <Field className="sm:col-span-2">
-                <FieldLabel htmlFor="passenger-document">Document status</FieldLabel>
+                <FieldLabel htmlFor="passenger-document"><T id="bookings.documentStatus" /></FieldLabel>
                 <Select value={documentStatus} onValueChange={(value) => setDocumentStatus(value as DocumentStatus)}>
                   <SelectTrigger id="passenger-document" className="w-full">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="verified">Verified</SelectItem>
-                    <SelectItem value="pending">Pending</SelectItem>
-                    <SelectItem value="missing">Missing</SelectItem>
+                    <SelectItem value="verified"><T id="bookings.verified" /></SelectItem>
+                    <SelectItem value="pending"><T id="bookings.pending" /></SelectItem>
+                    <SelectItem value="missing"><T id="bookings.missing" /></SelectItem>
                   </SelectContent>
                 </Select>
               </Field>
@@ -182,7 +183,7 @@ export function PassengersStep({
           </FieldGroup>
           <Button className="w-fit" onClick={handleAdd} disabled={!name.trim() || !age.trim()}>
             <Plus data-icon="inline-start" />
-            Add passenger
+            <T id="bookings.addPassenger" />
           </Button>
         </CardContent>
       </Card>

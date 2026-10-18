@@ -6,12 +6,11 @@ import type { Metadata } from "next";
 import { APP_CONFIG } from "@/config/app-config";
 
 import { LoginForm } from "../../_components/login-form";
-import { GoogleButton } from "../../_components/social-auth/google-button";
 
 export const metadata: Metadata = {
   title: "Open Source Branded Login Page with shadcn/ui",
   description:
-    "Explore an open source branded login page with a two-column layout, social sign-in, and email and password fields.",
+    "Sign in with your email and password.",
   alternates: {
     canonical: "/auth/v2/login",
   },
@@ -26,7 +25,6 @@ export default function LoginV2() {
           <p className="text-muted-foreground text-sm">Please enter your details to login.</p>
         </div>
         <div className="space-y-4">
-          <GoogleButton className="w-full" />
           <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-border after:border-t">
             <span className="relative z-10 bg-background px-2 text-muted-foreground">Or continue with</span>
           </div>

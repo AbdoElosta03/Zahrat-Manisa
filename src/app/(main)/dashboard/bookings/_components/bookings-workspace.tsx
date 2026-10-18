@@ -1,5 +1,6 @@
 "use client";
 
+import { T } from "@/i18n/t";
 import { useMemo, useState } from "react";
 
 import { format } from "date-fns";
@@ -41,11 +42,11 @@ export function BookingsWorkspace() {
           <TabsList>
             <TabsTrigger value="calendar" className="gap-1.5">
               <CalendarDays className="size-4" />
-              Calendar
+              <T id="bookings.calendar" />
             </TabsTrigger>
             <TabsTrigger value="list" className="gap-1.5">
               <List className="size-4" />
-              List
+              <T id="bookings.list" />
             </TabsTrigger>
           </TabsList>
         </Tabs>

@@ -55,6 +55,10 @@ Most admin templates I found, free or paid, felt cluttered, outdated, or too rig
 - **Tables & Data Handling**: TanStack Table  
 - **Tooling & DX**: Biome, Husky  
 
+## Data Architecture
+
+The dashboard uses Next.js App Router for routes and layouts, Axios + TanStack Query for browser-side Python API data, and Zustand for shared UI state only. The full Arabic architectural contract, including loading, skeleton, permissions, and mock-to-Python migration rules, is in [docs/data-architecture/README.md](docs/data-architecture/README.md).
+
 ## Screens
 
 ### Available

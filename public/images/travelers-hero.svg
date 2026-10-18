@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="120" y1="0" x2="850" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#125A7F"/>
+      <stop offset="1" stop-color="#77B8C9"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="225" y1="171" x2="452" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3483A3"/>
+      <stop offset="1" stop-color="#125A7F"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="630" y1="25" x2="785" y2="190" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEBF38"/>
+      <stop offset="1" stop-color="#D64C27"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="420" fill="url(#sky)"/>
+  <circle cx="758" cy="84" r="83" fill="url(#sun)" opacity=".8"/>
+  <path d="M0 308C118 260 192 281 289 315C408 356 482 286 598 298C731 311 812 265 960 302V420H0V308Z" fill="#E8D6BA"/>
+  <path d="M0 345C120 314 174 331 280 355C393 380 494 324 625 345C762 367 849 321 960 350V420H0V345Z" fill="#D8C29F"/>
+  <path d="M61 269L132 196L203 269M105 269L176 185L259 269M792 284L854 214L922 284" stroke="#F6EAD6" stroke-opacity=".7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M93 279H255M793 292H935" stroke="#F6EAD6" stroke-opacity=".7" stroke-width="9" stroke-linecap="round"/>
+  <!-- Suitcase and its telescopic handle -->
+  <path d="M694 273V204C694 186 708 174 727 174H736C755 174 769 186 769 204V273" stroke="#233C50" stroke-width="11"/>
+  <rect x="675" y="260" width="115" height="142" rx="22" fill="#FEBF38" stroke="#BC8228" stroke-width="5"/>
+  <path d="M707 280V381M736 280V381M765 280V381" stroke="#E9A62E" stroke-width="4"/>
+  <rect x="697" y="393" width="19" height="17" rx="6" fill="#233C50"/>
+  <rect x="752" y="393" width="19" height="17" rx="6" fill="#233C50"/>
+  <!-- Traveler on the left, pointing ahead -->
+  <path d="M288 304C263 284 261 232 283 204C304 178 351 177 380 199L408 242L393 374H295L288 304Z" fill="#233C50"/>
+  <path d="M267 226C273 203 290 188 311 188H365C391 188 408 206 415 232L447 381H263L267 226Z" fill="url(#shirt)"/>
+  <path d="M334 191L347 254L370 191" fill="#F8F1E4"/>
+  <path d="M294 205C273 199 254 196 232 188L167 146L151 160L205 219C224 238 248 250 271 255" fill="#F2BF95" stroke="#D99B78" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M151 160L138 145L132 124C130 116 120 117 120 125L118 147L101 145C91 144 89 155 99 159L129 171L151 160Z" fill="#F2BF95"/>
+  <path d="M390 208C417 217 441 250 451 278L431 291L391 253" fill="#F2BF95"/>
+  <path d="M298 199C279 214 275 235 270 251M388 208C413 221 430 244 441 268" stroke="#0E4D70" stroke-width="17" stroke-linecap="round"/>
+  <rect x="328" y="114" width="55" height="87" rx="25" fill="#F2BF95"/>
+  <ellipse cx="354" cy="126" rx="62" ry="66" fill="#F2BF95"/>
+  <path d="M292 119C283 72 306 46 335 51C350 27 395 35 407 67C431 90 414 125 405 136L393 105C375 112 351 98 339 84C330 110 312 122 292 119Z" fill="#382F35"/>
+  <path d="M318 130C325 123 335 123 342 130M370 130C377 123 387 123 394 130" stroke="#382F35" stroke-width="5" stroke-linecap="round"/>
+  <path d="M337 157C348 170 368 169 378 155" stroke="#A3574C" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="304" cy="138" r="13" fill="#F2BF95"/>
+  <circle cx="402" cy="138" r="13" fill="#F2BF95"/>
+  <!-- Folded map in the foreground -->
+  <path d="M404 253L455 265L492 248L540 262V333L492 319L455 337L404 325V253Z" fill="#F8F1E4" stroke="#C1AD91" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M455 265V337M492 248V319" stroke="#C1AD91" stroke-width="3"/>
+  <path d="M422 306C448 274 471 310 499 286C508 279 516 280 523 284" stroke="#D64C27" stroke-width="4" stroke-linecap="round" stroke-dasharray="5 7"/>
+  <circle cx="511" cy="280" r="8" fill="#D64C27"/>
+  <!-- Traveler on the right in a sunhat -->
+  <path d="M520 260C522 183 545 120 615 112C695 105 702 191 693 269L660 349H539L520 260Z" fill="#45313A"/>
+  <path d="M553 211C568 192 591 187 615 187H646C678 187 690 209 699 245L723 384H521L553 211Z" fill="#D64C27"/>
+  <path d="M586 203L598 310M657 203L647 310" stroke="#713F35" stroke-width="15" stroke-linecap="round"/>
+  <path d="M560 222C537 238 526 269 516 294L534 304L572 267" fill="#F2BF95"/>
+  <path d="M681 220C706 232 720 267 732 293L710 301L674 266" fill="#F2BF95"/>
+  <rect x="594" y="143" width="53" height="65" rx="24" fill="#F2BF95"/>
+  <ellipse cx="620" cy="131" rx="51" ry="59" fill="#F2BF95"/>
+  <path d="M568 136C556 87 578 56 617 57C666 55 682 93 670 141L661 117C637 114 620 104 603 91C593 116 581 130 568 136Z" fill="#45313A"/>
+  <ellipse cx="618" cy="95" rx="92" ry="22" fill="#DDA640"/>
+  <path d="M564 89C565 45 589 25 618 25C653 25 675 49 675 89C652 111 588 112 564 89Z" fill="#FEBF38"/>
+  <path d="M563 81C596 96 640 97 675 81" stroke="#125A7F" stroke-width="10"/>
+  <path d="M594 138C600 132 607 132 612 138M631 138C637 132 644 132 649 138" stroke="#45313A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M603 161C613 173 630 173 640 160" stroke="#A3574C" stroke-width="5" stroke-linecap="round"/>
+  <!-- Camera and travel details -->
+  <path d="M574 205L591 279M665 205L650 279" stroke="#233C50" stroke-width="5"/>
+  <rect x="589" y="266" width="75" height="53" rx="9" fill="#233C50"/>
+  <circle cx="627" cy="292" r="20" fill="#546777" stroke="#F8F1E4" stroke-width="4"/>
+  <circle cx="627" cy="292" r="10" fill="#233C50"/>
+  <path d="M705 296L728 283" stroke="#F2BF95" stroke-width="11" stroke-linecap="round"/>
+  <path d="M487 351C548 338 639 340 694 352" stroke="#125A7F" stroke-opacity=".25" stroke-width="9" stroke-linecap="round"/>
+</svg>

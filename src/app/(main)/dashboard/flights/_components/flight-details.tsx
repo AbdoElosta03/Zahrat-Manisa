@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import { cn } from "cn";
 import {
   Armchair,
@@ -43,8 +44,8 @@ function EmptyFlightDetails() {
         <EmptyMedia variant="icon">
           <Plane />
         </EmptyMedia>
-        <EmptyTitle>Select a flight</EmptyTitle>
-        <EmptyDescription>Choose a flight from the list to view its route, seats and bookings.</EmptyDescription>
+        <EmptyTitle><T id="flights.selectAFlight" /></EmptyTitle>
+        <EmptyDescription><T id="flights.chooseAFlightFromTheListToViewItsRouteSeatsAndBookings" /></EmptyDescription>
       </Empty>
     </div>
   );
@@ -61,8 +62,8 @@ function RoutePanel({ flight }: { flight: Flight }) {
         crossOrigin="anonymous"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-sea/10 via-black/35 to-background" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-background via-background/80 to-transparent backdrop-blur-md" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-sea/10 via-black/15 to-background/80" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background/70 via-background/30 to-transparent backdrop-blur-[2px] [mask-image:linear-gradient(to_top,black_0%,black_30%,transparent_100%)]" />
 
       <div className="flex h-full flex-col justify-between gap-6 p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -77,13 +78,13 @@ function RoutePanel({ flight }: { flight: Flight }) {
             </div>
             <div>
               <h2 className="text-lg leading-none font-semibold text-white drop-shadow-sm">{flight.flightNumber}</h2>
-              <p className="mt-1 text-sm text-white/85 drop-shadow-sm">{flight.airline}</p>
+              <p className="mt-1 text-sm text-white/85 drop-shadow-sm"><V scope="flights" text={flight.airline} /></p>
             </div>
           </div>
           <div className="flex flex-col items-end gap-2">
             <Badge variant="outline" className={cn("gap-1.5 backdrop-blur-sm", status.badge)}>
               <span className="size-1.5 rounded-full bg-current" />
-              {flight.status}
+              <V scope="flights" text={flight.status} />
             </Badge>
             <span className="flex items-center gap-1.5 text-xs text-white/85 drop-shadow-sm">
               <CalendarDays className="size-3.5" />
@@ -95,7 +96,7 @@ function RoutePanel({ flight }: { flight: Flight }) {
         <div className="flex items-center gap-3">
           <div>
             <div className="text-3xl font-semibold tracking-tight tabular-nums">{flight.origin.code}</div>
-            <div className="text-sm text-muted-foreground">{flight.origin.city}</div>
+            <div className="text-sm text-muted-foreground"><V scope="flights" text={flight.origin.city} /></div>
             <div className="mt-3 text-sm font-medium tabular-nums">{flight.departure}</div>
           </div>
 
@@ -108,12 +109,12 @@ function RoutePanel({ flight }: { flight: Flight }) {
               </div>
               <span className="h-px flex-1 border-t border-dashed border-primary/40" />
             </div>
-            <span className="text-xs text-muted-foreground">Nonstop</span>
+            <span className="text-xs text-muted-foreground"><T id="flights.nonstop" /></span>
           </div>
 
           <div className="text-right">
             <div className="text-3xl font-semibold tracking-tight tabular-nums">{flight.destination.code}</div>
-            <div className="text-sm text-muted-foreground">{flight.destination.city}</div>
+            <div className="text-sm text-muted-foreground"><V scope="flights" text={flight.destination.city} /></div>
             <div className="mt-3 text-sm font-medium tabular-nums">{flight.arrival}</div>
           </div>
         </div>
@@ -139,7 +140,7 @@ function SummaryBlock({
         <Icon className="size-4" />
       </div>
       <div className="min-w-0">
-        <div className="text-xs text-muted-foreground">{label}</div>
+        <div className="text-xs text-muted-foreground"><V scope="flights" text={label} /></div>
         <div className={cn("truncate text-sm font-medium", valueClassName)}>{value}</div>
       </div>
     </div>
@@ -167,7 +168,7 @@ function OverviewTab({ flight }: { flight: Flight }) {
       <div className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
         {rows.map(([label, value]) => (
           <div key={label} className="flex flex-col gap-1">
-            <span className="text-xs text-muted-foreground">{label}</span>
+            <span className="text-xs text-muted-foreground"><V scope="flights" text={label} /></span>
             <span className="text-sm font-medium">{value}</span>
           </div>
         ))}
@@ -177,13 +178,13 @@ function OverviewTab({ flight }: { flight: Flight }) {
 
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-medium">Seat capacity</h3>
+          <h3 className="text-sm font-medium"><T id="flights.seatCapacity" /></h3>
           <span className="text-sm tabular-nums text-muted-foreground">
-            {flight.bookedSeats} / {flight.totalSeats} booked
+            {flight.bookedSeats} / {flight.totalSeats} <T id="flights.booked" />
           </span>
         </div>
         <Progress value={(flight.bookedSeats / flight.totalSeats) * 100} />
-        <p className={cn("text-xs font-medium", getSeatAvailabilityClass(flight))}>{available} seats available</p>
+        <p className={cn("text-xs font-medium", getSeatAvailabilityClass(flight))}>{available} <T id="flights.seatsAvailable" /></p>
       </div>
     </div>
   );
@@ -196,8 +197,8 @@ function PassengersTab({ flight }: { flight: Flight }) {
         <EmptyMedia variant="icon">
           <Users />
         </EmptyMedia>
-        <EmptyTitle>No passengers</EmptyTitle>
-        <EmptyDescription>This flight currently has no booked passengers.</EmptyDescription>
+        <EmptyTitle><T id="flights.noPassengers" /></EmptyTitle>
+        <EmptyDescription><T id="flights.thisFlightCurrentlyHasNoBookedPassengers" /></EmptyDescription>
       </Empty>
     );
   }
@@ -206,7 +207,7 @@ function PassengersTab({ flight }: { flight: Flight }) {
     <div className="flex flex-col gap-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <div className="text-sm text-muted-foreground">Total passengers</div>
+          <div className="text-sm text-muted-foreground"><T id="flights.totalPassengers" /></div>
           <div className="text-2xl font-semibold tabular-nums">{flight.bookedSeats}</div>
         </div>
         <AvatarGroup>
@@ -227,10 +228,10 @@ function PassengersTab({ flight }: { flight: Flight }) {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Passenger</TableHead>
-            <TableHead>Seat</TableHead>
-            <TableHead>Class</TableHead>
-            <TableHead className="text-right">Check-in</TableHead>
+            <TableHead><T id="flights.passenger" /></TableHead>
+            <TableHead><T id="flights.seat" /></TableHead>
+            <TableHead><T id="flights.class" /></TableHead>
+            <TableHead className="text-right"><T id="flights.checkIn" /></TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -245,11 +246,11 @@ function PassengersTab({ flight }: { flight: Flight }) {
                     variant="outline"
                     className="border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
                   >
-                    Checked in
+                    <T id="flights.checkedIn" />
                   </Badge>
                 ) : (
                   <Badge variant="outline" className="border-border bg-muted text-muted-foreground">
-                    Pending
+                    <T id="flights.pending" />
                   </Badge>
                 )}
               </TableCell>
@@ -268,8 +269,8 @@ function BookingsTab({ flight }: { flight: Flight }) {
         <EmptyMedia variant="icon">
           <Ticket />
         </EmptyMedia>
-        <EmptyTitle>No bookings</EmptyTitle>
-        <EmptyDescription>No bookings are currently connected to this flight.</EmptyDescription>
+        <EmptyTitle><T id="flights.noBookings" /></EmptyTitle>
+        <EmptyDescription><T id="flights.noBookingsAreCurrentlyConnectedToThisFlight" /></EmptyDescription>
       </Empty>
     );
   }
@@ -278,12 +279,12 @@ function BookingsTab({ flight }: { flight: Flight }) {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Booking ID</TableHead>
-          <TableHead>Traveler</TableHead>
-          <TableHead>Destination</TableHead>
-          <TableHead className="text-right">Pax</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
-          <TableHead className="text-right">Status</TableHead>
+          <TableHead><T id="flights.bookingID" /></TableHead>
+          <TableHead><T id="flights.traveler" /></TableHead>
+          <TableHead><T id="flights.destination" /></TableHead>
+          <TableHead className="text-right"><T id="flights.pax" /></TableHead>
+          <TableHead className="text-right"><T id="flights.amount" /></TableHead>
+          <TableHead className="text-right"><T id="flights.status" /></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -291,13 +292,13 @@ function BookingsTab({ flight }: { flight: Flight }) {
           <TableRow key={booking.id}>
             <TableCell className="font-medium">{booking.id}</TableCell>
             <TableCell>{booking.traveler}</TableCell>
-            <TableCell>{booking.destination}</TableCell>
+            <TableCell><V scope="flights" text={booking.destination} /></TableCell>
             <TableCell className="text-right tabular-nums">{booking.pax}</TableCell>
             <TableCell className="text-right tabular-nums">{booking.amount}</TableCell>
             <TableCell className="text-right">
               <Badge variant="outline" className={cn("gap-1.5", bookingStatusClasses[booking.status])}>
                 <span className="size-1.5 rounded-full bg-current" />
-                {booking.status}
+                <V scope="flights" text={booking.status} />
               </Badge>
             </TableCell>
           </TableRow>
@@ -318,10 +319,10 @@ function HistoryTab({ flight }: { flight: Flight }) {
           </div>
           <div className={cn("flex flex-col gap-0.5", index < flight.history.length - 1 && "pb-5")}>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-medium">{event.label}</span>
-              <span className="text-xs text-muted-foreground">· {event.time}</span>
+              <span className="text-sm font-medium"><V scope="flights" text={event.label} /></span>
+              <span className="text-xs text-muted-foreground">· <V scope="flights" text={event.time} /></span>
             </div>
-            <p className="text-sm text-muted-foreground">{event.description}</p>
+            <p className="text-sm text-muted-foreground"><V scope="flights" text={event.description} /></p>
           </div>
         </div>
       ))}
@@ -354,10 +355,10 @@ export function FlightDetails({ flight }: FlightDetailsProps) {
 
       <Tabs defaultValue="overview" className="flex-1">
         <TabsList className="w-full justify-start" variant="line">
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="passengers">Passengers ({flight.bookedSeats})</TabsTrigger>
-          <TabsTrigger value="bookings">Bookings ({flight.bookings.length})</TabsTrigger>
-          <TabsTrigger value="history">History</TabsTrigger>
+          <TabsTrigger value="overview"><T id="flights.overview" /></TabsTrigger>
+          <TabsTrigger value="passengers"><T id="flights.passengers" />{flight.bookedSeats})</TabsTrigger>
+          <TabsTrigger value="bookings"><T id="flights.bookings" />{flight.bookings.length})</TabsTrigger>
+          <TabsTrigger value="history"><T id="flights.history" /></TabsTrigger>
         </TabsList>
         <TabsContent value="overview" className="mt-5">
           <OverviewTab flight={flight} />
@@ -378,18 +379,18 @@ export function FlightDetails({ flight }: FlightDetailsProps) {
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
         <Button className="flex-1">
           <Ticket data-icon="inline-start" />
-          View Bookings
+          <T id="flights.viewBookings" />
         </Button>
         <Button variant="outline" className="flex-1">
           <Pencil data-icon="inline-start" />
-          Edit Flight
+          <T id="flights.editFlight" />
         </Button>
         <Button
           variant="outline"
           className="text-destructive hover:bg-destructive/10 hover:text-destructive sm:ml-auto"
         >
           <Trash2 data-icon="inline-start" />
-          Cancel Flight
+          <T id="flights.cancelFlight" />
         </Button>
       </div>
     </div>

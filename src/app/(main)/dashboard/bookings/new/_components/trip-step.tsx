@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import { useMemo, useState } from "react";
 
 import Image from "next/image";
@@ -11,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useLanguage } from "@/i18n/language-provider";
 
 import type { TripOption } from "./types";
 
@@ -35,6 +37,7 @@ export function TripStep({
   selected: TripOption | null;
   onSelect: (trip: TripOption) => void;
 }) {
+  const { t } = useLanguage();
   const [search, setSearch] = useState("");
   const [destination, setDestination] = useState("all");
 
@@ -51,8 +54,8 @@ export function TripStep({
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <h2 className="font-semibold text-lg">Choose a trip</h2>
-        <p className="text-muted-foreground text-sm">Pick the package this booking is for.</p>
+        <h2 className="font-semibold text-lg"><T id="bookings.chooseATrip" /></h2>
+        <p className="text-muted-foreground text-sm"><T id="bookings.pickThePackageThisBookingIsFor" /></p>
       </div>
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
@@ -61,16 +64,16 @@ export function TripStep({
           <Input
             value={search}
             onChange={(event) => setSearch(event.target.value)}
-            placeholder="Search trips or destinations..."
+            placeholder={t("common.searchTrips")}
             className="pl-8"
           />
         </div>
         <Select value={destination} onValueChange={setDestination}>
           <SelectTrigger className="w-full sm:w-44">
-            <SelectValue placeholder="Destination" />
+            <SelectValue placeholder={t("common.destination")} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All destinations</SelectItem>
+            <SelectItem value="all"><T id="bookings.allDestinations" /></SelectItem>
             {destinations.map((dest) => (
               <SelectItem key={dest} value={dest}>
                 {dest}
@@ -105,7 +108,7 @@ export function TripStep({
                     className="object-cover"
                     sizes="(min-width: 640px) 320px, 100vw"
                   />
-                  <Badge className={`absolute top-2 right-2 ${status.className}`}>{status.label}</Badge>
+                  <Badge className={`absolute top-2 right-2 ${status.className}`}><V scope="bookings" text={status.label} /></Badge>
                   {isSelected ? (
                     <span className="absolute top-2 left-2 flex size-6 items-center justify-center rounded-full bg-primary text-primary-foreground">
                       <Check className="size-3.5" />
@@ -114,24 +117,24 @@ export function TripStep({
                 </div>
                 <CardContent className="flex flex-col gap-2 p-4">
                   <div className="flex items-start justify-between gap-2">
-                    <span className="font-medium text-sm leading-tight">{trip.name}</span>
+                    <span className="font-medium text-sm leading-tight"><V scope="bookings" text={trip.name} /></span>
                     <span className="shrink-0 font-semibold text-sm tabular-nums">{formatCurrency(trip.price)}</span>
                   </div>
                   <div className="flex items-center gap-1 text-muted-foreground text-xs">
                     <MapPin className="size-3" />
-                    {trip.destination}
+                    <V scope="bookings" text={trip.destination} />
                   </div>
                   <div className="flex items-center justify-between text-muted-foreground text-xs">
                     <span>
                       {format(parseISO(trip.departureDate), "d MMM")} –{" "}
-                      {format(parseISO(trip.returnDate), "d MMM yyyy")} &middot; {trip.duration}
+                      {format(parseISO(trip.returnDate), "d MMM yyyy")} <T id="bookings.middot" /> {trip.duration}
                     </span>
                     <span className="flex items-center gap-1">
                       <Users className="size-3" />
-                      {trip.availableSeats} left
+                      {trip.availableSeats} <T id="bookings.left" />
                     </span>
                   </div>
-                  <span className="text-muted-foreground text-xs">Guide: {trip.guide}</span>
+                  <span className="text-muted-foreground text-xs"><T id="bookings.guide" /> {trip.guide}</span>
                 </CardContent>
               </Card>
             </button>

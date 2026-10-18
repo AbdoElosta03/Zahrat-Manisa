@@ -1,11 +1,14 @@
+"use client";
+
 import type { ComponentType } from "react";
 
-import Image from "next/image";
-
+import { cn } from "cn";
 import { CalendarCheck, DollarSign, TrendingDown, TrendingUp, Users, Wallet } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useI18n } from "@/i18n/language-provider";
+import { T, V } from "@/i18n/t";
 
 import metricsData from "./metrics-data.json";
 
@@ -29,80 +32,64 @@ const icons: Record<string, ComponentType<{ className?: string }>> = {
   "avg-trip-value": Wallet,
 };
 
-const accents: Record<string, { icon: string; bar: string }> = {
-  "total-bookings": { icon: "bg-white/15 text-sky-300", bar: "bg-sky-300" },
-  revenue: { icon: "bg-white/15 text-emerald-300", bar: "bg-emerald-300" },
-  "active-travelers": { icon: "bg-white/15 text-violet-300", bar: "bg-violet-300" },
-  "avg-trip-value": { icon: "bg-white/15 text-amber-300", bar: "bg-amber-300" },
+const accents: Record<string, { icon: string }> = {
+  "total-bookings": { icon: "bg-primary/10 text-primary" },
+  revenue: { icon: "bg-secondary text-secondary-foreground" },
+  "active-travelers": { icon: "bg-accent text-accent-foreground" },
+  "avg-trip-value": { icon: "bg-success/10 text-success" },
 };
 
-function formatValue(metric: Metric) {
-  if (metric.format === "currency") {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      maximumFractionDigits: 0,
-    }).format(metric.value);
+export function KpiGrid() {
+  const { formatCurrency, formatNumber } = useI18n();
+
+  function formatValue(metric: Metric) {
+    return metric.format === "currency" ? formatCurrency(metric.value) : formatNumber(metric.value);
   }
 
-  return metric.value.toLocaleString();
-}
-
-export function KpiGrid() {
   return (
-    <Card className="relative h-full gap-4 overflow-hidden py-0">
-      <div className="absolute inset-0">
-        <Image src="/destinations/overview-hero.png" alt="" fill priority className="object-cover" sizes="800px" />
-        <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
-      </div>
-
-      <CardHeader className="relative z-10 pt-5">
-        <CardTitle className="leading-none text-white">Today&apos;s Overview</CardTitle>
-        <p className="text-sm text-white/70">Here&apos;s what&apos;s happening with your travel business today.</p>
+    <Card className="h-full gap-0 py-0">
+      <CardHeader className="gap-1 px-5 pt-5 pb-4">
+        <CardTitle className="leading-none">
+          <T id="default.todaySOverview" />
+        </CardTitle>
+        <p className="text-sm text-muted-foreground">
+          <T id="default.hereSWhatSHappeningWithYourTravelBusinessToday" />
+        </p>
       </CardHeader>
 
-      <CardContent className="relative z-10 pb-5">
+      <CardContent className="px-5 pb-5">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
           {metrics.map((metric) => {
             const Icon = icons[metric.id] ?? DollarSign;
             const accent = accents[metric.id] ?? accents["total-bookings"];
             const isUp = metric.trend === "up";
-            const maxSpark = Math.max(...metric.spark);
-
             return (
               <div
                 key={metric.id}
-                className="flex flex-col gap-2.5 rounded-xl border border-white/10 bg-white/10 p-3 backdrop-blur-sm"
+                className="flex flex-col gap-4 rounded-xl border border-border/60 bg-muted/30 p-4"
               >
-                <div className="flex items-center justify-between">
-                  <div className={`flex size-8 items-center justify-center rounded-lg ${accent.icon}`}>
-                    <Icon className="size-4" />
-                  </div>
-                  <Badge className="gap-1 border-white/15 bg-white/15 text-white backdrop-blur-sm">
-                    {isUp ? <TrendingUp className="size-3" /> : <TrendingDown className="size-3" />}
-                    {isUp ? "+" : ""}
-                    {metric.change}%
-                  </Badge>
+                <div className={`flex size-8 items-center justify-center rounded-lg ${accent.icon}`}>
+                  <Icon className="size-4" />
                 </div>
 
                 <div className="flex items-end justify-between gap-3">
-                  <div className="flex flex-col gap-0.5">
-                    <span className="font-medium text-2xl tabular-nums leading-none tracking-tight text-white">
+                  <div className="flex min-w-0 flex-col gap-1">
+                    <span className="font-semibold text-2xl tabular-nums leading-none tracking-tight text-foreground">
                       {formatValue(metric)}
                     </span>
-                    <span className="text-white/70 text-xs">{metric.label}</span>
+                    <span className="text-muted-foreground text-xs">
+                      <V scope="default" text={metric.label} />
+                    </span>
                   </div>
 
-                  <div className="flex h-8 items-end gap-0.5" aria-hidden="true">
-                    {metric.spark.map((point, sparkIndex) => (
-                      <span
-                        key={sparkIndex}
-                        className={`w-1.5 rounded-full ${accent.bar} opacity-70 first:opacity-40 last:opacity-100`}
-                        style={{ height: `${Math.max(6, (point / maxSpark) * 32)}px` }}
-                      />
-                    ))}
-                  </div>
+                  <Badge
+                    className={cn(isUp && "bg-success/10 text-success")}
+                    variant={isUp ? "secondary" : "destructive"}
+                  >
+                    {isUp ? <TrendingUp data-icon="inline-start" /> : <TrendingDown data-icon="inline-start" />}
+                    {isUp ? "+" : ""}
+                    {metric.change}%
+                  </Badge>
                 </div>
               </div>
             );

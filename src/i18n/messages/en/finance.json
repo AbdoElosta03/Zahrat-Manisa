@@ -1,0 +1,17 @@
+{
+  "finance": "Finance",
+  "monitorRevenueExpensesPaymentsAndFinancialPerformance": "Monitor revenue, expenses, payments and financial performance.",
+  "filter": "Filter",
+  "export": "Export",
+  "totalRevenue": "Total Revenue",
+  "thanLastMonth": "than last month",
+  "paymentStatus": "Payment Status",
+  "thisMonth": "This Month",
+  "paid": "Paid",
+  "recentRefunds": "Recent Refunds",
+  "viewAll": "View All",
+  "recentTransactions": "Recent Transactions",
+  "revenueExpenses": "Revenue & Expenses",
+  "upcomingPayments": "Upcoming Payments",
+  "due": "Due"
+}

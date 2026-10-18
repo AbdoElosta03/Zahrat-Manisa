@@ -1,6 +1,7 @@
+"use client";
+
 import type { ColumnDef } from "@tanstack/react-table";
 import { Subscribe } from "@tanstack/react-table";
-import { format, parseISO } from "date-fns";
 import { MoreHorizontal } from "lucide-react";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -15,20 +16,20 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useI18n } from "@/i18n/language-provider";
+import { T, V } from "@/i18n/t";
 import type { DataTableFeatures } from "@/lib/data-table-features";
 
 import type { BookingRow } from "./schema";
 
-function formatBookingDate(date: string) {
-  return format(parseISO(date), "d MMM yyyy");
+function BookingAmount({ amount }: { amount: number }) {
+  const { formatCurrency } = useI18n();
+  return <div className="w-24 tabular-nums">{formatCurrency(amount)}</div>;
 }
 
-function formatAmount(amount: number) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
+function BookingDate({ date }: { date: string }) {
+  const { formatDate } = useI18n();
+  return <div className="w-32 text-muted-foreground">{formatDate(date)}</div>;
 }
 
 function StatusBadge({ status }: { status: BookingRow["status"] }) {
@@ -39,7 +40,7 @@ function StatusBadge({ status }: { status: BookingRow["status"] }) {
         variant="outline"
       >
         <span className="size-1.5 rounded-full bg-current" />
-        Confirmed
+        <T id="default.confirmed" />
       </Badge>
     );
   }
@@ -48,7 +49,7 @@ function StatusBadge({ status }: { status: BookingRow["status"] }) {
     return (
       <Badge className="border-blue-700/25 text-blue-700 dark:border-blue-300/25 dark:text-blue-300" variant="outline">
         <span className="size-1.5 rounded-full bg-current" />
-        Completed
+        <T id="default.completed" />
       </Badge>
     );
   }
@@ -57,7 +58,7 @@ function StatusBadge({ status }: { status: BookingRow["status"] }) {
     return (
       <Badge variant="destructive">
         <span className="size-1.5 rounded-full bg-current" />
-        Cancelled
+        <T id="default.cancelled" />
       </Badge>
     );
   }
@@ -68,7 +69,7 @@ function StatusBadge({ status }: { status: BookingRow["status"] }) {
       variant="outline"
     >
       <span className="size-1.5 rounded-full bg-current" />
-      Pending
+      <T id="default.pending" />
     </Badge>
   );
 }
@@ -113,18 +114,20 @@ export const recentBookingsColumns: ColumnDef<DataTableFeatures, BookingRow>[] =
   },
   {
     accessorKey: "id",
-    header: "Booking",
+    header: () => <V scope="default" text="Booking" />,
     cell: ({ row }) => (
       <div className="flex flex-col gap-0.5">
         <div className="font-medium leading-none">{row.original.id}</div>
-        <div className="text-muted-foreground text-xs">{row.original.packageName}</div>
+        <div className="text-muted-foreground text-xs">
+          <V scope="default" text={row.original.packageName} />
+        </div>
       </div>
     ),
     enableHiding: false,
   },
   {
     accessorKey: "customer",
-    header: "Traveler",
+    header: () => <V scope="default" text="Traveler" />,
     cell: ({ row }) => (
       <div className="flex items-center gap-2.5">
         <Avatar className="size-8">
@@ -139,16 +142,21 @@ export const recentBookingsColumns: ColumnDef<DataTableFeatures, BookingRow>[] =
   },
   {
     accessorKey: "destination",
-    header: "Destination",
+    header: () => <V scope="default" text="Destination" />,
+    cell: ({ row }) => <V scope="default" text={row.original.destination} />,
   },
   {
     accessorKey: "travelers",
-    header: () => <div className="w-16">Pax</div>,
+    header: () => (
+      <div className="w-16">
+        <T id="default.pax" />
+      </div>
+    ),
     cell: ({ row }) => <div className="w-16 tabular-nums">{row.original.travelers}</div>,
   },
   {
     id: "status",
-    header: "Status",
+    header: () => <V scope="default" text="Status" />,
     cell: ({ row }) => <StatusBadge status={row.original.status} />,
     filterFn: (row, _columnId, value) => {
       if (value === "All") return true;
@@ -157,17 +165,29 @@ export const recentBookingsColumns: ColumnDef<DataTableFeatures, BookingRow>[] =
   },
   {
     accessorKey: "amount",
-    header: () => <div className="w-24">Amount</div>,
-    cell: ({ row }) => <div className="w-24 tabular-nums">{formatAmount(row.original.amount)}</div>,
+    header: () => (
+      <div className="w-24">
+        <T id="default.amount" />
+      </div>
+    ),
+    cell: ({ row }) => <BookingAmount amount={row.original.amount} />,
   },
   {
     accessorKey: "travelDate",
-    header: () => <div className="w-32">Travel date</div>,
-    cell: ({ row }) => <div className="w-32 text-muted-foreground">{formatBookingDate(row.original.travelDate)}</div>,
+    header: () => (
+      <div className="w-32">
+        <T id="default.travelDate" />
+      </div>
+    ),
+    cell: ({ row }) => <BookingDate date={row.original.travelDate} />,
   },
   {
     id: "actions",
-    header: () => <div className="flex w-full justify-end">Actions</div>,
+    header: () => (
+      <div className="flex w-full justify-end">
+        <T id="default.actions" />
+      </div>
+    ),
     cell: () => (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -178,11 +198,19 @@ export const recentBookingsColumns: ColumnDef<DataTableFeatures, BookingRow>[] =
           </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-44">
-          <DropdownMenuLabel>Booking Actions</DropdownMenuLabel>
+          <DropdownMenuLabel>
+            <T id="default.bookingActions" />
+          </DropdownMenuLabel>
           <DropdownMenuGroup>
-            <DropdownMenuItem>View itinerary</DropdownMenuItem>
-            <DropdownMenuItem>Contact traveler</DropdownMenuItem>
-            <DropdownMenuItem>Copy booking ID</DropdownMenuItem>
+            <DropdownMenuItem>
+              <T id="default.viewItinerary" />
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <T id="default.contactTraveler" />
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <T id="default.copyBookingID" />
+            </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>

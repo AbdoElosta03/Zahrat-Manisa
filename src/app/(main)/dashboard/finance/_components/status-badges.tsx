@@ -1,3 +1,4 @@
+import { V } from "@/i18n/t";
 import { cn } from "cn";
 
 import { Badge } from "@/components/ui/badge";
@@ -19,7 +20,7 @@ const transactionStatusLabels: Record<TransactionStatus, string> = {
 export function TransactionStatusBadge({ status }: { status: TransactionStatus }) {
   return (
     <Badge variant="outline" className={cn("capitalize", transactionStatusStyles[status])}>
-      {transactionStatusLabels[status]}
+      <V scope="finance" text={transactionStatusLabels[status]} />
     </Badge>
   );
 }
@@ -39,7 +40,7 @@ const upcomingPaymentStatusLabels: Record<UpcomingPaymentStatus, string> = {
 export function UpcomingPaymentStatusBadge({ status }: { status: UpcomingPaymentStatus }) {
   return (
     <Badge variant="outline" className={cn("capitalize", upcomingPaymentStatusStyles[status])}>
-      {upcomingPaymentStatusLabels[status]}
+      <V scope="finance" text={upcomingPaymentStatusLabels[status]} />
     </Badge>
   );
 }
@@ -59,7 +60,7 @@ const refundStatusLabels: Record<RefundStatus, string> = {
 export function RefundStatusBadge({ status }: { status: RefundStatus }) {
   return (
     <Badge variant="outline" className={cn("capitalize", refundStatusStyles[status])}>
-      {refundStatusLabels[status]}
+      <V scope="finance" text={refundStatusLabels[status]} />
     </Badge>
   );
 }

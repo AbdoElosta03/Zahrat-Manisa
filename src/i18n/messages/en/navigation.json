@@ -1,0 +1,18 @@
+{
+  "dashboard": "Dashboard",
+  "overview": "Overview",
+  "finance": "Finance",
+  "operations": "Operations",
+  "bookings": "Bookings",
+  "flights": "Flights",
+  "ticketing": "Ticketing",
+  "cancellations": "Cancellations",
+  "customers": "Customers",
+  "support": "Support",
+  "transactions": "Transactions",
+  "users": "Users",
+  "rolesPermissions": "Roles & Permissions",
+  "userManagement": "User Management",
+  "refunds": "Refunds",
+  "tagline": "Travel & Tourism"
+}

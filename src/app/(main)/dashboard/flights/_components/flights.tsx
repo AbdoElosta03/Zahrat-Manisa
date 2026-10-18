@@ -3,12 +3,15 @@
 import * as React from "react";
 
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { useI18n } from "@/i18n/language-provider";
+import { T } from "@/i18n/t";
 
 import { FlightDetails } from "./flight-details";
 import { FlightList } from "./flight-list";
 import { flights } from "./flights-data";
 
 export function Flights() {
+  const { inlineEnd } = useI18n();
   const [detailsOpen, setDetailsOpen] = React.useState(false);
   const [selectedFlightId, setSelectedFlightId] = React.useState<string | null>(flights[0].id);
   const selectedFlight = flights.find((flight) => flight.id === selectedFlightId) ?? flights[0];
@@ -37,12 +40,14 @@ export function Flights() {
 
       <Sheet open={detailsOpen} onOpenChange={setDetailsOpen}>
         <SheetContent
-          side="right"
-          className="gap-0 p-0 data-[side=right]:w-full data-[side=right]:sm:max-w-none data-[side=right]:md:w-3/4"
+          side={inlineEnd}
+          className="gap-0 p-0 data-[side=left]:w-full data-[side=left]:sm:max-w-none data-[side=left]:md:w-3/4 data-[side=right]:w-full data-[side=right]:sm:max-w-none data-[side=right]:md:w-3/4"
         >
           <SheetHeader className="sr-only">
             <SheetTitle>{selectedFlight ? `Flight ${selectedFlight.flightNumber}` : "Flight details"}</SheetTitle>
-            <SheetDescription>Selected flight route, schedule, and booking details.</SheetDescription>
+            <SheetDescription>
+              <T id="flights.selectedFlightRouteScheduleAndBookingDetails" />
+            </SheetDescription>
           </SheetHeader>
           <FlightDetails flight={selectedFlight} />
         </SheetContent>

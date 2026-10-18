@@ -1,5 +1,6 @@
 "use client";
 
+import { T } from "@/i18n/t";
 import { useState } from "react";
 
 import { Check, Plus, Search, UserRound } from "lucide-react";
@@ -10,6 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { useLanguage } from "@/i18n/language-provider";
 
 import type { ExistingTraveler } from "./types";
 
@@ -24,6 +26,7 @@ export function TravelerStep({
   onSelect: (traveler: ExistingTraveler) => void;
   onCreateTraveler: (traveler: Omit<ExistingTraveler, "id" | "previousBookings">) => void;
 }) {
+  const { t } = useLanguage();
   const [search, setSearch] = useState("");
   const [isCreating, setIsCreating] = useState(false);
   const [newName, setNewName] = useState("");
@@ -65,8 +68,8 @@ export function TravelerStep({
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <h2 className="font-semibold text-lg">Select a traveler</h2>
-        <p className="text-muted-foreground text-sm">Choose an existing traveler or create a new one.</p>
+        <h2 className="font-semibold text-lg"><T id="bookings.selectATraveler" /></h2>
+        <p className="text-muted-foreground text-sm"><T id="bookings.chooseAnExistingTravelerOrCreateANewOne" /></p>
       </div>
 
       <div className="relative">
@@ -74,7 +77,7 @@ export function TravelerStep({
         <Input
           value={search}
           onChange={(event) => setSearch(event.target.value)}
-          placeholder="Search by name, phone, or email..."
+          placeholder={t("common.searchTravelers")}
           className="pl-8"
         />
       </div>
@@ -103,8 +106,7 @@ export function TravelerStep({
                     <span className="truncate text-muted-foreground text-xs">{traveler.phone}</span>
                     <span className="truncate text-muted-foreground text-xs">{traveler.email}</span>
                     <span className="text-muted-foreground text-xs">
-                      {traveler.country} &middot; {traveler.previousBookings} previous booking
-                      {traveler.previousBookings === 1 ? "" : "s"}
+                      {traveler.country} <T id="bookings.middot" /> {t("bookings.previousBookings", { count: traveler.previousBookings })}
                     </span>
                   </div>
                 </CardContent>
@@ -120,8 +122,8 @@ export function TravelerStep({
             <EmptyMedia variant="icon">
               <UserRound />
             </EmptyMedia>
-            <EmptyTitle>No travelers found</EmptyTitle>
-            <EmptyDescription>Try a different search, or create a new traveler below.</EmptyDescription>
+            <EmptyTitle><T id="bookings.noTravelersFound" /></EmptyTitle>
+            <EmptyDescription><T id="bookings.tryADifferentSearchOrCreateANewTravelerBelow" /></EmptyDescription>
           </EmptyHeader>
         </Empty>
       ) : null}
@@ -132,7 +134,7 @@ export function TravelerStep({
             <FieldGroup>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <Field>
-                  <FieldLabel htmlFor="new-traveler-name">Full name</FieldLabel>
+                  <FieldLabel htmlFor="new-traveler-name"><T id="bookings.fullName" /></FieldLabel>
                   <Input
                     id="new-traveler-name"
                     value={newName}
@@ -141,7 +143,7 @@ export function TravelerStep({
                   />
                 </Field>
                 <Field>
-                  <FieldLabel htmlFor="new-traveler-phone">Phone</FieldLabel>
+                  <FieldLabel htmlFor="new-traveler-phone"><T id="bookings.phone" /></FieldLabel>
                   <Input
                     id="new-traveler-phone"
                     value={newPhone}
@@ -150,7 +152,7 @@ export function TravelerStep({
                   />
                 </Field>
                 <Field>
-                  <FieldLabel htmlFor="new-traveler-email">Email</FieldLabel>
+                  <FieldLabel htmlFor="new-traveler-email"><T id="bookings.email" /></FieldLabel>
                   <Input
                     id="new-traveler-email"
                     type="email"
@@ -160,7 +162,7 @@ export function TravelerStep({
                   />
                 </Field>
                 <Field>
-                  <FieldLabel htmlFor="new-traveler-country">Country</FieldLabel>
+                  <FieldLabel htmlFor="new-traveler-country"><T id="bookings.country" /></FieldLabel>
                   <Input
                     id="new-traveler-country"
                     value={newCountry}
@@ -172,14 +174,14 @@ export function TravelerStep({
             </FieldGroup>
             <div className="flex items-center justify-end gap-2">
               <Button variant="outline" size="sm" onClick={() => setIsCreating(false)}>
-                Cancel
+                <T id="bookings.cancel" />
               </Button>
               <Button
                 size="sm"
                 onClick={handleCreate}
                 disabled={!newName.trim() || !newPhone.trim() || !newEmail.trim()}
               >
-                Add traveler
+                <T id="bookings.addTraveler" />
               </Button>
             </div>
           </CardContent>
@@ -187,7 +189,7 @@ export function TravelerStep({
       ) : (
         <Button variant="outline" className="w-fit" onClick={() => setIsCreating(true)}>
           <Plus data-icon="inline-start" />
-          Create new traveler
+          <T id="bookings.createNewTraveler" />
         </Button>
       )}
     </div>

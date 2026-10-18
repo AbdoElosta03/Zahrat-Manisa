@@ -1,3 +1,6 @@
+import { T, V } from "@/i18n/t";
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
@@ -20,10 +23,12 @@ export function RecentTransactionsCard() {
   return (
     <Card className="h-full shadow-xs">
       <CardHeader className="flex flex-row items-center justify-between gap-4">
-        <CardTitle className="font-semibold text-base">Recent Transactions</CardTitle>
+        <CardTitle className="font-semibold text-base"><T id="finance.recentTransactions" /></CardTitle>
         <CardAction>
-          <Button variant="ghost" size="sm">
-            View All
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="/dashboard/transactions" prefetch={false}>
+              <T id="finance.viewAll" />
+            </Link>
           </Button>
         </CardAction>
       </CardHeader>
@@ -43,7 +48,7 @@ export function RecentTransactionsCard() {
                     <span className="shrink-0 text-muted-foreground text-xs tabular-nums">{transaction.id}</span>
                   </div>
                   <span className="truncate text-muted-foreground text-xs">
-                    {typeLabels[transaction.type]} · {transaction.method}
+                    <V scope="finance" text={typeLabels[transaction.type]} /> · <V scope="finance" text={transaction.method} />
                   </span>
                 </div>
                 <div className="flex shrink-0 flex-col items-end gap-1">

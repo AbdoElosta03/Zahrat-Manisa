@@ -1,3 +1,4 @@
+import { T } from "@/i18n/t";
 import { Button } from "@/components/ui/button";
 import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
@@ -16,10 +17,10 @@ export function RecentRefundsCard() {
   return (
     <Card className="h-full shadow-xs">
       <CardHeader className="flex flex-row items-center justify-between gap-4">
-        <CardTitle className="font-semibold text-base">Recent Refunds</CardTitle>
+        <CardTitle className="font-semibold text-base"><T id="finance.recentRefunds" /></CardTitle>
         <CardAction>
           <Button variant="ghost" size="sm">
-            View All
+            <T id="finance.viewAll" />
           </Button>
         </CardAction>
       </CardHeader>

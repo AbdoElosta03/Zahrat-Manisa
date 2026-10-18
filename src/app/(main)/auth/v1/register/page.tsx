@@ -4,12 +4,11 @@ import { Command } from "lucide-react";
 import type { Metadata } from "next";
 
 import { RegisterForm } from "../../_components/register-form";
-import { GoogleButton } from "../../_components/social-auth/google-button";
 
 export const metadata: Metadata = {
   title: "Open Source Split Screen Registration Page with shadcn/ui",
   description:
-    "Explore an open source split screen registration page with account details, social sign-up, and a login link.",
+    "Register a new account with your email address.",
   alternates: {
     canonical: "/auth/v1/register",
   },
@@ -28,7 +27,6 @@ export default function RegisterV1() {
           </div>
           <div className="space-y-4">
             <RegisterForm />
-            <GoogleButton className="w-full" variant="outline" />
             <p className="text-center text-muted-foreground text-xs">
               Already have an account?{" "}
               <Link prefetch={false} href="login" className="text-primary">

@@ -1,3 +1,4 @@
+import { T } from "@/i18n/t";
 import Link from "next/link";
 
 import { Download, Plus } from "lucide-react";
@@ -12,18 +13,18 @@ export default function BookingsPage() {
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex flex-col gap-1">
-          <h1 className="font-semibold text-2xl tracking-tight">Bookings</h1>
-          <p className="text-muted-foreground text-sm">Manage and track all customer bookings</p>
+          <h1 className="font-semibold text-2xl tracking-tight"><T id="bookings.bookings" /></h1>
+          <p className="text-muted-foreground text-sm"><T id="bookings.manageAndTrackAllCustomerBookings" /></p>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="outline">
             <Download data-icon="inline-start" />
-            Export
+            <T id="bookings.export" />
           </Button>
           <Button asChild>
             <Link href="/dashboard/bookings/new">
               <Plus data-icon="inline-start" />
-              New Booking
+              <T id="bookings.newBooking" />
             </Link>
           </Button>
         </div>

@@ -1,9 +1,15 @@
-import type { ComponentType } from "react";
+"use client";
 
+import { Fragment, type ComponentType } from "react";
+
+import { cn } from "cn";
 import { Hourglass, Receipt, TrendingDown, TrendingUp, Wallet } from "lucide-react";
 
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { formatCurrency } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
+import { useI18n } from "@/i18n/language-provider";
+import { T, V } from "@/i18n/t";
 
 import financeSummaryData from "./finance-summary-data.json";
 import type { FinanceSummary } from "./types";
@@ -16,10 +22,10 @@ type StatCardConfig = {
   value: number;
   change: number;
   direction: "up" | "down";
-  caption: string;
+  caption?: string;
+  captionAmount?: number;
   icon: ComponentType<{ className?: string }>;
   iconClassName: string;
-  badgeClassName: string;
 };
 
 const stats: StatCardConfig[] = [
@@ -29,10 +35,10 @@ const stats: StatCardConfig[] = [
     value: summary.totalExpenses,
     change: summary.expensesChange,
     direction: "up",
-    caption: `+${formatCurrency(summary.expensesComparedAmount, { noDecimals: true })} than last month`,
+    caption: "than last month",
+    captionAmount: summary.expensesComparedAmount,
     icon: Receipt,
-    iconClassName: "bg-rose-500/10 text-rose-600 dark:text-rose-400",
-    badgeClassName: "text-rose-600 dark:text-rose-400",
+    iconClassName: "bg-secondary text-secondary-foreground",
   },
   {
     id: "net-profit",
@@ -40,10 +46,10 @@ const stats: StatCardConfig[] = [
     value: summary.netProfit,
     change: summary.netProfitChange,
     direction: "up",
-    caption: `+${formatCurrency(summary.netProfitComparedAmount, { noDecimals: true })} than last month`,
+    caption: "than last month",
+    captionAmount: summary.netProfitComparedAmount,
     icon: Wallet,
-    iconClassName: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
-    badgeClassName: "text-emerald-600 dark:text-emerald-400",
+    iconClassName: "bg-success/10 text-success",
   },
   {
     id: "outstanding",
@@ -53,42 +59,64 @@ const stats: StatCardConfig[] = [
     direction: "down",
     caption: summary.outstandingReceivablesCaption,
     icon: Hourglass,
-    iconClassName: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
-    badgeClassName: "text-amber-600 dark:text-amber-400",
+    iconClassName: "bg-accent text-accent-foreground",
   },
 ];
 
 export function FinanceStatCards() {
-  return (
-    <>
-      {stats.map((stat) => {
-        const Icon = stat.icon;
-        const TrendIcon = stat.direction === "up" ? TrendingUp : TrendingDown;
+  const { formatCurrency } = useI18n();
 
-        return (
-          <Card key={stat.id} className="h-full shadow-xs">
-            <CardContent className="flex h-full flex-col gap-4">
-              <div className="flex items-center justify-between">
-                <div className={`flex size-8 items-center justify-center rounded-lg ${stat.iconClassName}`}>
-                  <Icon className="size-4" />
+  return (
+    <Card className="h-full shadow-xs">
+      <CardContent className="flex h-full flex-col justify-center md:flex-row md:items-stretch">
+        {stats.map((stat, index) => {
+          const Icon = stat.icon;
+          const TrendIcon = stat.direction === "up" ? TrendingUp : TrendingDown;
+
+          return (
+            <Fragment key={stat.id}>
+              {index > 0 ? (
+                <>
+                  <Separator className="md:hidden" />
+                  <Separator orientation="vertical" className="hidden h-auto md:block" />
+                </>
+              ) : null}
+              <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 py-4 text-start md:px-4 md:py-0 first:pt-0 last:pb-0 md:first:ps-0 md:last:pe-0">
+                <div className="flex items-center justify-between gap-2">
+                  <div className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${stat.iconClassName}`}>
+                    <Icon className="size-4" />
+                  </div>
+                  <Badge
+                    className={cn(stat.direction === "up" && "bg-success/10 text-success")}
+                    dir="ltr"
+                    variant={stat.direction === "up" ? "secondary" : "destructive"}
+                  >
+                    <TrendIcon data-icon="inline-start" />
+                    {stat.direction === "up" ? "+" : ""}
+                    {stat.change}%
+                  </Badge>
                 </div>
-                <span className={`flex items-center gap-1 font-medium text-xs ${stat.badgeClassName}`}>
-                  <TrendIcon className="size-3" />
-                  {stat.direction === "up" ? "+" : ""}
-                  {stat.change}%
-                </span>
+                <div className="flex min-w-0 flex-col gap-1">
+                  <span className="text-muted-foreground text-xs"><V scope="finance" text={stat.label} /></span>
+                  <span className="font-semibold text-2xl tabular-nums leading-none tracking-tight" dir="auto">
+                    {formatCurrency(stat.value, { maximumFractionDigits: 0 })}
+                  </span>
+                  <p className="text-muted-foreground text-xs leading-snug" dir="auto">
+                    {stat.captionAmount !== undefined ? (
+                      <>
+                        <bdi>+{formatCurrency(stat.captionAmount, { maximumFractionDigits: 0 })}</bdi>{" "}
+                        <T id="finance.thanLastMonth" />
+                      </>
+                    ) : (
+                      <V scope="finance" text={stat.caption ?? ""} />
+                    )}
+                  </p>
+                </div>
               </div>
-              <div className="mt-auto flex flex-col gap-1">
-                <span className="font-semibold text-2xl tabular-nums leading-none tracking-tight">
-                  {formatCurrency(stat.value, { noDecimals: true })}
-                </span>
-                <span className="text-muted-foreground text-xs">{stat.label}</span>
-              </div>
-              <p className="text-muted-foreground text-xs leading-snug">{stat.caption}</p>
-            </CardContent>
-          </Card>
-        );
-      })}
-    </>
+            </Fragment>
+          );
+        })}
+      </CardContent>
+    </Card>
   );
 }

@@ -1,3 +1,4 @@
+import { T, V } from "@/i18n/t";
 import Image from "next/image";
 
 import { format, parseISO } from "date-fns";
@@ -30,13 +31,13 @@ export function UpcomingDepartures() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-normal text-muted-foreground text-sm">Upcoming Departures</CardTitle>
+        <CardTitle className="font-normal text-muted-foreground text-sm"><T id="default.upcomingDepartures" /></CardTitle>
         <CardDescription className="text-foreground text-xl tabular-nums leading-none tracking-tight">
-          {departures.length} scheduled trips
+          {departures.length} <T id="default.scheduledTrips" />
         </CardDescription>
         <CardAction>
           <Button variant="outline" size="sm">
-            View calendar
+            <T id="default.viewCalendar" />
           </Button>
         </CardAction>
       </CardHeader>
@@ -58,8 +59,8 @@ export function UpcomingDepartures() {
                 />
               </div>
               <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-                <span className="truncate font-medium text-sm leading-none">{departure.packageName}</span>
-                <span className="truncate text-muted-foreground text-xs">{departure.destination}</span>
+                <span className="truncate font-medium text-sm leading-none"><V scope="default" text={departure.packageName} /></span>
+                <span className="truncate text-muted-foreground text-xs"><V scope="default" text={departure.destination} /></span>
                 <span className="text-muted-foreground text-xs">
                   {formatDateRange(departure.departureDate, departure.returnDate)} · {departure.guide}
                 </span>
@@ -72,7 +73,7 @@ export function UpcomingDepartures() {
                     : undefined
                 }
               >
-                {isFull ? "Full" : `${seatsLeft} left`}
+                {isFull ? <V scope="default" text="Full" /> : <>{seatsLeft} <T id="bookings.left" /></>}
               </Badge>
             </div>
           );

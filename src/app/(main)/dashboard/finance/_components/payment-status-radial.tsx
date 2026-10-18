@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import type { ComponentType } from "react";
 
 import { Clock, RefreshCw, Timer, Wallet } from "lucide-react";
@@ -42,8 +43,8 @@ export function PaymentStatusRadial() {
   return (
     <Card className="h-full shadow-xs">
       <CardHeader className="flex flex-row items-center justify-between gap-4">
-        <CardTitle className="font-semibold text-base">Payment Status</CardTitle>
-        <CardDescription>This Month</CardDescription>
+        <CardTitle className="font-semibold text-base"><T id="finance.paymentStatus" /></CardTitle>
+        <CardDescription><T id="finance.thisMonth" /></CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-5">
         <div className="relative mx-auto aspect-square w-full max-w-[200px]">
@@ -62,7 +63,7 @@ export function PaymentStatusRadial() {
           </ChartContainer>
           <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
             <span className="font-semibold text-2xl tabular-nums leading-none">{paid?.percentage}%</span>
-            <span className="mt-1 text-muted-foreground text-xs">Paid</span>
+            <span className="mt-1 text-muted-foreground text-xs"><T id="finance.paid" /></span>
           </div>
         </div>
 
@@ -77,7 +78,7 @@ export function PaymentStatusRadial() {
                   <Icon className="size-4" />
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-                  <span className="truncate font-medium text-sm leading-none">{item.label}</span>
+                  <span className="truncate font-medium text-sm leading-none"><V scope="finance" text={item.label} /></span>
                   <span className="text-muted-foreground text-xs tabular-nums">
                     {formatCurrency(item.amount, { noDecimals: true })}
                   </span>

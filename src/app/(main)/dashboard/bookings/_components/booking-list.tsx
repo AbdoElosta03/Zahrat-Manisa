@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import { useMemo, useState } from "react";
 
 import Image from "next/image";
@@ -21,6 +22,7 @@ import {
 } from "@/components/ui/pagination";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { useLanguage } from "@/i18n/language-provider";
 
 import { BookingStatusBadge, PaymentStatusBadge } from "./status-badge";
 import type { Booking, BookingStatus } from "./types";
@@ -40,6 +42,7 @@ export function BookingList({
   bookings: Booking[];
   onViewBooking: (booking: Booking) => void;
 }) {
+  const { t } = useLanguage();
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<BookingStatus | "all">("all");
   const [page, setPage] = useState(1);
@@ -73,7 +76,7 @@ export function BookingList({
               setSearch(event.target.value);
               setPage(1);
             }}
-            placeholder="Search by trip, destination, or ID..."
+            placeholder={t("common.searchBookings")}
             className="pl-8"
           />
         </div>
@@ -85,13 +88,13 @@ export function BookingList({
           }}
         >
           <SelectTrigger className="w-full sm:w-40">
-            <SelectValue placeholder="Status" />
+            <SelectValue placeholder={t("common.status")} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All statuses</SelectItem>
-            <SelectItem value="confirmed">Confirmed</SelectItem>
-            <SelectItem value="pending">Pending</SelectItem>
-            <SelectItem value="cancelled">Cancelled</SelectItem>
+            <SelectItem value="all"><T id="bookings.allStatuses" /></SelectItem>
+            <SelectItem value="confirmed"><T id="bookings.confirmed" /></SelectItem>
+            <SelectItem value="pending"><T id="bookings.pending" /></SelectItem>
+            <SelectItem value="cancelled"><T id="bookings.cancelled" /></SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -102,8 +105,8 @@ export function BookingList({
             <EmptyMedia variant="icon">
               <Search />
             </EmptyMedia>
-            <EmptyTitle>No bookings found</EmptyTitle>
-            <EmptyDescription>Try adjusting your search or filters.</EmptyDescription>
+            <EmptyTitle><T id="bookings.noBookingsFound" /></EmptyTitle>
+            <EmptyDescription><T id="bookings.tryAdjustingYourSearchOrFilters" /></EmptyDescription>
           </EmptyHeader>
         </Empty>
       ) : (
@@ -111,15 +114,15 @@ export function BookingList({
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Booking</TableHead>
-                <TableHead>Traveler</TableHead>
-                <TableHead>Trip</TableHead>
-                <TableHead>Travel dates</TableHead>
-                <TableHead>Pax</TableHead>
-                <TableHead>Amount</TableHead>
-                <TableHead>Payment</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
+                <TableHead><T id="bookings.booking" /></TableHead>
+                <TableHead><T id="bookings.traveler" /></TableHead>
+                <TableHead><T id="bookings.trip" /></TableHead>
+                <TableHead><T id="bookings.travelDates" /></TableHead>
+                <TableHead><T id="bookings.pax" /></TableHead>
+                <TableHead><T id="bookings.amount" /></TableHead>
+                <TableHead><T id="bookings.payment" /></TableHead>
+                <TableHead><T id="bookings.status" /></TableHead>
+                <TableHead className="text-right"><T id="bookings.actions" /></TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -164,8 +167,8 @@ export function BookingList({
                           />
                         </div>
                         <div className="flex min-w-0 flex-col gap-0.5">
-                          <span className="truncate font-medium text-sm leading-none">{booking.tripName}</span>
-                          <span className="text-muted-foreground text-xs">{booking.destination}</span>
+                          <span className="truncate font-medium text-sm leading-none"><V scope="bookings" text={booking.tripName} /></span>
+                          <span className="text-muted-foreground text-xs"><V scope="bookings" text={booking.destination} /></span>
                         </div>
                       </div>
                     </TableCell>
@@ -187,7 +190,7 @@ export function BookingList({
                     </TableCell>
                     <TableCell className="text-right">
                       <Button variant="outline" size="sm" onClick={() => onViewBooking(booking)}>
-                        View
+                        <T id="bookings.view" />
                       </Button>
                     </TableCell>
                   </TableRow>
@@ -201,7 +204,7 @@ export function BookingList({
       {totalPages > 1 ? (
         <div className="flex items-center justify-between">
           <span className="text-muted-foreground text-xs">
-            Showing {(currentPage - 1) * PAGE_SIZE + 1}-{Math.min(currentPage * PAGE_SIZE, filtered.length)} of{" "}
+            <T id="bookings.showing" /> {(currentPage - 1) * PAGE_SIZE + 1}-{Math.min(currentPage * PAGE_SIZE, filtered.length)} <T id="bookings.of" />{" "}
             {filtered.length}
           </span>
           <Pagination className="mx-0 w-fit justify-end">

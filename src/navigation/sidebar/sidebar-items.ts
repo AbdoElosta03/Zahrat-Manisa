@@ -22,6 +22,8 @@ import {
   XCircle,
 } from "lucide-react";
 
+import type { Permission } from "@/lib/auth/permissions";
+
 export type NavBadge = "new" | "soon";
 
 export interface NavSubItem {
@@ -32,6 +34,7 @@ export interface NavSubItem {
   badge?: NavBadge;
   disabled?: boolean;
   newTab?: boolean;
+  permission?: Permission;
 }
 
 interface NavItemBase {
@@ -41,6 +44,7 @@ interface NavItemBase {
   badge?: NavBadge;
   disabled?: boolean;
   newTab?: boolean;
+  permission?: Permission;
 }
 
 export interface NavMainLinkItem extends NavItemBase {
@@ -75,12 +79,14 @@ export const sidebarItems: NavGroup[] = [
             title: "Overview",
             url: "/dashboard/default",
             icon: LayoutDashboard,
+            permission: "dashboard.view",
           },
           {
             id: "dashboard-finance",
             title: "Finance",
             url: "/dashboard/finance",
             icon: Wallet,
+            permission: "payments.view",
           },
         ],
       },
@@ -95,24 +101,28 @@ export const sidebarItems: NavGroup[] = [
         title: "Bookings",
         url: "/dashboard/bookings",
         icon: ReceiptText,
+        permission: "bookings.view",
       },
       {
         id: "flights",
         title: "Flights",
         url: "/dashboard/flights",
         icon: Plane,
+        permission: "flights.view",
       },
       {
         id: "ticketing",
         title: "Ticketing",
         url: "/dashboard/ticketing",
         icon: Ticket,
+        permission: "ticketing.view",
       },
       {
         id: "cancellations",
         title: "Cancellations",
-        url: "/dashboard/tasks",
+        url: "/dashboard/cancellations",
         icon: XCircle,
+        permission: "cancellations.view",
       },
     ],
   },
@@ -123,14 +133,16 @@ export const sidebarItems: NavGroup[] = [
       {
         id: "customers",
         title: "Customers",
-        url: "/dashboard/users",
+        url: "/dashboard/customers",
         icon: Users,
+        permission: "customers.view",
       },
       {
         id: "support",
         title: "Support",
-        url: "/dashboard/chat",
+        url: "/dashboard/support",
         icon: Headset,
+        permission: "support.view",
       },
     ],
   },
@@ -141,20 +153,23 @@ export const sidebarItems: NavGroup[] = [
       {
         id: "transactions",
         title: "Transactions",
-        url: "/dashboard/finance-v1",
+        url: "/dashboard/transactions",
         icon: CircleDollarSign,
+        permission: "payments.view",
       },
       {
         id: "refunds",
         title: "Refunds",
-        url: "/dashboard/kanban",
+        url: "/dashboard/refunds",
         icon: RotateCcw,
+        permission: "payments.view",
       },
       {
         id: "reconciliation",
         title: "Reconciliation",
-        url: "/dashboard/analytics",
+        url: "/dashboard/reconciliation",
         icon: Scale,
+        permission: "payments.view",
       },
     ],
   },
@@ -165,20 +180,23 @@ export const sidebarItems: NavGroup[] = [
       {
         id: "promotions",
         title: "Promotions",
-        url: "/dashboard/productivity",
+        url: "/dashboard/promotions",
         icon: Megaphone,
+        permission: "promotions.view",
       },
       {
         id: "notifications",
         title: "Notifications",
-        url: "/dashboard/mail",
+        url: "/dashboard/notifications",
         icon: Bell,
+        permission: "notifications.view",
       },
       {
         id: "campaigns",
         title: "Campaigns",
-        url: "/dashboard/crm",
+        url: "/dashboard/campaigns",
         icon: Mail,
+        permission: "campaigns.view",
       },
     ],
   },
@@ -189,50 +207,70 @@ export const sidebarItems: NavGroup[] = [
       {
         id: "reports",
         title: "Reports",
-        url: "/dashboard/analytics-v1",
+        url: "/dashboard/reports",
         icon: ChartBar,
+        permission: "reports.view",
       },
       {
         id: "analytics",
         title: "Analytics",
-        url: "/dashboard/academy",
+        url: "/dashboard/analytics-overview",
         icon: Waypoints,
+        permission: "reports.view",
       },
     ],
   },
   {
     id: 7,
+    label: "User Management",
+    items: [
+      {
+        id: "users",
+        title: "Users",
+        url: "/dashboard/users",
+        icon: Users,
+        permission: "users.view",
+      },
+      {
+        id: "roles-permissions",
+        title: "Roles & Permissions",
+        url: "/dashboard/roles-permissions",
+        icon: Shield,
+        permission: "roles.view",
+      },
+    ],
+  },
+  {
+    id: 8,
     label: "System",
     items: [
       {
         id: "airlines",
         title: "Airlines & Providers",
-        url: "/dashboard/infrastructure",
+        url: "/dashboard/airlines-providers",
         icon: Plane,
+        permission: "providers.view",
       },
       {
         id: "integrations",
         title: "Integrations",
-        url: "/dashboard/file-manager",
+        url: "/dashboard/integrations",
         icon: Plug,
-      },
-      {
-        id: "roles",
-        title: "Roles & Permissions",
-        url: "/dashboard/roles",
-        icon: Shield,
+        permission: "integrations.view",
       },
       {
         id: "audit-logs",
         title: "Audit Logs",
-        url: "/dashboard/calendar",
+        url: "/dashboard/audit-logs",
         icon: ScrollText,
+        permission: "audit.view",
       },
       {
         id: "settings",
         title: "Settings",
-        url: "/dashboard/profile",
+        url: "/dashboard/settings",
         icon: Settings,
+        permission: "settings.view",
       },
     ],
   },

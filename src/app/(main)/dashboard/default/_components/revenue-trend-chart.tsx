@@ -1,10 +1,12 @@
 "use client";
 
-import { format, parseISO } from "date-fns";
+import { T } from "@/i18n/t";
+import { parseISO } from "date-fns";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLanguage } from "@/i18n/language-provider";
 import {
   type ChartConfig,
   ChartContainer,
@@ -43,17 +45,6 @@ const rawData = revenueTrendData as RevenuePoint[];
 const chartData = rawData.filter((_, index) => index % 7 === 0);
 const summary = revenueSummaryData as RevenueSummary;
 
-const chartConfig = {
-  bookings: {
-    label: "Bookings",
-    color: "var(--color-blue-500)",
-  },
-  revenue: {
-    label: "Revenue",
-    color: "var(--color-teal-500)",
-  },
-} satisfies ChartConfig;
-
 function formatCurrency(amount: number) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -63,29 +54,36 @@ function formatCurrency(amount: number) {
 }
 
 export function RevenueTrendChart() {
+  const { locale, t, value } = useLanguage();
+  const dateLocale = locale === "ar" ? "ar" : "en-US";
+  const chartConfig = {
+    bookings: { label: value("default", "Bookings"), color: "var(--chart-2)" },
+    revenue: { label: value("default", "Revenue"), color: "var(--chart-1)" },
+  } satisfies ChartConfig;
+
   return (
     <Card className="@container/card h-full">
       <CardHeader>
-        <CardTitle className="leading-none">Bookings & Revenue</CardTitle>
+        <CardTitle className="leading-none"><T id="default.bookingsRevenue" /></CardTitle>
         <CardDescription>
-          <span className="@[540px]/card:block hidden">Weekly bookings vs revenue for the last 90 days</span>
-          <span className="@[540px]/card:hidden">Last 90 days</span>
+          <span className="@[540px]/card:block hidden"><T id="default.weeklyBookingsVsRevenueForTheLast90Days" /></span>
+          <span className="@[540px]/card:hidden"><T id="default.last90Days" /></span>
         </CardDescription>
         <CardAction className="flex items-center gap-2">
           <Select defaultValue="90d">
             <SelectTrigger size="sm" className="w-28">
-              <SelectValue placeholder="90 days" />
+              <SelectValue placeholder={t("default.90Days")} />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectLabel>Period</SelectLabel>
-                <SelectItem value="90d">90 days</SelectItem>
+                <SelectLabel><T id="default.period" /></SelectLabel>
+                <SelectItem value="90d"><T id="default.90Days" /></SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
 
           <Button variant="outline" size="sm">
-            View report
+            <T id="default.viewReport" />
           </Button>
         </CardAction>
       </CardHeader>
@@ -111,7 +109,7 @@ export function RevenueTrendChart() {
               axisLine={false}
               tickMargin={8}
               tickFormatter={(value) =>
-                parseISO(value).toLocaleDateString("en-US", {
+                parseISO(value).toLocaleDateString(dateLocale, {
                   month: "short",
                   day: "numeric",
                 })
@@ -123,7 +121,9 @@ export function RevenueTrendChart() {
               content={
                 <ChartTooltipContent
                   className="w-50"
-                  labelFormatter={(value) => format(parseISO(value), "d MMMM yyyy")}
+                  labelFormatter={(value) =>
+                    parseISO(value).toLocaleDateString(dateLocale, { day: "numeric", month: "long", year: "numeric" })
+                  }
                 />
               }
             />
@@ -136,17 +136,17 @@ export function RevenueTrendChart() {
 
         <div className="mt-5 grid grid-cols-3 gap-3 border-t pt-4">
           <div className="flex flex-col gap-1">
-            <span className="text-muted-foreground text-xs">Booking Revenue</span>
+            <span className="text-muted-foreground text-xs"><T id="default.bookingRevenue" /></span>
             <span className="font-medium text-sm tabular-nums">{formatCurrency(summary.bookingRevenue)}</span>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-muted-foreground text-xs">Refunds</span>
+            <span className="text-muted-foreground text-xs"><T id="default.refunds" /></span>
             <span className="font-medium text-rose-600 text-sm tabular-nums dark:text-rose-400">
               {formatCurrency(summary.refunds)}
             </span>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-muted-foreground text-xs">Net Profit</span>
+            <span className="text-muted-foreground text-xs"><T id="default.netProfit" /></span>
             <span className="font-medium text-emerald-600 text-sm tabular-nums dark:text-emerald-400">
               {formatCurrency(summary.netProfit)}
             </span>

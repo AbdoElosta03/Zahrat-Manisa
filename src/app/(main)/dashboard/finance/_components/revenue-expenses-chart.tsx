@@ -1,5 +1,6 @@
 "use client";
 
+import { T } from "@/i18n/t";
 import type { CSSProperties } from "react";
 
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
@@ -14,34 +15,44 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { formatCurrency } from "@/lib/utils";
+import { useLanguage } from "@/i18n/language-provider";
 
 import revenueExpensesData from "./revenue-expenses-data.json";
 import type { MonthlyFinancePoint } from "./types";
 
 const chartData = revenueExpensesData as MonthlyFinancePoint[];
 
-const chartConfig = {
-  revenue: { label: "Revenue", color: "var(--color-teal-500)" },
-  expenses: { label: "Expenses", color: "var(--color-orange-500)" },
-  profit: { label: "Profit", color: "var(--color-amber-400)" },
-} satisfies ChartConfig;
-
 export function RevenueExpensesChart() {
+  const { locale, value } = useLanguage();
+  const chartConfig = {
+    revenue: { label: value("finance", "Revenue"), color: "var(--chart-1)" },
+    expenses: { label: value("finance", "Expenses"), color: "var(--chart-2)" },
+  } satisfies ChartConfig;
+
   return (
     <Card className="h-full shadow-xs">
       <CardHeader className="flex flex-row items-center justify-between gap-4">
-        <CardTitle className="font-semibold text-base">Revenue & Expenses</CardTitle>
+        <CardTitle className="font-semibold text-base"><T id="finance.revenueExpenses" /></CardTitle>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="h-[280px] w-full">
-          <ComposedFinanceChart data={chartData} />
+          <ComposedFinanceChart data={chartData} locale={locale} labels={chartConfig} />
         </ChartContainer>
       </CardContent>
     </Card>
   );
 }
 
-function ComposedFinanceChart({ data }: { data: MonthlyFinancePoint[] }) {
+function ComposedFinanceChart({
+  data,
+  locale,
+  labels,
+}: {
+  data: MonthlyFinancePoint[];
+  locale: "en" | "ar";
+  labels: ChartConfig;
+}) {
+  const dateLocale = locale === "ar" ? "ar" : "en-US";
   return (
     <BarChart accessibilityLayer data={data} margin={{ left: 0, right: 0, top: 8 }}>
       <CartesianGrid vertical={false} />
@@ -50,7 +61,7 @@ function ComposedFinanceChart({ data }: { data: MonthlyFinancePoint[] }) {
         tickLine={false}
         axisLine={false}
         tickMargin={8}
-        tickFormatter={(value: string) => new Date(value).toLocaleDateString("en-US", { month: "short" })}
+        tickFormatter={(value: string) => new Date(value).toLocaleDateString(dateLocale, { month: "short" })}
       />
       <YAxis
         tickLine={false}
@@ -64,7 +75,7 @@ function ComposedFinanceChart({ data }: { data: MonthlyFinancePoint[] }) {
           <ChartTooltipContent
             labelFormatter={(value) =>
               typeof value === "string"
-                ? new Date(value).toLocaleDateString("en-US", { month: "long", year: "numeric" })
+                ? new Date(value).toLocaleDateString(dateLocale, { month: "long", year: "numeric" })
                 : value
             }
             formatter={(value, name, item) => (
@@ -75,7 +86,7 @@ function ComposedFinanceChart({ data }: { data: MonthlyFinancePoint[] }) {
                 />
                 <div className="flex flex-1 items-center justify-between gap-4 leading-none">
                   <span className="text-muted-foreground">
-                    {chartConfig[name as keyof typeof chartConfig]?.label ?? name}
+                    {labels[String(name)]?.label ?? name}
                   </span>
                   <span className="font-medium text-foreground tabular-nums">
                     {formatCurrency(Number(value), { noDecimals: true })}

@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/pagination";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { useI18n } from "@/i18n/language-provider";
+import { T } from "@/i18n/t";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
 import { recentBookingsColumns } from "./columns";
@@ -27,6 +29,7 @@ import { type BookingFilter, type BookingRow, bookingFilters } from "./schema";
 const recentBookings = bookingsData as BookingRow[];
 
 export function RecentBookingsTable() {
+  const { formatNumber } = useI18n();
   const [rowSelection, setRowSelection] = React.useState({});
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
@@ -61,8 +64,8 @@ export function RecentBookingsTable() {
   const pageCount = table.getPageCount();
   const bookingCountDescription =
     selectedBookingCount > 0
-      ? formatSelectedBookingCount(selectedBookingCount)
-      : formatBookingCount(activeFilter, bookingCount);
+      ? formatSelectedBookingCount(selectedBookingCount, formatNumber)
+      : formatBookingCount(activeFilter, bookingCount, formatNumber);
   const pageNumbers = React.useMemo(() => {
     if (pageCount <= 3) {
       return Array.from({ length: pageCount }, (_, index) => index + 1);
@@ -77,7 +80,9 @@ export function RecentBookingsTable() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-normal text-muted-foreground text-sm">Recent Bookings</CardTitle>
+        <CardTitle className="font-normal text-muted-foreground text-sm">
+          <T id="default.recentBookings" />
+        </CardTitle>
         <CardDescription className="text-foreground text-xl tabular-nums leading-none tracking-tight">
           {bookingCountDescription}
         </CardDescription>
@@ -153,7 +158,7 @@ export function RecentBookingsTable() {
               ) : (
                 <TableRow>
                   <TableCell className="h-24 text-center" colSpan={table.getVisibleLeafColumns().length}>
-                    No bookings found.
+                    <T id="default.noBookingsFound" />
                   </TableCell>
                 </TableRow>
               )}
@@ -163,7 +168,8 @@ export function RecentBookingsTable() {
 
         <div className="flex items-center justify-between gap-4 px-4 pb-1">
           <p className="text-muted-foreground text-sm">
-            Viewing {visibleBookingCount} out of {bookingCount.toLocaleString()} bookings
+            <T id="default.viewing" /> {formatNumber(visibleBookingCount)} <T id="default.outOf" />{" "}
+            {formatNumber(bookingCount)} <T id="default.bookings" />
           </p>
 
           <Pagination className="mx-0 w-auto justify-end">

@@ -1,3 +1,4 @@
+import { T } from "@/i18n/t";
 import { Download, ListFilter } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -25,9 +26,9 @@ export default function Page() {
     <div className="@container/main flex flex-col gap-4 md:gap-6">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div className="space-y-1">
-          <h1 className="font-semibold text-3xl tracking-tight">Finance</h1>
+          <h1 className="font-semibold text-3xl tracking-tight"><T id="finance.finance" /></h1>
           <p className="text-muted-foreground text-sm">
-            Monitor revenue, expenses, payments and financial performance.
+            <T id="finance.monitorRevenueExpensesPaymentsAndFinancialPerformance" />
           </p>
         </div>
 
@@ -35,19 +36,17 @@ export default function Page() {
           <DateRangePicker />
           <Button variant="outline" size="sm">
             <ListFilter data-icon="inline-start" />
-            Filter
+            <T id="finance.filter" />
           </Button>
           <Button variant="outline" size="sm">
             <Download data-icon="inline-start" />
-            Export
+            <T id="finance.export" />
           </Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 items-stretch gap-4 md:gap-6 xl:grid-cols-4">
-        <div className="xl:col-span-2">
-          <FeaturedRevenueCard />
-        </div>
+      <div className="grid grid-cols-1 items-stretch gap-4 md:gap-6 lg:grid-cols-2">
+        <FeaturedRevenueCard />
         <FinanceStatCards />
       </div>
 

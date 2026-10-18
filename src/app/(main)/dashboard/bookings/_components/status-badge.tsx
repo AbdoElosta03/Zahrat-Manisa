@@ -1,3 +1,4 @@
+import { V } from "@/i18n/t";
 import { cn } from "cn";
 
 import type { BookingStatus, CalendarEventType, PaymentStatus } from "./types";
@@ -23,7 +24,7 @@ export function BookingStatusBadge({ status, className }: { status: BookingStatu
         className,
       )}
     >
-      {bookingStatusLabels[status]}
+      <V scope="bookings" text={bookingStatusLabels[status]} />
     </span>
   );
 }
@@ -49,7 +50,7 @@ export function PaymentStatusBadge({ status, className }: { status: PaymentStatu
         className,
       )}
     >
-      {paymentStatusLabels[status]}
+      <V scope="bookings" text={paymentStatusLabels[status]} />
     </span>
   );
 }

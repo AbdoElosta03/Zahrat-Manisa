@@ -1,0 +1,17 @@
+{
+  "finance": "المالية",
+  "monitorRevenueExpensesPaymentsAndFinancialPerformance": "تابع الإيرادات والمصروفات والمدفوعات والأداء المالي.",
+  "filter": "تصفية",
+  "export": "تصدير",
+  "totalRevenue": "إجمالي الإيرادات",
+  "thanLastMonth": "مقارنة بالشهر الماضي",
+  "paymentStatus": "حالة الدفع",
+  "thisMonth": "هذا الشهر",
+  "paid": "مدفوع",
+  "recentRefunds": "المبالغ المستردة الأخيرة",
+  "viewAll": "عرض الكل",
+  "recentTransactions": "المعاملات الأخيرة",
+  "revenueExpenses": "الإيرادات والمصروفات",
+  "upcomingPayments": "المدفوعات القادمة",
+  "due": "مستحق"
+}

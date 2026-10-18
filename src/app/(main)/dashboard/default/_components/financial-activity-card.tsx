@@ -1,3 +1,4 @@
+import { T, V } from "@/i18n/t";
 import type { ComponentType } from "react";
 
 import { format, parseISO } from "date-fns";
@@ -43,13 +44,13 @@ export function FinancialActivityCard() {
   return (
     <Card className="h-full shadow-xs">
       <CardHeader>
-        <CardTitle className="font-normal text-muted-foreground text-sm">Financial Activity</CardTitle>
+        <CardTitle className="font-normal text-muted-foreground text-sm"><T id="default.financialActivity" /></CardTitle>
         <CardDescription className="text-foreground text-xl tabular-nums leading-none tracking-tight">
-          Last 5 transactions
+          <T id="default.last5Transactions" />
         </CardDescription>
         <CardAction>
           <Button variant="outline" size="sm">
-            View ledger
+            <T id="default.viewLedger" />
           </Button>
         </CardAction>
       </CardHeader>
@@ -64,7 +65,7 @@ export function FinancialActivityCard() {
                 <Icon className="size-4" />
               </div>
               <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-                <span className="truncate font-medium text-sm leading-none">{txn.description}</span>
+                <span className="truncate font-medium text-sm leading-none"><V scope="default" text={txn.description} /></span>
                 <span className="text-muted-foreground text-xs">{format(parseISO(txn.date), "d MMM")}</span>
               </div>
               <span

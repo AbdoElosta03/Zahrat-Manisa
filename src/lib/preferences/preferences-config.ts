@@ -126,6 +126,10 @@ export function parsePreference<K extends PreferenceKey>(
   const definition = PREFERENCE_REGISTRY[key];
   const allowedValues = definition.values as readonly string[];
 
+  if (rawValue === "system" && key === "theme_mode") {
+    return "dark" as PreferenceValueMap[K];
+  }
+
   if (rawValue && allowedValues.includes(rawValue)) {
     return rawValue as PreferenceValueMap[K];
   }

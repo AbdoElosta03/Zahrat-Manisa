@@ -58,7 +58,7 @@ export function NavMain({ items, label }: { items: SidebarNavItem[]; label?: str
                   </SidebarMenuButton>
                 ) : (
                   <SidebarMenuButton asChild tooltip={item.title} isActive={active && !item.items?.length}>
-                    <Link href={item.url} prefetch={false}>
+                    <Link href={item.url}>
                       {item.icon}
                       <span>{item.title}</span>
                     </Link>
@@ -81,7 +81,6 @@ export function NavMain({ items, label }: { items: SidebarNavItem[]; label?: str
                             <SidebarMenuSubButton asChild isActive={pathname === subItem.url}>
                               <Link
                                 href={subItem.url}
-                                prefetch={false}
                                 target={subItem.newTab ? "_blank" : undefined}
                                 rel={subItem.newTab ? "noreferrer" : undefined}
                               >

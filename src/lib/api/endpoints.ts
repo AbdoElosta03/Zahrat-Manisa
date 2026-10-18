@@ -1,0 +1,42 @@
+export const endpoints = {
+  // Railway/FastAPI routes; the existing auth endpoints below belong to the demo API.
+  authV1: {
+    login: "/api/v1/auth/login",
+    register: "/api/v1/auth/register",
+    confirmRegister: "/api/v1/auth/register/confirm",
+    forgotPassword: "/api/v1/auth/forgot-password",
+    me: "/api/v1/auth/me",
+    logout: "/api/v1/auth/logout",
+  },
+  auth: {
+    me: "/auth/me",
+    login: "/auth/login",
+    logout: "/auth/logout",
+    demoAccounts: "/auth/demo-accounts",
+    demoSession: "/auth/demo-session",
+  },
+  users: {
+    list: "/users",
+    stats: "/users/stats",
+    detail: (id: string) => `/users/${encodeURIComponent(id)}`,
+  },
+  usersV1: {
+    list: "/api/v1/users",
+    detail: (id: string) => `/api/v1/users/${encodeURIComponent(id)}`,
+    employee: (id: string) => `/api/v1/users/${encodeURIComponent(id)}/employee`,
+    blocking: (id: string) => `/api/v1/users/${encodeURIComponent(id)}/blocking`,
+  },
+  rolesV1: {
+    list: "/api/v1/authorization/roles",
+    permissions: "/api/v1/authorization/permissions",
+    detail: (id: string) => `/api/v1/authorization/roles/${encodeURIComponent(id)}`,
+    rolePermissions: (id: string) => `/api/v1/authorization/roles/${encodeURIComponent(id)}/permissions`,
+  },
+  roles: {
+    list: "/roles",
+    detail: (id: string) => `/roles/${encodeURIComponent(id)}`,
+  },
+  bookings: {},
+  flights: {},
+  finance: {},
+} as const;

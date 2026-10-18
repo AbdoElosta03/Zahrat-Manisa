@@ -1,5 +1,6 @@
 "use client";
 
+import { T, V } from "@/i18n/t";
 import Image from "next/image";
 
 import { format, parseISO } from "date-fns";
@@ -33,21 +34,21 @@ export function DayDetailsPanel({
   return (
     <div className="flex h-full flex-col gap-4">
       <div className="flex flex-col gap-0.5">
-        <span className="text-muted-foreground text-xs">Selected day</span>
+        <span className="text-muted-foreground text-xs"><T id="bookings.selectedDay" /></span>
         <span className="font-medium text-lg">{format(parseISO(selectedDate), "EEEE, MMM d yyyy")}</span>
       </div>
 
       <div className="grid grid-cols-3 gap-2 rounded-lg border bg-muted/30 p-3">
         <div className="flex flex-col gap-0.5">
-          <span className="text-muted-foreground text-[11px]">Trips</span>
+          <span className="text-muted-foreground text-[11px]"><T id="bookings.trips" /></span>
           <span className="font-medium text-sm tabular-nums">{bookings.length}</span>
         </div>
         <div className="flex flex-col gap-0.5">
-          <span className="text-muted-foreground text-[11px]">Travelers</span>
+          <span className="text-muted-foreground text-[11px]"><T id="bookings.travelers2" /></span>
           <span className="font-medium text-sm tabular-nums">{travelers}</span>
         </div>
         <div className="flex flex-col gap-0.5">
-          <span className="text-muted-foreground text-[11px]">Revenue</span>
+          <span className="text-muted-foreground text-[11px]"><T id="bookings.revenue" /></span>
           <span className="font-medium text-sm tabular-nums">{formatCurrency(revenue)}</span>
         </div>
       </div>
@@ -58,8 +59,8 @@ export function DayDetailsPanel({
             <EmptyMedia variant="icon">
               <CalendarX2 />
             </EmptyMedia>
-            <EmptyTitle>No trips scheduled</EmptyTitle>
-            <EmptyDescription>There are no departures or bookings for this day.</EmptyDescription>
+            <EmptyTitle><T id="bookings.noTripsScheduled" /></EmptyTitle>
+            <EmptyDescription><T id="bookings.thereAreNoDeparturesOrBookingsForThisDay" /></EmptyDescription>
           </EmptyHeader>
         </Empty>
       ) : (
@@ -78,7 +79,7 @@ export function DayDetailsPanel({
                 </div>
                 <div className="flex flex-1 flex-col gap-0.5">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="truncate font-medium text-sm">{booking.tripName}</span>
+                    <span className="truncate font-medium text-sm"><V scope="bookings" text={booking.tripName} /></span>
                     <BookingStatusBadge status={booking.bookingStatus} />
                   </div>
                   <span className="text-muted-foreground text-xs">{booking.id}</span>
@@ -113,11 +114,11 @@ export function DayDetailsPanel({
                     </AvatarGroupCount>
                   ) : null}
                   <span className="ml-2 self-center text-muted-foreground text-xs">
-                    {booking.travelersCount} travelers
+                    {booking.travelersCount} <T id="bookings.travelers3" />
                   </span>
                 </AvatarGroup>
                 <Button variant="outline" size="sm" onClick={() => onViewBooking(booking)}>
-                  View details
+                  <T id="bookings.viewDetails" />
                 </Button>
               </div>
             </div>

@@ -4,7 +4,7 @@ export const users = [
     name: "Arham Khan",
     username: "Aarhamkhnz",
     email: "hello@arhamkhnz.com",
-    avatar: "https://avatars.githubusercontent.com/u/43849669",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=128&h=128&fit=crop&crop=face",
     role: "administrator",
   },
   {
@@ -12,7 +12,7 @@ export const users = [
     name: "Ammar Khan",
     username: "ammarkhnz",
     email: "hello@ammarkhnz.com",
-    avatar: "",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=128&h=128&fit=crop&crop=face",
     role: "admin",
   },
 ];
